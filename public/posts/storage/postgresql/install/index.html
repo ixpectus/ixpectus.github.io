@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Установка из исходников  Где скачать Делаю по инструкции  Сам процесс установки tar -xzf postgresql-10.0.tar.gz cd ./postgresql-10.0.0 ./configure С версией 10.0.0 возникла ошибка при установке
+copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’ copy_file_range(const char *path, off_t begin, off_t end, bool trunc) Взял версию 10.0.13. Всё установилось, но не был создан пользователь postgres, от имени которого должен запускаться сам postgres. Добавил его руками
+sudo useradd postgres sudo passwd postgres sudo mkdir /home/postgres sudo chown postgres /home/postgres su postgres Последним шагом вошёл в систему от имени пользователя postgres и добавил в .'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Install • ixpectus notes'>
+<meta property='og:description' content='Установка из исходников  Где скачать Делаю по инструкции  Сам процесс установки tar -xzf postgresql-10.0.tar.gz cd ./postgresql-10.0.0 ./configure С версией 10.0.0 возникла ошибка при установке
+copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’ copy_file_range(const char *path, off_t begin, off_t end, bool trunc) Взял версию 10.0.13. Всё установилось, но не был создан пользователь postgres, от имени которого должен запускаться сам postgres. Добавил его руками
+sudo useradd postgres sudo passwd postgres sudo mkdir /home/postgres sudo chown postgres /home/postgres su postgres Последним шагом вошёл в систему от имени пользователя postgres и добавил в .'>
+<meta property='og:url' content='http://www.example.com/posts/storage/postgresql/install/'>
+<meta property='og:site_name' content='ixpectus notes'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:published_time' content='2020-06-08T11:43:07&#43;03:00'/><meta property='article:modified_time' content='2020-06-08T11:43:07&#43;03:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.71.1" />
+
+  <title>Install • ixpectus notes</title>
+  <link rel='canonical' href='http://www.example.com/posts/storage/postgresql/install/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      ixpectus notes
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/posts/administrate/'>administrate</a></li><li class='item'>
+  <a href='/posts/linux/tools/'>linux tools</a></li><li class='item'>
+  <a href='/posts/storage/'>storage</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/cli/' style='font-size:1em'>cli</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.3333333333333333em'>linux</a>
+      </li><li>
+        <a href='/tags/network/' style='font-size:1em'>network</a>
+      </li><li>
+        <a href='/tags/pg_file_settings/' style='font-size:1em'>pg_file_settings</a>
+      </li><li>
+        <a href='/tags/pg_reload_conf/' style='font-size:1em'>pg_reload_conf</a>
+      </li><li>
+        <a href='/tags/pg_settings/' style='font-size:1em'>pg_settings</a>
+      </li><li>
+        <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
+      </li><li>
+        <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/posts/administrate/'>administrate</a>
+      </li><li class='item'>
+        <a href='/posts/linux/tools/'>linux tools</a>
+      </li><li class='item'>
+        <a href='/posts/storage/'>storage</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>ixpectus notes</a></li><li><a href='/posts/'>posts</a></li><li><a href='/posts/storage/'>storage</a></li><li><span>Install</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>ixpectus notes</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Install</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-06-08T11:43:07&#43;03:00'>2020, Jun 08</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <h3 id="установка-из-исходников">Установка из исходников</h3>
+<ul>
+<li><a href="https://www.postgresql.org/ftp/source/v10.0/">Где скачать</a></li>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_01_tools_install.html">Делаю по инструкции</a></li>
+</ul>
+<h4 id="сам-процесс-установки">Сам процесс установки</h4>
+<pre><code>tar -xzf postgresql-10.0.tar.gz
+cd ./postgresql-10.0.0
+./configure
+</code></pre><p>С версией 10.0.0 возникла ошибка при установке</p>
+<pre><code>copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’
+ copy_file_range(const char *path, off_t begin, off_t end, bool trunc)
+</code></pre><p>Взял версию 10.0.13. Всё установилось, но не был создан пользователь postgres, от имени которого должен запускаться сам postgres. Добавил его руками</p>
+<pre><code>sudo useradd postgres
+sudo passwd postgres
+sudo mkdir /home/postgres
+sudo chown postgres /home/postgres
+su postgres
+</code></pre><p>Последним шагом вошёл в систему от имени пользователя postgres и добавил в .bashrc</p>
+<pre><code>export PGDATA=&quot;/usr/local/psql/data&quot;
+export PATH=$PATH:/usr/local/pgsql/bin/;
+</code></pre><h5 id="добавление-psql-директории-для-хранения-данных">Добавление psql директории для хранения данных</h5>
+<pre><code>sudo mkdir /usr/local/psql/
+sudo chown postgres /usr/local/psql/
+</code></pre><p>После добавление директории psql нужно выполнить от имени пользователя postgres <code>initdb -k</code></p>
+<h5 id="запуск-сервера">Запуск сервера</h5>
+<pre><code>pg_ctl -w -l /home/postgres/logfile -D /usr/local/psql/data start
+</code></pre><p>Postgresql стартовал</p>
+<pre><code>ps aux | grep postgres
+...
+postgres  102850  0.0  0.0 160184  2736 ?        Ss   10:44   0:00 postgres: checkpointer process
+postgres  102851  0.0  0.0 160184  5004 ?        Ss   10:44   0:00 postgres: writer process
+postgres  102852  0.0  0.0 160184  8516 ?        Ss   10:44   0:00 postgres: wal writer process
+postgres  102853  0.0  0.0 160596  5804 ?        Ss   10:44   0:00 postgres: autovacuum launcher process
+postgres  102854  0.0  0.0  15132  2644 ?        Ss   10:44   0:00 postgres: stats collector process
+...
+</code></pre><p>Но не удаётся подключится к нему</p>
+<pre><code>psql
+psql: error: could not connect to server
+</code></pre><p>Попробовал скопировать конфиги и поменять <code>listen_addresses</code></p>
+<pre><code>sudo cp /usr/local/pgsql/share/postgresql.conf.sample /usr/local/pgsql/share/postgresql.conf
+</code></pre><p>Нужно было указать host</p>
+<pre><code>psql -h 127.0.0.1
+</code></pre><h5 id="установка-расширения-pgcrypto">Установка расширения pgcrypto</h5>
+<pre><code>cd ./postgresql-10.13/contrib/pgcrypto
+make 
+sudo make install
+</code></pre><p>Установка прошли успешно, проверяем установленные расширения</p>
+<pre><code>select * from pg_available_extensions;
+   name   | default_version | installed_version |           comment
+----------+-----------------+-------------------+------------------------------
+ plpgsql  | 1.0             | 1.0               | PL/pgSQL procedural language
+ pgcrypto | 1.3             |                   | cryptographic functions
+(2 rows)
+</code></pre><h5 id="установка-всех-расширений-из-директории-contrib">Установка всех расширений из директории contrib</h5>
+<pre><code>cd ./postgresql-10.13/contrib/
+sudo make install
+        name        | default_version | installed_version |                               comment
+--------------------+-----------------+-------------------+----------------------------------------------------------------------
+ pg_prewarm         | 1.1             |                   | prewarm relation data
+ earthdistance      | 1.1             |                   | calculate great-circle distances on the surface of the Earth
+ tsm_system_time    | 1.0             |                   | TABLESAMPLE method which accepts time in milliseconds as a limit
+ plpgsql            | 1.0             | 1.0               | PL/pgSQL procedural language
+ pg_freespacemap    | 1.2             |                   | examine the free space map (FSM)
+ hstore             | 1.4             |                   | data type for storing sets of (key, value) pairs
+ pgstattuple        | 1.5             |                   | show tuple-level statistics
+ unaccent           | 1.1             |                   | text search dictionary that removes accents
+ chkpass            | 1.0             |                   | data type for auto-encrypted passwords
+ moddatetime        | 1.0             |                   | functions for tracking last modification time
+ tcn                | 1.0             |                   | Triggered change notifications
+ citext             | 1.4             |                   | data type for case-insensitive character strings
+ pageinspect        | 1.6             |                   | inspect the contents of database pages at a low level
+ tsm_system_rows    | 1.0             |                   | TABLESAMPLE method which accepts number of rows as a limit
+ amcheck            | 1.0             |                   | functions for verifying relation integrity
+ intagg             | 1.1             |                   | integer aggregator and enumerator (obsolete)
+ lo                 | 1.1             |                   | Large Object maintenance
+ refint             | 1.0             |                   | functions for implementing referential integrity (obsolete)
+ btree_gist         | 1.5             |                   | support for indexing common datatypes in GiST
+ ltree
+ ...
+
+</code></pre><h5 id="остановка-сервера">Остановка сервера</h5>
+<pre><code>pg_ctl stop -m fast
+</code></pre><p>Можно написать просто <code>pg_ctl stop</code>, по умолчанию режим остановки как раз буде fast.
+Режимы остановки</p>
+<ul>
+<li>fast принудительно завершает все сеансы и записывает на диск изменения из оперативной памяти</li>
+<li>smart ожидает завершения всех сеансов и записывает на диск изменения из оперативной памяти</li>
+<li>immediate принудительно завершает сеансы, при запуске потребуется восстановление
+Получается immediate не записывает изменения из оперативной памяти, но не понятно какого рода восстановление понадобится после запуска</li>
+</ul>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/postgresql/'>postgresql</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/storage/postgresql/courses/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>курсы по postgresql</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/storage/postgresql/psql/'>
+        <span class='screen-reader-text'>Next post: </span>psql<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p></p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

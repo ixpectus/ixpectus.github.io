@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on ixpectus notes</title>
+    <link>http://www.example.com/tags/</link>
+    <description>Recent content in Tags on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 20 Jun 2020 21:41:17 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>pg_file_settings</title>
+      <link>http://www.example.com/tags/pg_file_settings/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/pg_file_settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pg_reload_conf</title>
+      <link>http://www.example.com/tags/pg_reload_conf/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/pg_reload_conf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pg_settings</title>
+      <link>http://www.example.com/tags/pg_settings/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/pg_settings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>http://www.example.com/tags/postgresql/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psql</title>
+      <link>http://www.example.com/tags/psql/</link>
+      <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/psql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>http://www.example.com/tags/cli/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://www.example.com/tags/linux/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>http://www.example.com/tags/network/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

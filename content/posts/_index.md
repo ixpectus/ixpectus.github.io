@@ -1,0 +1,4 @@
+---
+title: posts
+linkTitle: posts
+---

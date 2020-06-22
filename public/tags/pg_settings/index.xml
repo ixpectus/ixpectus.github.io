@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pg_settings on ixpectus notes</title>
+    <link>http://www.example.com/tags/pg_settings/</link>
+    <description>Recent content in pg_settings on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 20 Jun 2020 21:41:17 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/tags/pg_settings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Конфигурирование postgresql</title>
+      <link>http://www.example.com/posts/storage/postgresql/configs/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/configs/</guid>
+      <description>Демо Слайды  Посмотреть настройки конфигурационного файла Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу
+select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting | applied | error --------------------------------------+------------+-------+----------------------------+--------------------+---------+-------- /usr/local/psql/data/postgresql.conf | 64 | 1 | max_connections | 100 | t | [NULL] /usr/local/psql/data/postgresql.conf | 113 | 2 | shared_buffers | 128MB | t | [NULL] /usr/local/psql/data/postgresql.conf | 127 | 3 | dynamic_shared_memory_type | posix | t | [NULL] /usr/local/psql/data/postgresql.</description>
+    </item>
+    
+  </channel>
+</rss>

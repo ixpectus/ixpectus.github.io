@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Демо Слайды  Посмотреть настройки конфигурационного файла Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу
+select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting | applied | error --------------------------------------&#43;------------&#43;-------&#43;----------------------------&#43;--------------------&#43;---------&#43;-------- /usr/local/psql/data/postgresql.conf | 64 | 1 | max_connections | 100 | t | [NULL] /usr/local/psql/data/postgresql.conf | 113 | 2 | shared_buffers | 128MB | t | [NULL] /usr/local/psql/data/postgresql.conf | 127 | 3 | dynamic_shared_memory_type | posix | t | [NULL] /usr/local/psql/data/postgresql.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Конфигурирование postgresql • ixpectus notes'>
+<meta property='og:description' content='Демо Слайды  Посмотреть настройки конфигурационного файла Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу
+select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting | applied | error --------------------------------------&#43;------------&#43;-------&#43;----------------------------&#43;--------------------&#43;---------&#43;-------- /usr/local/psql/data/postgresql.conf | 64 | 1 | max_connections | 100 | t | [NULL] /usr/local/psql/data/postgresql.conf | 113 | 2 | shared_buffers | 128MB | t | [NULL] /usr/local/psql/data/postgresql.conf | 127 | 3 | dynamic_shared_memory_type | posix | t | [NULL] /usr/local/psql/data/postgresql.'>
+<meta property='og:url' content='http://www.example.com/posts/storage/postgresql/configs/'>
+<meta property='og:site_name' content='ixpectus notes'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:tag' content='pg_file_settings'><meta property='article:tag' content='pg_settings'><meta property='article:tag' content='pg_reload_conf'><meta property='article:published_time' content='2020-06-20T21:41:17&#43;03:00'/><meta property='article:modified_time' content='2020-06-20T21:41:17&#43;03:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.71.1" />
+
+  <title>Конфигурирование postgresql • ixpectus notes</title>
+  <link rel='canonical' href='http://www.example.com/posts/storage/postgresql/configs/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      ixpectus notes
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/posts/administrate/'>administrate</a></li><li class='item'>
+  <a href='/posts/linux/tools/'>linux tools</a></li><li class='item'>
+  <a href='/posts/storage/'>storage</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/cli/' style='font-size:1em'>cli</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.3333333333333333em'>linux</a>
+      </li><li>
+        <a href='/tags/network/' style='font-size:1em'>network</a>
+      </li><li>
+        <a href='/tags/pg_file_settings/' style='font-size:1em'>pg_file_settings</a>
+      </li><li>
+        <a href='/tags/pg_reload_conf/' style='font-size:1em'>pg_reload_conf</a>
+      </li><li>
+        <a href='/tags/pg_settings/' style='font-size:1em'>pg_settings</a>
+      </li><li>
+        <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
+      </li><li>
+        <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/posts/administrate/'>administrate</a>
+      </li><li class='item'>
+        <a href='/posts/linux/tools/'>linux tools</a>
+      </li><li class='item'>
+        <a href='/posts/storage/'>storage</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>ixpectus notes</a></li><li><a href='/posts/'>posts</a></li><li><a href='/posts/storage/'>storage</a></li><li><span>Конфигурирование postgresql</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>ixpectus notes</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Конфигурирование postgresql</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-06-20T21:41:17&#43;03:00'>2020, Jun 20</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+4 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <ul>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_03_tools_configuration.html">Демо</a></li>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_03_tools_configuration.pdf">Слайды</a></li>
+</ul>
+<h4 id="посмотреть-настройки-конфигурационного-файла">Посмотреть настройки конфигурационного файла</h4>
+<p>Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу</p>
+<pre><code>select * from pg_file_settings;
+              sourcefile              | sourceline | seqno |            name            |      setting       | applied | error
+--------------------------------------+------------+-------+----------------------------+--------------------+---------+--------
+ /usr/local/psql/data/postgresql.conf |         64 |     1 | max_connections            | 100                | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        113 |     2 | shared_buffers             | 128MB              | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        127 |     3 | dynamic_shared_memory_type | posix              | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        461 |     4 | log_timezone               | Europe/Moscow      | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        565 |     5 | datestyle                  | iso, mdy           | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        567 |     6 | timezone                   | Europe/Moscow      | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        580 |     7 | lc_messages                | en_US.UTF-8        | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        582 |     8 | lc_monetary                | en_US.UTF-8        | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        583 |     9 | lc_numeric                 | en_US.UTF-8        | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        584 |    10 | lc_time                    | en_US.UTF-8        | t       | [NULL]
+ /usr/local/psql/data/postgresql.conf |        587 |    11 | default_text_search_config | pg_catalog.english | t       | [NULL]
+(11 rows)
+</code></pre><p>Столбец applied везде установлен true, что говорит о том, что в конфигурационном файле значение установлено, но в текущей сессии вполне может быть другое значение этого параметра.</p>
+<h3 id="где-посмотреть-конфигурационные-параметры-текущей-сессии">Где посмотреть конфигурационные параметры текущей сессии</h3>
+<ul>
+<li>Посмотреть все текущие настройки(там много всего)
+<pre><code>select * from pg_settings;
+</code></pre></li>
+<li>Узнать имя текущего конфигурационного файла
+<pre><code>select * from pg_settings where name='config_file';
+-[ RECORD 1 ]---+-------------------------------------------
+name            | config_file
+setting         | /usr/local/psql/data/postgresql.conf
+unit            | [NULL]
+category        | File Locations
+short_desc      | Sets the server's main configuration file.
+extra_desc      | [NULL]
+context         | postmaster
+vartype         | string
+source          | override
+min_val         | [NULL]
+max_val         | [NULL]
+enumvals        | [NULL]
+boot_val        | [NULL]
+reset_val       | /usr/local/psql/data/postgresql.conf
+sourcefile      | [NULL]
+sourceline      | [NULL]
+pending_restart | f
+</code></pre><p>Видим, что файл расположен в <code>/usr/local/psql/data/postgresql.conf</code></p>
+<ul>
+<li><code>setting</code> текущее значение параметра</li>
+<li><code>reset_val</code> значение по умолчанию, если выполнить команду <code>reset</code> то оно будет установлено</li>
+<li><code>pending_restart</code> обозначает необходимость перезапуска сервера для того, чтобы конфигурационный параметр применился(в нашей случае false, значит перезагружать сервер нет необходимости)</li>
+</ul>
+</li>
+<li>Узнать значение параметра <code>work_mem</code> - максимальное количество памяти, которое может быть выделено для текущего процесса</li>
+</ul>
+<pre><code>select * from pg_settings where name='work_mem'\gx
+-[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
+name            | work_mem
+setting         | 4096
+unit            | kB
+category        | Resource Usage / Memory
+short_desc      | Sets the maximum memory to be used for query workspaces.
+extra_desc      | This much memory can be used by each internal sort operation and hash table before switching to temporary disk files.
+context         | user
+vartype         | integer
+source          | default
+min_val         | 64
+max_val         | 2147483647
+enumvals        | [NULL]
+boot_val        | 4096
+reset_val       | 4096
+sourcefile      | [NULL]
+sourceline      | [NULL]
+pending_restart | f
+</code></pre><ul>
+<li><code>setting</code> текущее значение параметра</li>
+<li><code>unit</code> единица измерения, в нашем случае kB</li>
+<li><code>reset_val</code> если параметр изменен во время сеанса, то можно вызвать <code>reset</code> и будет установлено это значение</li>
+<li><code>pending_restart</code> обозначает необходимость перезапуска сервера для того, чтобы конфигурационный параметр применился(в нашей случае false, значит перезагружать сервер нет необходимости)</li>
+<li><code>context</code> установлен <code>user</code>, обозначает, что пользователь в рамках своей сессии может изменить значение дананого параметра</li>
+<li><code>boot_val</code> значение по умолчанию</li>
+<li><code>min_val</code>, <code>max_val</code> минимальное-максимальное значение параметра</li>
+<li>Параметр <code>context</code>
+<ul>
+<li>Можно посмотреть список возможных значений параметра context</li>
+</ul>
+<pre><code>  select distinct context from pg_settings;
+        context
+  -------------------
+   postmaster
+   superuser-backend
+   user
+   internal
+   backend
+   sighup
+   superuser
+  (7 rows)
+</code></pre><ul>
+<li><code>internal</code> изменить нельзя никогда</li>
+<li><code>user</code> может изменить пользователь в рамках своей сессии</li>
+<li><code>postmaster</code> нужен перезапуск сервера для изменения значения</li>
+<li><code>sighup</code> требуется перечитать файлы конфигурации</li>
+<li><code>superuser</code> суперпользователь может изменить для своего сеанса</li>
+</ul>
+</li>
+</ul>
+<h4 id="попробуем-изменить-значения-параметра-work_mem">Попробуем изменить значения параметра <code>work_mem</code></h4>
+<ul>
+<li>Изменим значение в конфигурационном файле
+<pre><code>work_mem = 24MB
+</code></pre></li>
+<li>Посмотрим значения в отображении <code>pg_file_settings</code>
+<pre><code>127.0.0.1 postgres@postgres=# select * from pg_file_settings where name='work_mem';
+              sourcefile              | sourceline | seqno |   name   | setting | applied | error
+--------------------------------------+------------+-------+----------+---------+---------+--------
+ /usr/local/psql/data/postgresql.conf |        122 |     3 | work_mem | 24MB    | t       | [NULL]
+(1 row)
+</code></pre><p>Видим, что значение установлено</p>
+</li>
+<li>Посмотрим значение в <code>pg_settings</code>
+<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+-[ RECORD 1 ]-
+setting | 4096
+</code></pre><p>Значение не поменялось</p>
+</li>
+<li>Для того, чтобы изменить значение нужно выполнить
+<pre><code>select pg_reload_conf();
+</code></pre></li>
+<li>Посмотрим на параметр
+<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+-[ RECORD 1 ]--
+setting | 24576
+</code></pre><p>Изменился!</p>
+</li>
+</ul>
+<h4 id="изменение-параметров-без-ручной-правки-конфигурационного-файла">Изменение параметров без ручной правки конфигурационного файла</h4>
+<p>Есть команда <code>ALTER SYSTEM</code>, которая позволяет изменить значение параметра прямо в sql. Будет создан новый конфигурационный файл <code>postgresql.auto.conf</code>, значения параметров там будут перекрывать значения в <code>postgresql.conf</code></p>
+<ul>
+<li>Изменим <code>work_mem</code>
+<pre><code>127.0.0.1 postgres@postgres=# alter system set work_mem to '10MB';
+ALTER SYSTEM
+Time: 5.099 ms
+</code></pre></li>
+<li>Смотрим, не изменилось
+<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+-[ RECORD 1 ]--
+setting | 24576
+</code></pre></li>
+<li>Нужно обновить конфиги <code>select pg_reload_conf</code> и значение изменится</li>
+<li><code>alter system reset work_mem</code> очистит значение</li>
+</ul>
+<h4 id="изменение-значений-параметров-на-время-сессии">Изменение значений параметров на время сессии</h4>
+<ul>
+<li><code>SET work_mem to '26MB'</code></li>
+<li>Проверим, видим, что значение изменилось, и что источник <code>session</code>
+<pre><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name='work_mem'\gx
+-[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
+name            | work_mem
+setting         | 26624
+unit            | kB
+category        | Resource Usage / Memory
+short_desc      | Sets the maximum memory to be used for query workspaces.
+extra_desc      | This much memory can be used by each internal sort operation and hash table before switching to temporary disk files.
+context         | user
+vartype         | integer
+source          | session
+</code></pre></li>
+</ul>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/pg_file_settings/'>pg_file_settings</a>, <a class='tag' href='/tags/pg_reload_conf/'>pg_reload_conf</a>, <a class='tag' href='/tags/pg_settings/'>pg_settings</a>, <a class='tag' href='/tags/postgresql/'>postgresql</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/storage/postgresql/psql/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>psql</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p></p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

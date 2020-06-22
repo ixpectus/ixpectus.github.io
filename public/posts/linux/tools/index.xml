@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux tools on ixpectus notes</title>
+    <link>http://www.example.com/posts/linux/tools/</link>
+    <description>Recent content in linux tools on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="http://www.example.com/posts/linux/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>dd</title>
+      <link>http://www.example.com/posts/linux/tools/dd/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/linux/tools/dd/</guid>
+      <description>dd умеет читать побайтово с устройства
+flags  if откуда читать of куда писать bs сколько бит читать  example прочитает первые 512 бит диска /dev/sda
+sudo dd uf=/dev/sda bs=512 How to calculate read/write speed  dd if=/dev/zero of=~/test.tmp bs=500K count=1024 sync; echo 3 | sudo tee /proc/sys/vm/drop_caches reset cache dd if=~/test.tmp of=/dev/null bs=500K count=1024 write  </description>
+    </item>
+    
+  </channel>
+</rss>

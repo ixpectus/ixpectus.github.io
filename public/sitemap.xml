@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/administrate/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/linux/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/pg_file_settings/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/pg_reload_conf/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/pg_settings/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/postgresql/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/configs/</loc>
+    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/psql/</loc>
+    <lastmod>2020-06-17T10:34:36+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/psql/</loc>
+    <lastmod>2020-06-17T10:34:36+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/install/</loc>
+    <lastmod>2020-06-08T11:43:07+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/courses/</loc>
+    <lastmod>2020-05-31T23:14:55+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/administrate/networking/arp/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/cli/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/linux/tools/dd/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/linux/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/network/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/administrate/networking/</loc>
+    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/search/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/page/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/series/</loc>
+  </url>
+  
+</urlset>

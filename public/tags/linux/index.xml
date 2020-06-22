@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on ixpectus notes</title>
+    <link>http://www.example.com/tags/linux/</link>
+    <description>Recent content in linux on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 31 May 2020 15:25:35 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>arp</title>
+      <link>http://www.example.com/posts/administrate/networking/arp/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/administrate/networking/arp/</guid>
+      <description>ARP  Address resolution protocol В локальной сети по ip с помощью arp как-то определяется mac адрес и обращение идёт по нему  Call example sudo arp-scan 192.168.4.0/24 [sudo] пароль для ixpectus: Interface: enp3s0, datalink type: EN10MB (Ethernet) Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/) 192.168.4.1 00:19:bb:c5:3e:02 Hewlett-Packard Company 192.168.4.2 20:cf:30:f1:fd:58 ASUSTek COMPUTER INC. 192.168.4.6 00:30:48:62:5e:aa Supermicro Computer, Inc. 192.168.4.7 00:25:90:92:68:97 Super Micro Computer, Inc. 192.168.4.8 00:30:48:d4:1e:86 Supermicro Computer, Inc. 192.</description>
+    </item>
+    
+    <item>
+      <title>dd</title>
+      <link>http://www.example.com/posts/linux/tools/dd/</link>
+      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/linux/tools/dd/</guid>
+      <description>dd умеет читать побайтово с устройства
+flags  if откуда читать of куда писать bs сколько бит читать  example прочитает первые 512 бит диска /dev/sda
+sudo dd uf=/dev/sda bs=512 How to calculate read/write speed  dd if=/dev/zero of=~/test.tmp bs=500K count=1024 sync; echo 3 | sudo tee /proc/sys/vm/drop_caches reset cache dd if=~/test.tmp of=/dev/null bs=500K count=1024 write  </description>
+    </item>
+    
+  </channel>
+</rss>

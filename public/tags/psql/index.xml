@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>psql on ixpectus notes</title>
+    <link>http://www.example.com/tags/psql/</link>
+    <description>Recent content in psql on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Jun 2020 10:34:36 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/tags/psql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>psql</title>
+      <link>http://www.example.com/posts/storage/postgresql/psql/</link>
+      <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/psql/</guid>
+      <description>Работа с psql  Демо Слайды  Команды \? список команд psql
+\? variables переменные psql
+\help показывает список команды, по которым можно получить документацию, например help alter table
+\q выход
+\conninfo информация о соединении
+You are connected to database &amp;quot;postgres&amp;quot; as user &amp;quot;postgres&amp;quot; on host &amp;quot;127.0.0.1&amp;quot; at port &amp;quot;5432&amp;quot;. \a включает/выключает выравнивание при выводе
+\t включает/выключает вывод заголовков
+\pset fielfsep &#39; &#39; устанавливает другой разделитель для строк, может использоваться для сохранения csv</description>
+    </item>
+    
+  </channel>
+</rss>
