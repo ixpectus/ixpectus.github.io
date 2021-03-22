@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>isolation on ixpectus notes</title>
+    <link>http://www.example.com/tags/isolation/</link>
+    <description>Recent content in isolation on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate>
+    
+	<atom:link href="http://www.example.com/tags/isolation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Изоляция и многоверсионность в postgresql</title>
+      <link>http://www.example.com/posts/storage/postgresql/isolation/</link>
+      <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/isolation/</guid>
+      <description>Демо Слайды  MVCC и postrges Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет. Каждое изменение строки приводит к появлению новой версии строки в файле данных. Каждый запрос работает со снимком данных. Снимок включает в себя
+ номер последней активной транзакции список активных транзакций Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения  Vacuum Каждое изменение данных приводит к появлению новой строки данных.</description>
+    </item>
+    
+  </channel>
+</rss>

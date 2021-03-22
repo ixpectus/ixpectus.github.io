@@ -5,10 +5,30 @@
     <link>http://www.example.com/tags/postgresql/</link>
     <description>Recent content in postgresql on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 20 Jun 2020 21:41:17 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate>
     
 	<atom:link href="http://www.example.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Изоляция и многоверсионность в postgresql</title>
+      <link>http://www.example.com/posts/storage/postgresql/isolation/</link>
+      <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/isolation/</guid>
+      <description>Демо Слайды  MVCC и postrges Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет. Каждое изменение строки приводит к появлению новой версии строки в файле данных. Каждый запрос работает со снимком данных. Снимок включает в себя
+ номер последней активной транзакции список активных транзакций Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения  Vacuum Каждое изменение данных приводит к появлению новой строки данных.</description>
+    </item>
+    
+    <item>
+      <title>Общее устройство postgresql</title>
+      <link>http://www.example.com/posts/storage/postgresql/basestructure/</link>
+      <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/basestructure/</guid>
+      <description>Слайды  Описание устройства в целом В целом, как и у любой бд есть
+ клиент сервер протокол взаимодействия клиента и сервера сервер умеет  разбирать запрос формировать план выполнения выполнять запрос    Интересные нюансы postgresql  postgresql создаёт по процессу на каждое клиентское соединение если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса.</description>
+    </item>
     
     <item>
       <title>Конфигурирование postgresql</title>

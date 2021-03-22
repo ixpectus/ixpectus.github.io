@@ -4,7 +4,7 @@
   
   <url>
     <loc>http://www.example.com/posts/storage/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+    <lastmod>2020-06-24T10:09:28+03:00</lastmod>
   </url>
   
   <url>
@@ -18,42 +18,62 @@
   
   <url>
     <loc>http://www.example.com/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/tags/pg_file_settings/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/tags/pg_reload_conf/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/tags/pg_settings/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/tags/postgresql/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+    <lastmod>2020-06-24T10:09:28+03:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/posts/storage/postgresql/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+    <lastmod>2020-06-24T10:09:28+03:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/posts/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+    <lastmod>2020-06-24T10:09:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/cache/</loc>
+    <lastmod>2020-06-24T10:09:28+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/acid/</loc>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/isolation/</loc>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/mvcc/</loc>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/postgresql/</loc>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.example.com/tags/</loc>
-    <lastmod>2020-06-20T21:41:17+03:00</lastmod>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/isolation/</loc>
+    <lastmod>2020-06-21T14:06:19+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/posts/storage/postgresql/basestructure/</loc>
+    <lastmod>2020-06-20T22:50:08+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</loc>
+    <lastmod>2020-06-20T22:50:08+03:00</lastmod>
   </url>
   
   <url>

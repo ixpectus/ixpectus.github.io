@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Слайды  Описание устройства в целом В целом, как и у любой бд есть
+ клиент сервер протокол взаимодействия клиента и сервера сервер умеет  разбирать запрос формировать план выполнения выполнять запрос    Интересные нюансы postgresql  postgresql создаёт по процессу на каждое клиентское соединение если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Общее устройство postgresql • ixpectus notes'>
+<meta property='og:description' content='Слайды  Описание устройства в целом В целом, как и у любой бд есть
+ клиент сервер протокол взаимодействия клиента и сервера сервер умеет  разбирать запрос формировать план выполнения выполнять запрос    Интересные нюансы postgresql  postgresql создаёт по процессу на каждое клиентское соединение если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса.'>
+<meta property='og:url' content='http://www.example.com/posts/storage/postgresql/basestructure/'>
+<meta property='og:site_name' content='ixpectus notes'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:tag' content='архитектура'><meta property='article:published_time' content='2020-06-20T22:50:08&#43;03:00'/><meta property='article:modified_time' content='2020-06-20T22:50:08&#43;03:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.71.1" />
+
+  <title>Общее устройство postgresql • ixpectus notes</title>
+  <link rel='canonical' href='http://www.example.com/posts/storage/postgresql/basestructure/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      ixpectus notes
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/posts/administrate/'>administrate</a></li><li class='item'>
+  <a href='/posts/linux/tools/'>linux tools</a></li><li class='item'>
+  <a href='/posts/storage/'>storage</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/acid/' style='font-size:1em'>acid</a>
+      </li><li>
+        <a href='/tags/cli/' style='font-size:1em'>cli</a>
+      </li><li>
+        <a href='/tags/isolation/' style='font-size:1em'>isolation</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.2em'>linux</a>
+      </li><li>
+        <a href='/tags/mvcc/' style='font-size:1em'>mvcc</a>
+      </li><li>
+        <a href='/tags/network/' style='font-size:1em'>network</a>
+      </li><li>
+        <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
+      </li><li>
+        <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li><li>
+        <a href='/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/' style='font-size:1em'>архитектура</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/posts/administrate/'>administrate</a>
+      </li><li class='item'>
+        <a href='/posts/linux/tools/'>linux tools</a>
+      </li><li class='item'>
+        <a href='/posts/storage/'>storage</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>ixpectus notes</a></li><li><a href='/posts/'>posts</a></li><li><a href='/posts/storage/'>storage</a></li><li><span>Общее устройство postgresql</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>ixpectus notes</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Общее устройство postgresql</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-06-20T22:50:08&#43;03:00'>2020, Jun 20</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+3 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <ul>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_04_arch_general.pdf">Слайды</a></li>
+</ul>
+<h3 id="описание-устройства-в-целом">Описание устройства в целом</h3>
+<p>В целом, как и у любой бд есть</p>
+<ul>
+<li>клиент</li>
+<li>сервер</li>
+<li>протокол взаимодействия клиента и сервера</li>
+<li>сервер умеет
+<ul>
+<li>разбирать запрос</li>
+<li>формировать план выполнения</li>
+<li>выполнять запрос</li>
+</ul>
+</li>
+</ul>
+<h4 id="интересные-нюансы-postgresql">Интересные нюансы postgresql</h4>
+<ul>
+<li>postgresql создаёт по процессу на каждое клиентское соединение</li>
+<li>если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс</li>
+<li>место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса. Это важный момент. Дело в том, что postgresql не очень хорошо обрабатывает большое количество соединений и вместе с ним как правило используют некое proxy, которое держит пул коннектов к postgresql. Это приводит к тому, что использовать prepared statement становится затруднительно, т.к. приложение при следующем запросе может быть обслужено другим соединением из пула соединений, которое ничего не знает о его прошлом запросе</li>
+</ul>
+<h4 id="основные-процессы-в-postgresql">Основные процессы в postgresql</h4>
+<p>Работу postgresql обеспечивает ряд процессов ОС</p>
+<h5 id="посмотрим-что-это-за-процессы">Посмотрим, что это за процессы</h5>
+<pre><code>&gt; ps -axo pid,ppid,command | grep post
+1295940 1283863 vim /usr/local/psql/data/postgresql.conf
+1310877       1 /usr/local/pgsql/bin/postgres
+1310879 1310877 postgres: checkpointer process
+1310880 1310877 postgres: writer process
+1310881 1310877 postgres: wal writer process
+1310882 1310877 postgres: autovacuum launcher process
+1310883 1310877 postgres: stats collector process
+1310884 1310877 postgres: bgworker: logical replication launcher
+1311013 1310877 postgres: postgres postgres 127.0.0.1(48512) idle
+</code></pre><p>По названию можно предположить, что</p>
+<ul>
+<li><code>/ust/local/psql/bin/postgres</code> основной процесс, который породил остальные процессы, видно что parent id у них 1310877</li>
+<li><code>wal writer process</code> отвечает за запись данных в write ahead log</li>
+<li><code>autovacuum launcher process</code> запускает процесс autovacuum(очистки устаревших данных)</li>
+<li><code>stats collector process</code> видимо отвечает за сбор статистики, которая в дальнейшем будет использоваться при построении плана выполнения запроса</li>
+<li>ради интереса убьём процесс <code>autovacuum launcher process</code> и посмотрим что сделает основной процесс postgres
+<pre><code>~ sudo kill -9 1310882
+~ ps -axo pid,ppid,command | grep post
+1295940 1283863 vim /usr/local/psql/data/postgresql.conf
+1310877       1 /usr/local/pgsql/bin/postgres
+1355751 1310877 postgres: checkpointer process
+1355752 1310877 postgres: writer process
+1355753 1310877 postgres: wal writer process
+1355754 1310877 postgres: autovacuum launcher process
+1355755 1310877 postgres: stats collector process
+</code></pre><p>Видно, что postgres перезапустил все остальные процессы(это понятно по сменившимся pid)</p>
+</li>
+</ul>
+<h5 id="описание-основных-процессов">Описание основных процессов</h5>
+<ul>
+<li><code>postmaster</code> самый главный процесс
+<ul>
+<li>порождает остальные процессы и следит за ними. В случае, если какой-то процесс аварийно завершает работу, то он может перезапустить как один процесс, так и вообще все процессы(что было видно выше)</li>
+<li>выделяет общую память, к которой могут получить доступ другие процессы</li>
+<li>слушает входящие соединения клиентов и порождает процессы, который будут обрабатывать клиентские запросы, эти порожденные запросы выглядят так в команде ps</li>
+</ul>
+<pre><code>1370265 1310877 postgres: postgres postgres 127.0.0.1(52834) idle
+</code></pre></li>
+</ul>
+<h5 id="процессы-обработчики-запросов">Процессы обработчики запросов</h5>
+<p>На каждое подключение клиента postgres создаёт отдельный процесс, который обслуживает этого клиента. До определённого момента(говорят до тысячи соединений) это работает неплохо, но больше postgresql не тянет и используют сторонние решения, которые держат пул коннектов к базе и управляют им (например pgbouncer)</p>
+<h5 id="mvcc">MVCC</h5>
+<p>Postgres использует multi version concurrency control для консистентной работы множества процессов с одними и теми же данными. Клиент в момент подключения получает некий идентификатор транзакции и при чтении получает записи из таблиц, соответствующие этому идентификатору.
+Т.е. postgres хранит сразу несколько версий строк, при каждом изменении создаётся новая версия строки
+И в какой-то момент нужно удалять версии строк, который никому не нужны, за это как раз отвечает процесс autovacuum</p>
+<h5 id="кэширование">Кэширование</h5>
+<p>Postgresql кэширует данные в памяти, а с диском работает через системные вызовы OS, и эти системные вызовы используют кэш ОС. Т.е. фактически получается двойной кэш, этим postgresql отличается от MySQL, которые не использует кэш ОС</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/postgresql/'>postgresql</a>, <a class='tag' href='/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/'>архитектура</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/storage/postgresql/configs/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Конфигурирование postgresql</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/storage/postgresql/isolation/'>
+        <span class='screen-reader-text'>Next post: </span>Изоляция и многоверсионность в postgresql<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p></p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

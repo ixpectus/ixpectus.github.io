@@ -11,7 +11,7 @@ select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting
 select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting | applied | error --------------------------------------&#43;------------&#43;-------&#43;----------------------------&#43;--------------------&#43;---------&#43;-------- /usr/local/psql/data/postgresql.conf | 64 | 1 | max_connections | 100 | t | [NULL] /usr/local/psql/data/postgresql.conf | 113 | 2 | shared_buffers | 128MB | t | [NULL] /usr/local/psql/data/postgresql.conf | 127 | 3 | dynamic_shared_memory_type | posix | t | [NULL] /usr/local/psql/data/postgresql.'>
 <meta property='og:url' content='http://www.example.com/posts/storage/postgresql/configs/'>
 <meta property='og:site_name' content='ixpectus notes'>
-<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:tag' content='pg_file_settings'><meta property='article:tag' content='pg_settings'><meta property='article:tag' content='pg_reload_conf'><meta property='article:published_time' content='2020-06-20T21:41:17&#43;03:00'/><meta property='article:modified_time' content='2020-06-20T21:41:17&#43;03:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:published_time' content='2020-06-20T21:41:17&#43;03:00'/><meta property='article:modified_time' content='2020-06-20T21:41:17&#43;03:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.71.1" />
 
@@ -80,21 +80,23 @@ select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/acid/' style='font-size:1em'>acid</a>
+      </li><li>
         <a href='/tags/cli/' style='font-size:1em'>cli</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1.3333333333333333em'>linux</a>
+        <a href='/tags/isolation/' style='font-size:1em'>isolation</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.2em'>linux</a>
+      </li><li>
+        <a href='/tags/mvcc/' style='font-size:1em'>mvcc</a>
       </li><li>
         <a href='/tags/network/' style='font-size:1em'>network</a>
-      </li><li>
-        <a href='/tags/pg_file_settings/' style='font-size:1em'>pg_file_settings</a>
-      </li><li>
-        <a href='/tags/pg_reload_conf/' style='font-size:1em'>pg_reload_conf</a>
-      </li><li>
-        <a href='/tags/pg_settings/' style='font-size:1em'>pg_settings</a>
       </li><li>
         <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
       </li><li>
         <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li><li>
+        <a href='/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/' style='font-size:1em'>архитектура</a>
       </li></ul>
 </div>
 
@@ -354,7 +356,7 @@ setting | 24576
 <h4 id="изменение-значений-параметров-на-время-сессии">Изменение значений параметров на время сессии</h4>
 <ul>
 <li><code>SET work_mem to '26MB'</code></li>
-<li>Проверим, видим, что значение изменилось, и что источник <code>session</code>
+<li>Проверим, видим, что значение изменилось, и что источник ``
 <pre><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
 name            | work_mem
@@ -379,7 +381,7 @@ source          | session
   <line x1="7" y1="7" x2="7" y2="7"/>
   
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/pg_file_settings/'>pg_file_settings</a>, <a class='tag' href='/tags/pg_reload_conf/'>pg_reload_conf</a>, <a class='tag' href='/tags/pg_settings/'>pg_settings</a>, <a class='tag' href='/tags/postgresql/'>postgresql</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/postgresql/'>postgresql</a></div>
 
   </div>
 </footer>
@@ -398,6 +400,16 @@ source          | session
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>psql</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/storage/postgresql/basestructure/'>
+        <span class='screen-reader-text'>Next post: </span>Общее устройство postgresql<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
     </div></div>
 </nav>
 

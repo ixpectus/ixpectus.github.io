@@ -82,21 +82,23 @@ sudo useradd postgres sudo passwd postgres sudo mkdir /home/postgres sudo chown 
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/acid/' style='font-size:1em'>acid</a>
+      </li><li>
         <a href='/tags/cli/' style='font-size:1em'>cli</a>
       </li><li>
-        <a href='/tags/linux/' style='font-size:1.3333333333333333em'>linux</a>
+        <a href='/tags/isolation/' style='font-size:1em'>isolation</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.2em'>linux</a>
+      </li><li>
+        <a href='/tags/mvcc/' style='font-size:1em'>mvcc</a>
       </li><li>
         <a href='/tags/network/' style='font-size:1em'>network</a>
-      </li><li>
-        <a href='/tags/pg_file_settings/' style='font-size:1em'>pg_file_settings</a>
-      </li><li>
-        <a href='/tags/pg_reload_conf/' style='font-size:1em'>pg_reload_conf</a>
-      </li><li>
-        <a href='/tags/pg_settings/' style='font-size:1em'>pg_settings</a>
       </li><li>
         <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
       </li><li>
         <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li><li>
+        <a href='/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/' style='font-size:1em'>архитектура</a>
       </li></ul>
 </div>
 
@@ -290,7 +292,8 @@ sudo make install
 <li>fast принудительно завершает все сеансы и записывает на диск изменения из оперативной памяти</li>
 <li>smart ожидает завершения всех сеансов и записывает на диск изменения из оперативной памяти</li>
 <li>immediate принудительно завершает сеансы, при запуске потребуется восстановление
-Получается immediate не записывает изменения из оперативной памяти, но не понятно какого рода восстановление понадобится после запуска</li>
+Получается immediate не записывает изменения из оперативной памяти, но не понятно какого рода восстановление понадобится после запуска.
+После запуска потребуется прочитать записи из WAL с прошлого checkpoint и применить их</li>
 </ul>
 
 </div>

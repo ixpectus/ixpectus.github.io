@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Демо Слайды  MVCC и postrges Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет. Каждое изменение строки приводит к появлению новой версии строки в файле данных. Каждый запрос работает со снимком данных. Снимок включает в себя
+ номер последней активной транзакции список активных транзакций Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения  Vacuum Каждое изменение данных приводит к появлению новой строки данных.'>
+<meta name='theme-color' content='#ffcd00'>
+
+<meta property='og:title' content='Изоляция и многоверсионность в postgresql • ixpectus notes'>
+<meta property='og:description' content='Демо Слайды  MVCC и postrges Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет. Каждое изменение строки приводит к появлению новой версии строки в файле данных. Каждый запрос работает со снимком данных. Снимок включает в себя
+ номер последней активной транзакции список активных транзакций Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения  Vacuum Каждое изменение данных приводит к появлению новой строки данных.'>
+<meta property='og:url' content='http://www.example.com/posts/storage/postgresql/isolation/'>
+<meta property='og:site_name' content='ixpectus notes'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='postgresql'><meta property='article:tag' content='isolation'><meta property='article:tag' content='mvcc'><meta property='article:tag' content='acid'><meta property='article:published_time' content='2020-06-21T14:06:19&#43;03:00'/><meta property='article:modified_time' content='2020-06-21T14:06:19&#43;03:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.71.1" />
+
+  <title>Изоляция и многоверсионность в postgresql • ixpectus notes</title>
+  <link rel='canonical' href='http://www.example.com/posts/storage/postgresql/isolation/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#ffcd00;}
+</style>
+
+  
+
+</head>
+<body class='page type-posts has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/images/logo.png'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+      <a href='/'>
+      ixpectus notes
+      </a>
+    </h2>
+    <div class='desc'>
+    
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-search sep-after'>
+  <header>
+    <h4 class='title widget-title'>Search</h4>
+  </header>
+
+  <form action='/search' id='search-form' class='search-form'>
+    <label>
+      <span class='screen-reader-text'>Search</span>
+      <input id='search-term' class='search-term' type='search' name='q' placeholder='Search&hellip;'>
+    </label></form>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/posts/administrate/'>administrate</a></li><li class='item'>
+  <a href='/posts/linux/tools/'>linux tools</a></li><li class='item'>
+  <a href='/posts/storage/'>storage</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/acid/' style='font-size:1em'>acid</a>
+      </li><li>
+        <a href='/tags/cli/' style='font-size:1em'>cli</a>
+      </li><li>
+        <a href='/tags/isolation/' style='font-size:1em'>isolation</a>
+      </li><li>
+        <a href='/tags/linux/' style='font-size:1.2em'>linux</a>
+      </li><li>
+        <a href='/tags/mvcc/' style='font-size:1em'>mvcc</a>
+      </li><li>
+        <a href='/tags/network/' style='font-size:1em'>network</a>
+      </li><li>
+        <a href='/tags/postgresql/' style='font-size:2em'>postgresql</a>
+      </li><li>
+        <a href='/tags/psql/' style='font-size:1em'>psql</a>
+      </li><li>
+        <a href='/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/' style='font-size:1em'>архитектура</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="3" y1="12" x2="21" y2="12" />
+  <line x1="3" y1="6" x2="21" y2="6" />
+  <line x1="3" y1="18" x2="21" y2="18" />
+  
+</svg>
+</span>
+  <span class='close'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="18" y1="6" x2="6" y2="18" />
+  <line x1="6" y1="6" x2="18" y2="18" />
+  
+</svg>
+</span>
+</button>
+    <ul><li class='item'>
+        <a href='/posts/administrate/'>administrate</a>
+      </li><li class='item'>
+        <a href='/posts/linux/tools/'>linux tools</a>
+      </li><li class='item'>
+        <a href='/posts/storage/'>storage</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'>
+    
+    
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+      <ol><li><a href='/'>ixpectus notes</a></li><li><a href='/posts/'>posts</a></li><li><a href='/posts/storage/'>storage</a></li><li><span>Изоляция и многоверсионность в postgresql</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>ixpectus notes</p><p class='desc site-desc'></p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Изоляция и многоверсионность в postgresql</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-06-21T14:06:19&#43;03:00'>2020, Jun 21</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+6 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <ul>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_05_arch_mvcc.html">Демо</a></li>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_05_arch_mvcc.pdf">Слайды</a></li>
+</ul>
+<h4 id="mvcc-и-postrges">MVCC и postrges</h4>
+<p>Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет.
+Каждое изменение строки приводит к появлению новой версии строки в файле данных.
+Каждый запрос работает со снимком данных. <br>
+Снимок включает в себя</p>
+<ul>
+<li>номер последней активной транзакции</li>
+<li>список активных транзакций
+Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения</li>
+</ul>
+<h4 id="vacuum">Vacuum</h4>
+<p>Каждое изменение данных приводит к появлению новой строки данных. Кажется, что изменение одного int может привести к появлению новой строки, в которой потенциально может быть гораздо больше данных.<br>
+Со временем данные становятся никому не нужно, поскольку нет процессов, которые работают со снимком, включающих в себя эти данные.<br>
+Удалением неактуальных данных занимается процесс auto vacuum, а точнее 2 процесса</p>
+<ul>
+<li><code>autovacuum launcher</code> следит за количеством строк, которые надо удалить и при необходимости вызвает</li>
+<li><code>autovacuum worker</code> непосредственно занимается удалением неактуальных данных</li>
+</ul>
+<h4 id="команды">Команды</h4>
+<ul>
+<li><code>SELECT txid_current();</code> возвращает id текущей транзакции, что интересно, каждый следующий вызов увеличивает число</li>
+<li><code>select xmax, xmin from &lt;table_name&gt;</code> можно увидеть значения xmax и xmin для строк в таблице
+<ul>
+<li><code>xmin</code> минимальный номер транзакции, для которой актуальна эта версия строки</li>
+<li><code>xmax</code> максимальный номер транзакции, для которой актуальна эта версия строки</li>
+</ul>
+</li>
+</ul>
+<h4 id="поэкспериментируем">Поэкспериментируем</h4>
+<ul>
+<li>Создадим базу и таблицу
+<pre><code> create database test;
+ create table texts(s1 text,s2 text);
+</code></pre></li>
+<li>Посмотрим xmin, xmax
+<pre><code>127.0.0.1 postgres@test=# select xmax,xmin from texts;
+ xmax | xmin
+------+------
+(0 rows)
+</code></pre><p>Ничего нет, что логично</p>
+</li>
+<li>Вставим строку и посмотрим на xmin, xmax
+<pre><code>127.0.0.1 postgres@test=# insert into texts(s1,s2) values('qqq', 'wwwwwww');
+INSERT 0 1
+127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
+ s1  |   s2    | xmin | xmax
+-----+---------+------+------
+ qqq | wwwwwww |  565 |    0
+(1 row)
+</code></pre><p>xmin установлен, а xmax = 0, что говорит о том, что данные актуальны</p>
+</li>
+<li>Обновим строку и снова посмотрим
+<pre><code>127.0.0.1 postgres@test=# update texts set s2='wwwwww' where s1='qqq';
+UPDATE 1
+Time: 1.329 ms
+127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
+ s1  |   s2   | xmin | xmax
+-----+--------+------+------
+ qqq | wwwwww |  566 |    0
+(1 row)
+   
+Time: 0.626 ms
+</code></pre><p>Видно, что версия обновилась, но старых данных не видно, интересно</p>
+</li>
+<li>Попробуем в 2-х терминалах
+<ul>
+<li>Терминал 1
+<pre><code>127.0.0.1 postgres@test=# begin transaction;
+BEGIN
+Time: 0.364 ms
+127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
+ s1  |   s2   | xmin | xmax
+-----+--------+------+------
+ qqq | wwwwww |  566 |    0
+(1 row)
+     
+Time: 0.564 ms
+127.0.0.1 postgres@test=# update texts set s2='yyy' where s1='qqq';
+UPDATE 1
+Time: 0.627 ms
+127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
+ s1  | s2  | xmin | xmax
+-----+-----+------+------
+ qqq | yyy |  567 |    0
+(1 row)
+     
+Time: 0.481 ms
+</code></pre></li>
+<li>Терминал 2
+<pre><code>begin transaction;
+127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
+ s1  |   s2   | xmin | xmax
+-----+--------+------+------
+ qqq | wwwwww |  566 |  567
+(1 row)
+select txid_current();
+ txid_current
+--------------
+          568
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<p>В 1 терминале начали транзакцию, изменили значение и прошлого значения там уже не видно. А вот во втором терминале видно, что xmax=567, что говорит о том, что значение уже неактуально, но в первой транзакции ещё не было коммита. После того, как в первой сессии произойдёт commit, появится возможность прочитать обновленные данные.</p>
+<ul>
+<li>Что будет, если в первом терминале сделать rollback ? Я предположил, что в этом случае появится новая версия строки с большим xmin и xmax=0, но в первом терминале после rollback я увидел следующее</li>
+</ul>
+<pre><code>127.0.0.1 postgres@test=# update texts set s2='zzz' where s1='qqq';
+UPDATE 1
+Time: 0.228 ms
+127.0.0.1 postgres@test=# rollback;
+ROLLBACK
+Time: 0.187 ms
+127.0.0.1 postgres@test=# select * , xmin, xmax from texts;
+ s1  | s2  | xmin | xmax
+-----+-----+------+------
+ qqq | yyy |  567 |  569
+(1 row)
+</code></pre><p>В момент выполнения этого запроса во втором терминале</p>
+<pre><code>127.0.0.1 postgres@test=# select txid_current();
+ txid_current
+--------------
+          568
+(1 row)
+</code></pre><p>После rollback во втором терминале xmin и xmax не изменились. Не очень понятно, что значит xmax в таком случае</p>
+<h4 id="уровни-изоляции-транзакций">Уровни изоляции транзакций</h4>
+<ul>
+<li>Read Commited</li>
+<li>Repeatable Read</li>
+<li>Serializable</li>
+</ul>
+<p>Можно установить уровень транзакции при старте транзакции</p>
+<pre><code>begin isolation level repeatable read;
+</code></pre><h4 id="эксперимент-со-счётчиком">Эксперимент со счётчиком</h4>
+<p>Судя по тому, что я узнал если сделать таблицу с одной строчкой и 10 тысяч раз её изменить, то размер таблицы увеличится, проверим</p>
+<ul>
+<li>Создадим таблицу и вставим строку</li>
+</ul>
+<pre><code>127.0.0.1 postgres@test=# create table some_table(id int, counter int, text1 text, text2 text);
+CREATE TABLE
+Time: 12.475 ms
+127.0.0.1 postgres@test=# insert into some_table(id, counter, text1, text2) values(1,0,'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
+INSERT 0 1
+Time: 2.613 ms
+</code></pre><ul>
+<li>Посмотрим размер таблицы</li>
+</ul>
+<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+ pg_size_pretty
+----------------
+ 16 kB
+(1 row)
+</code></pre><ul>
+<li>Посмотрим файлы на диске</li>
+</ul>
+<pre><code>ixpectus# ls -lh $PGDATA
+6 postgres postgres 4.0K Jun 21 22:06 base
+drwx------ 2 postgres postgres 4.0K Jun 21 22:08 global
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_commit_ts
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_dynshmem
+-rw------- 1 postgres postgres 4.5K Jun 16 10:42 pg_hba.conf
+-rw------- 1 postgres postgres 1.6K Jun 16 10:42 pg_ident.conf
+drwx------ 4 postgres postgres 4.0K Jun 23 10:23 pg_logical
+drwx------ 4 postgres postgres 4.0K Jun 16 10:42 pg_multixact
+drwx------ 2 postgres postgres 4.0K Jun 21 13:40 pg_notify
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_replslot
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_serial
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_snapshots
+drwx------ 2 postgres postgres 4.0K Jun 21 13:40 pg_stat
+drwx------ 2 postgres postgres 4.0K Jun 23 10:25 pg_stat_tmp
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_subtrans
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_tblspc
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_twophase
+-rw------- 1 postgres postgres    3 Jun 16 10:42 PG_VERSION
+drwx------ 3 postgres postgres 4.0K Jun 16 10:42 pg_wal
+drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_xact
+-rw------- 1 postgres postgres  106 Jun 20 22:25 postgresql.auto.conf
+-rw------- 1 postgres postgres  23K Jun 20 22:31 postgresql.conf
+-rw------- 1 postgres postgres   30 Jun 20 22:34 postmaster.opts
+-rw------- 1 postgres postgres   81 Jun 21 13:40 postmaster.pid
+</code></pre><ul>
+<li>Увеличим counter 10000 раз</li>
+</ul>
+<pre><code>for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1';done;
+</code></pre><ul>
+<li>Размер таблицы не изменился практически</li>
+</ul>
+<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+ pg_size_pretty
+----------------
+ 16 kB
+(1 row)
+</code></pre><p>Хотя казалось бы для каждого update должна была создаваться запись с новой версией. Возможно vacuum успевал работать<br>
+Размер файлов на диске также существенно не изменился</p>
+<ul>
+<li>Попробуем запустить скрипт немного по-другому</li>
+</ul>
+<pre><code> for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1' &amp;;done;
+</code></pre><p>В конце команды добавил знак <code>&amp;</code>, что приведёт к тому, что команды начнут запускаться не последовательно, а параллельно</p>
+<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+ pg_size_pretty
+----------------
+ 1008 kB
+(1 row)
+</code></pre><p>И размер базы вырос в 1000 раз, хотя там по-прежнему одна строка</p>
+<ul>
+<li>Теперь увеличим счётчик еще на 10000 раз и посмотрим, какие файлы на диске изменились по размеру<br>
+Текущее состояние</li>
+</ul>
+<pre><code>du -h | sort -h
+4.0K    ./pg_commit_ts
+4.0K    ./pg_dynshmem
+4.0K    ./pg_logical/mappings
+4.0K    ./pg_logical/snapshots
+4.0K    ./pg_replslot
+4.0K    ./pg_serial
+4.0K    ./pg_snapshots
+4.0K    ./pg_stat
+4.0K    ./pg_tblspc
+4.0K    ./pg_twophase
+4.0K    ./pg_wal/archive_status
+12K     ./pg_multixact/members
+12K     ./pg_multixact/offsets
+12K     ./pg_notify
+12K     ./pg_xact
+16K     ./pg_logical
+28K     ./pg_multixact
+32K     ./pg_stat_tmp
+92K     ./pg_subtrans
+584K    ./global
+7.1M    ./base/1
+7.1M    ./base/12296
+7.2M    ./base/12297
+8.2M    ./base/16384
+17M     ./pg_wal
+30M     ./base
+</code></pre><p>После увеличения счётчика на 10000 раз размер базы не увеличился, т.к. вероятно пришёл vacuum и удалил старые строки. Увеличим сразу на 20000. Размер базы вообще уменьшился и размер файлов тоже существенно не увеличился</p>
+<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+ pg_size_pretty
+----------------
+ 280 kB
+(1 row)
+</code></pre><h5 id="мораль">Мораль</h5>
+<p>В postgresql всё работает не так прямолинейно, и даже если размер таблицы увеличился по размеру, он может стать меньше даже без vacuum full</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/acid/'>acid</a>, <a class='tag' href='/tags/isolation/'>isolation</a>, <a class='tag' href='/tags/mvcc/'>mvcc</a>, <a class='tag' href='/tags/postgresql/'>postgresql</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/storage/postgresql/basestructure/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Общее устройство postgresql</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/storage/postgresql/cache/'>
+        <span class='screen-reader-text'>Next post: </span>Буфферный кэш<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p></p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+
