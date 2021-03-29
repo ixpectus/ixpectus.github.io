@@ -2,160 +2,160 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ixpectus notes</title>
-    <link>http://www.example.com/tags/</link>
+    <link>http://ixpectus.github.io/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://ixpectus.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>postgresql</title>
-      <link>http://www.example.com/tags/postgresql/</link>
+      <link>http://ixpectus.github.io/tags/postgresql/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/postgresql/</guid>
+      <guid>http://ixpectus.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>репликация</title>
-      <link>http://www.example.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
+      <link>http://ixpectus.github.io/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</guid>
+      <guid>http://ixpectus.github.io/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>monitoring</title>
-      <link>http://www.example.com/tags/monitoring/</link>
+      <link>http://ixpectus.github.io/tags/monitoring/</link>
       <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/monitoring/</guid>
+      <guid>http://ixpectus.github.io/tags/monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tablespaces</title>
-      <link>http://www.example.com/tags/tablespaces/</link>
+      <link>http://ixpectus.github.io/tags/tablespaces/</link>
       <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/tablespaces/</guid>
+      <guid>http://ixpectus.github.io/tags/tablespaces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>system catalog</title>
-      <link>http://www.example.com/tags/system-catalog/</link>
+      <link>http://ixpectus.github.io/tags/system-catalog/</link>
       <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/system-catalog/</guid>
+      <guid>http://ixpectus.github.io/tags/system-catalog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scheme</title>
-      <link>http://www.example.com/tags/scheme/</link>
+      <link>http://ixpectus.github.io/tags/scheme/</link>
       <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/scheme/</guid>
+      <guid>http://ixpectus.github.io/tags/scheme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>buffer cache</title>
-      <link>http://www.example.com/tags/buffer-cache/</link>
+      <link>http://ixpectus.github.io/tags/buffer-cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/buffer-cache/</guid>
+      <guid>http://ixpectus.github.io/tags/buffer-cache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>acid</title>
-      <link>http://www.example.com/tags/acid/</link>
+      <link>http://ixpectus.github.io/tags/acid/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/acid/</guid>
+      <guid>http://ixpectus.github.io/tags/acid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>isolation</title>
-      <link>http://www.example.com/tags/isolation/</link>
+      <link>http://ixpectus.github.io/tags/isolation/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/isolation/</guid>
+      <guid>http://ixpectus.github.io/tags/isolation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mvcc</title>
-      <link>http://www.example.com/tags/mvcc/</link>
+      <link>http://ixpectus.github.io/tags/mvcc/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/mvcc/</guid>
+      <guid>http://ixpectus.github.io/tags/mvcc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>архитектура</title>
-      <link>http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
+      <link>http://ixpectus.github.io/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</guid>
+      <guid>http://ixpectus.github.io/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>configs</title>
-      <link>http://www.example.com/tags/configs/</link>
+      <link>http://ixpectus.github.io/tags/configs/</link>
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/configs/</guid>
+      <guid>http://ixpectus.github.io/tags/configs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psql</title>
-      <link>http://www.example.com/tags/psql/</link>
+      <link>http://ixpectus.github.io/tags/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/psql/</guid>
+      <guid>http://ixpectus.github.io/tags/psql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>install</title>
-      <link>http://www.example.com/tags/install/</link>
+      <link>http://ixpectus.github.io/tags/install/</link>
       <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/install/</guid>
+      <guid>http://ixpectus.github.io/tags/install/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>http://www.example.com/tags/cli/</link>
+      <link>http://ixpectus.github.io/tags/cli/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/cli/</guid>
+      <guid>http://ixpectus.github.io/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://www.example.com/tags/linux/</link>
+      <link>http://ixpectus.github.io/tags/linux/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/linux/</guid>
+      <guid>http://ixpectus.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>network</title>
-      <link>http://www.example.com/tags/network/</link>
+      <link>http://ixpectus.github.io/tags/network/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://www.example.com/tags/network/</guid>
+      <guid>http://ixpectus.github.io/tags/network/</guid>
       <description></description>
     </item>
     

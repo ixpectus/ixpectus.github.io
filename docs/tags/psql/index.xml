@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>psql on ixpectus notes</title>
-    <link>http://www.example.com/tags/psql/</link>
+    <link>http://ixpectus.github.io/tags/psql/</link>
     <description>Recent content in psql on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Jun 2020 10:34:36 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/psql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Jun 2020 10:34:36 +0300</lastBuildDate><atom:link href="http://ixpectus.github.io/tags/psql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>psql</title>
-      <link>http://www.example.com/posts/storage/postgresql/psql/</link>
+      <link>http://ixpectus.github.io/posts/storage/postgresql/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
-      <guid>http://www.example.com/posts/storage/postgresql/psql/</guid>
+      <guid>http://ixpectus.github.io/posts/storage/postgresql/psql/</guid>
       <description>Основные команды psql</description>
     </item>
     

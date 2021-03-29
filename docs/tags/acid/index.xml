@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>acid on ixpectus notes</title>
-    <link>http://www.example.com/tags/acid/</link>
+    <link>http://ixpectus.github.io/tags/acid/</link>
     <description>Recent content in acid on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/acid/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate><atom:link href="http://ixpectus.github.io/tags/acid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Изоляция и многоверсионность в postgresql</title>
-      <link>http://www.example.com/posts/storage/postgresql/isolation/</link>
+      <link>http://ixpectus.github.io/posts/storage/postgresql/isolation/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>http://www.example.com/posts/storage/postgresql/isolation/</guid>
+      <guid>http://ixpectus.github.io/posts/storage/postgresql/isolation/</guid>
       <description>Уровни изоляции транзакция в postrgesql с примерами</description>
     </item>
     
