@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>networking on ixpectus notes</title>
-    <link>http://ixpectus.github.io/posts/administrate/networking/</link>
+    <link>http://ixpectus.com/posts/administrate/networking/</link>
     <description>Recent content in networking on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 31 May 2020 15:25:35 +0300</lastBuildDate><atom:link href="http://ixpectus.github.io/posts/administrate/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 May 2020 15:25:35 +0300</lastBuildDate><atom:link href="http://ixpectus.com/posts/administrate/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>arp</title>
-      <link>http://ixpectus.github.io/posts/administrate/networking/arp/</link>
+      <link>http://ixpectus.com/posts/administrate/networking/arp/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://ixpectus.github.io/posts/administrate/networking/arp/</guid>
+      <guid>http://ixpectus.com/posts/administrate/networking/arp/</guid>
       <description>ARP - address resolution protocol. С его помощью можно найти устройства в локальной cети</description>
     </item>
     

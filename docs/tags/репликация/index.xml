@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>репликация on ixpectus notes</title>
-    <link>http://ixpectus.github.io/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
+    <link>http://ixpectus.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
     <description>Recent content in репликация on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://ixpectus.github.io/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://ixpectus.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Репликация</title>
-      <link>http://ixpectus.github.io/posts/storage/postgresql/replication/</link>
+      <link>http://ixpectus.com/posts/storage/postgresql/replication/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>http://ixpectus.github.io/posts/storage/postgresql/replication/</guid>
+      <guid>http://ixpectus.com/posts/storage/postgresql/replication/</guid>
       <description>Виды репликации в Postgresql</description>
     </item>
     
