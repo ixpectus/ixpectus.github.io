@@ -4,6 +4,7 @@ date: 2020-06-20T22:50:08+03:00
 tags:
   - postgresql
   - архитектура
+summary: "Верхнеуровневое описание устройства postgresql и его основных процессов"
 ---
 * [Слайды](https://edu.postgrespro.ru/dba1/dba1_04_arch_general.pdf)
 

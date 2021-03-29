@@ -3,6 +3,8 @@ title: "Install"
 date: 2020-06-08T11:43:07+03:00
 tags:
   - postgresql
+  - install
+summary : "Установка postgres из исходников"
 ---
 
 ### Установка из исходников 

@@ -6,6 +6,7 @@ tags:
   - isolation
   - mvcc
   - acid
+summary: "Уровни изоляции транзакция в postrgesql с примерами"
 ---
 
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_05_arch_mvcc.html)

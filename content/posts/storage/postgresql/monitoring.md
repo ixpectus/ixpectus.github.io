@@ -1,6 +1,10 @@
 ---
 title: "Мониторинг"
 date: 2020-07-17T10:22:46+03:00
+tags:
+  - postgresql
+  - monitoring
+summary: "Статистику о работе postgres можно посмотреть в таблицах pg_stat_activity, pg_stat_all_tables"
 ---
 
 

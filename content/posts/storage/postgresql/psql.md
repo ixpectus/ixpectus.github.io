@@ -4,6 +4,7 @@ date: 2020-06-17T10:34:36+03:00
 tags:
   - postgresql
   - psql
+summary: "Основные команды psql"
 ---
 ### Работа с psql 
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_02_tools_psql.html)

@@ -1,6 +1,10 @@
 ---
 title: "Буфферный кэш"
 date: 2020-06-24T10:09:28+03:00
+tags:
+  - postgresql
+  - buffer cache
+summary: "При чтении страниц с диска postgresql пытается извлечь их из буфферного кэша, если страниц в кэше нет, то postres читает их с диска и помещает в кэш"
 ---
 
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_06_arch_wal.html)

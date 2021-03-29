@@ -4,6 +4,8 @@ date: 2020-05-31T15:25:35+03:00
 tags: 
   - linux 
   - network
+summary: "ARP - address resolution protocol. С его помощью можно найти устройства в локальной cети"
+
 ---
 
 ### ARP

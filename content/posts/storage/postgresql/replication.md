@@ -1,6 +1,10 @@
 ---
 title: "Репликация"
 date: 2020-07-20T10:26:55+03:00
+summary: "Виды репликации в Postgresql"
+tags:
+  - postgresql
+  - репликация
 ---
 
 * [Слайды](https://edu.postgrespro.ru/dba1/dba1_18_replica_overview.pdf)

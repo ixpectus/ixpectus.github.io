@@ -3,12 +3,12 @@ title = "ixpectus notes"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
 
-theme = "minimo"
+theme = "kiss"
 
 disqusShortname = ""
 googleAnalytics = ""
 
-Paginate = 5
+Paginate = 20
 preserveTaxonomyNames = true
 
 enableRobotsTXT = true # generate robots.txt
@@ -25,11 +25,11 @@ defaultContentLanguage = "en"
 description = ""
 title404 = "Nothing's here!"
 
-[params.assets]
-favicon = "favicon.ico"
-customCSS = ["css/custom.css"]
-customJS = ["js/custom.js"]
-gopher = "" # used in 404 template ( Generator: https://gopherize.me )
+# [params.assets]
+# favicon = "favicon.ico"
+# customCSS = ["css/custom.css"]
+# customJS = ["js/custom.js"]
+# gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
 [params.settings]
 # date & time format: https://golang.org/pkg/time/
@@ -107,12 +107,6 @@ tag = "tags"
 [permalinks]
 page = "/:slug/"
 
-# [[menu.main]]
-# name = "Repo"
-# weight = -10
-# identifier = "repository"
-# url = "https://github.com/MunifTanjim/minimo"
-
 [blackfriday]
 hrefTargetBlank = true
 
@@ -122,3 +116,11 @@ hrefTargetBlank = true
 lang = "en"
 languageName = "English"
 weight = 1
+
+ 
+[params.social]
+github = "ixpectus"
+email = "ixpectus@gmail.com"
+ 
+[params.social.config]
+platforms = ["github","email"]

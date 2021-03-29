@@ -1,6 +1,10 @@
 ---
 title: "Схемы в базе данных"
 date: 2020-07-08T09:35:30+03:00
+summary: "Схема в postgresql. Каждая таблица в postgres принадлежит к какой-то схеме, как правило по умолчанию это схема `public`"
+tags:
+  - postgresql
+  - scheme
 ---
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_07_data_databases.pdf)
 * [Слайды](https://edu.postgrespro.ru/dba1/dba1_07_data_databases.html)

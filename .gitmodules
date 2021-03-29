@@ -1,6 +1,0 @@
-[submodule "themes/book"]
-	path = themes/book
-	url = https://github.com/alex-shpak/hugo-book
-[submodule "themes/minimo"]
-	path = themes/minimo
-	url = https://github.com/MunifTanjim/minimo

@@ -3,6 +3,8 @@ title: "Конфигурирование postgresql"
 date: 2020-06-20T21:41:17+03:00
 tags:
   - postgresql
+  - configs
+summary : "Где можно посмотреть основные конфиги postgresql"
 ---
 
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_03_tools_configuration.html)

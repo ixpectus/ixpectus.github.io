@@ -1,6 +1,9 @@
 ---
 title: "Низкий уровень"
 date: 2020-07-10T18:12:28+03:00
+tags:
+  - postgresql
+summary: "Представление данных в postgresql на уровне файлов и файловой системы"
 ---
 
 * [Демо](https://edu.postgrespro.ru/dba1/dba1_10_data_lowlevel.html)
