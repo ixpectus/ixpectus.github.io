@@ -2,143 +2,143 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ixpectus notes</title>
-    <link>http://ixpectus.com/</link>
+    <link>https://ixpectus.com/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Репликация</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/replication/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/replication/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/replication/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/replication/</guid>
       <description>Виды репликации в Postgresql</description>
     </item>
     
     <item>
       <title>Мониторинг</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/monitoring/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/monitoring/</link>
       <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/monitoring/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/monitoring/</guid>
       <description>Статистику о работе postgres можно посмотреть в таблицах pg_stat_activity, pg_stat_all_tables</description>
     </item>
     
     <item>
       <title>Низкий уровень</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/lowlevel/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/lowlevel/</link>
       <pubDate>Fri, 10 Jul 2020 18:12:28 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/lowlevel/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/lowlevel/</guid>
       <description>Представление данных в postgresql на уровне файлов и файловой системы</description>
     </item>
     
     <item>
       <title>Табличные пространства</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/tablespaces/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/tablespaces/</link>
       <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/tablespaces/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/tablespaces/</guid>
       <description>Табличное пространство это указание на каталог в котором хранятся данные.Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</description>
     </item>
     
     <item>
       <title>Системный каталог</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/systemcatalog/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</link>
       <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/systemcatalog/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</guid>
       <description>В postgres, как и в других базах данных есть таблицы, которые хранят информацию о всех сущностях в базе</description>
     </item>
     
     <item>
       <title>Схемы в базе данных</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/scheme/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/scheme/</link>
       <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/scheme/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/scheme/</guid>
       <description>Схема в postgresql. Каждая таблица в postgres принадлежит к какой-то схеме, как правило по умолчанию это схема &lt;code&gt;public&lt;/code&gt;</description>
     </item>
     
     <item>
       <title>Буфферный кэш</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/cache/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/cache/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/cache/</guid>
       <description>При чтении страниц с диска postgresql пытается извлечь их из буфферного кэша, если страниц в кэше нет, то postres читает их с диска и помещает в кэш</description>
     </item>
     
     <item>
       <title>Изоляция и многоверсионность в postgresql</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/isolation/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/isolation/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/isolation/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/isolation/</guid>
       <description>Уровни изоляции транзакция в postrgesql с примерами</description>
     </item>
     
     <item>
       <title>Общее устройство postgresql</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/basestructure/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/basestructure/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/basestructure/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/basestructure/</guid>
       <description>Верхнеуровневое описание устройства postgresql и его основных процессов</description>
     </item>
     
     <item>
       <title>Конфигурирование postgresql</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/configs/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/configs/</link>
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/configs/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/configs/</guid>
       <description>Где можно посмотреть основные конфиги postgresql</description>
     </item>
     
     <item>
       <title>psql</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/psql/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/psql/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/psql/</guid>
       <description>Основные команды psql</description>
     </item>
     
     <item>
       <title>Install</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/install/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/install/</link>
       <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/install/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/install/</guid>
       <description>Установка postgres из исходников</description>
     </item>
     
     <item>
       <title>курсы по postgresql</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/courses/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/courses/</link>
       <pubDate>Sun, 31 May 2020 23:14:55 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/courses/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/courses/</guid>
       <description>Хорошие курсы от команды postgrespro и Олега Бартунова
  Администрирование PostgreSQL 10. Базовый курс Администрирование PostgreSQL 9.5. Расширенный курс Разработка серверной части приложений PostgreSQL 9.6. Базовый курс  </description>
     </item>
     
     <item>
       <title>arp</title>
-      <link>http://ixpectus.com/posts/administrate/networking/arp/</link>
+      <link>https://ixpectus.com/posts/administrate/networking/arp/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/administrate/networking/arp/</guid>
+      <guid>https://ixpectus.com/posts/administrate/networking/arp/</guid>
       <description>ARP - address resolution protocol. С его помощью можно найти устройства в локальной cети</description>
     </item>
     
     <item>
       <title>dd</title>
-      <link>http://ixpectus.com/posts/linux/tools/dd/</link>
+      <link>https://ixpectus.com/posts/linux/tools/dd/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/linux/tools/dd/</guid>
+      <guid>https://ixpectus.com/posts/linux/tools/dd/</guid>
       <description>dd умеет читать побайтово с устройства</description>
     </item>
     

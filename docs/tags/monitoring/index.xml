@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>monitoring on ixpectus notes</title>
-    <link>http://ixpectus.com/tags/monitoring/</link>
+    <link>https://ixpectus.com/tags/monitoring/</link>
     <description>Recent content in monitoring on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Jul 2020 10:22:46 +0300</lastBuildDate><atom:link href="http://ixpectus.com/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Jul 2020 10:22:46 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Мониторинг</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/monitoring/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/monitoring/</link>
       <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/monitoring/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/monitoring/</guid>
       <description>Статистику о работе postgres можно посмотреть в таблицах pg_stat_activity, pg_stat_all_tables</description>
     </item>
     

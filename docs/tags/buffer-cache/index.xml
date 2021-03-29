@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>buffer cache on ixpectus notes</title>
-    <link>http://ixpectus.com/tags/buffer-cache/</link>
+    <link>https://ixpectus.com/tags/buffer-cache/</link>
     <description>Recent content in buffer cache on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 24 Jun 2020 10:09:28 +0300</lastBuildDate><atom:link href="http://ixpectus.com/tags/buffer-cache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jun 2020 10:09:28 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/buffer-cache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Буфферный кэш</title>
-      <link>http://ixpectus.com/posts/storage/postgresql/cache/</link>
+      <link>https://ixpectus.com/posts/storage/postgresql/cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       
-      <guid>http://ixpectus.com/posts/storage/postgresql/cache/</guid>
+      <guid>https://ixpectus.com/posts/storage/postgresql/cache/</guid>
       <description>При чтении страниц с диска postgresql пытается извлечь их из буфферного кэша, если страниц в кэше нет, то postres читает их с диска и помещает в кэш</description>
     </item>
     
