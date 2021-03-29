@@ -142,23 +142,5 @@
       <description>dd умеет читать побайтово с устройства</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>http://www.example.com/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.example.com/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://www.example.com/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.example.com/search/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

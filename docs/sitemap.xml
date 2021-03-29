@@ -202,23 +202,11 @@
   </url>
   
   <url>
-    <loc>http://www.example.com/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/search/</loc>
-  </url>
-  
-  <url>
     <loc>http://www.example.com/authors/</loc>
   </url>
   
   <url>
     <loc>http://www.example.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://www.example.com/page/</loc>
   </url>
   
   <url>
