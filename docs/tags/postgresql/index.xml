@@ -5,10 +5,69 @@
     <link>http://www.example.com/tags/postgresql/</link>
     <description>Recent content in postgresql on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Репликация</title>
+      <link>http://www.example.com/posts/storage/postgresql/replication/</link>
+      <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/replication/</guid>
+      <description>Виды репликации в Postgresql</description>
+    </item>
     
-	<atom:link href="http://www.example.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мониторинг</title>
+      <link>http://www.example.com/posts/storage/postgresql/monitoring/</link>
+      <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/monitoring/</guid>
+      <description>Статистику о работе postgres можно посмотреть в таблицах pg_stat_activity, pg_stat_all_tables</description>
+    </item>
     
+    <item>
+      <title>Низкий уровень</title>
+      <link>http://www.example.com/posts/storage/postgresql/lowlevel/</link>
+      <pubDate>Fri, 10 Jul 2020 18:12:28 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/lowlevel/</guid>
+      <description>Представление данных в postgresql на уровне файлов и файловой системы</description>
+    </item>
+    
+    <item>
+      <title>Табличные пространства</title>
+      <link>http://www.example.com/posts/storage/postgresql/tablespaces/</link>
+      <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/tablespaces/</guid>
+      <description>Табличное пространство это указание на каталог в котором хранятся данные.Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</description>
+    </item>
+    
+    <item>
+      <title>Системный каталог</title>
+      <link>http://www.example.com/posts/storage/postgresql/systemcatalog/</link>
+      <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/systemcatalog/</guid>
+      <description>В postgres, как и в других базах данных есть таблицы, которые хранят информацию о всех сущностях в базе</description>
+    </item>
+    
+    <item>
+      <title>Схемы в базе данных</title>
+      <link>http://www.example.com/posts/storage/postgresql/scheme/</link>
+      <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/scheme/</guid>
+      <description>Схема в postgresql. Каждая таблица в postgres принадлежит к какой-то схеме, как правило по умолчанию это схема &lt;code&gt;public&lt;/code&gt;</description>
+    </item>
+    
+    <item>
+      <title>Буфферный кэш</title>
+      <link>http://www.example.com/posts/storage/postgresql/cache/</link>
+      <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/cache/</guid>
+      <description>При чтении страниц с диска postgresql пытается извлечь их из буфферного кэша, если страниц в кэше нет, то postres читает их с диска и помещает в кэш</description>
+    </item>
     
     <item>
       <title>Изоляция и многоверсионность в postgresql</title>
@@ -16,8 +75,7 @@
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/isolation/</guid>
-      <description>Демо Слайды  MVCC и postrges Для того, чтобы писатели не блокировали читателей в postgres используется MVCC - multiversion concurrency control. Клиент может читать данные, пока кто-то другой эти данные меняет. Каждое изменение строки приводит к появлению новой версии строки в файле данных. Каждый запрос работает со снимком данных. Снимок включает в себя
- номер последней активной транзакции список активных транзакций Список активных транзакций нужен для того, чтобы случайно не считать данные, которые находятся ещё в процессе изменения  Vacuum Каждое изменение данных приводит к появлению новой строки данных.</description>
+      <description>Уровни изоляции транзакция в postrgesql с примерами</description>
     </item>
     
     <item>
@@ -26,8 +84,7 @@
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/basestructure/</guid>
-      <description>Слайды  Описание устройства в целом В целом, как и у любой бд есть
- клиент сервер протокол взаимодействия клиента и сервера сервер умеет  разбирать запрос формировать план выполнения выполнять запрос    Интересные нюансы postgresql  postgresql создаёт по процессу на каждое клиентское соединение если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса.</description>
+      <description>Верхнеуровневое описание устройства postgresql и его основных процессов</description>
     </item>
     
     <item>
@@ -36,8 +93,7 @@
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/configs/</guid>
-      <description>Демо Слайды  Посмотреть настройки конфигурационного файла Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу
-select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting | applied | error --------------------------------------+------------+-------+----------------------------+--------------------+---------+-------- /usr/local/psql/data/postgresql.conf | 64 | 1 | max_connections | 100 | t | [NULL] /usr/local/psql/data/postgresql.conf | 113 | 2 | shared_buffers | 128MB | t | [NULL] /usr/local/psql/data/postgresql.conf | 127 | 3 | dynamic_shared_memory_type | posix | t | [NULL] /usr/local/psql/data/postgresql.</description>
+      <description>Где можно посмотреть основные конфиги postgresql</description>
     </item>
     
     <item>
@@ -46,14 +102,7 @@ select * from pg_file_settings; sourcefile | sourceline | seqno | name | setting
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/psql/</guid>
-      <description>Работа с psql  Демо Слайды  Команды \? список команд psql
-\? variables переменные psql
-\help показывает список команды, по которым можно получить документацию, например help alter table
-\q выход
-\conninfo информация о соединении
-You are connected to database &amp;quot;postgres&amp;quot; as user &amp;quot;postgres&amp;quot; on host &amp;quot;127.0.0.1&amp;quot; at port &amp;quot;5432&amp;quot;. \a включает/выключает выравнивание при выводе
-\t включает/выключает вывод заголовков
-\pset fielfsep &#39; &#39; устанавливает другой разделитель для строк, может использоваться для сохранения csv</description>
+      <description>Основные команды psql</description>
     </item>
     
     <item>
@@ -62,9 +111,7 @@ You are connected to database &amp;quot;postgres&amp;quot; as user &amp;quot;pos
       <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/install/</guid>
-      <description>Установка из исходников  Где скачать Делаю по инструкции  Сам процесс установки tar -xzf postgresql-10.0.tar.gz cd ./postgresql-10.0.0 ./configure С версией 10.0.0 возникла ошибка при установке
-copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’ copy_file_range(const char *path, off_t begin, off_t end, bool trunc) Взял версию 10.0.13. Всё установилось, но не был создан пользователь postgres, от имени которого должен запускаться сам postgres. Добавил его руками
-sudo useradd postgres sudo passwd postgres sudo mkdir /home/postgres sudo chown postgres /home/postgres su postgres Последним шагом вошёл в систему от имени пользователя postgres и добавил в .</description>
+      <description>Установка postgres из исходников</description>
     </item>
     
     <item>

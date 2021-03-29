@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Табличные пространства | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="http://www.example.com/posts/storage/postgresql/tablespaces/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="http://www.example.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/postgresql/">#postgresql</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/tablespaces/">#tablespaces</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">July 10, 2020</h2>
+    <h1 class="title">Табличные пространства</h1>
+    
+    <div class="content">
+      <ul>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_09_data_tablespaces.pdf">Слайды</a></li>
+<li><a href="https://edu.postgrespro.ru/dba1/dba1_09_data_tablespaces.html">Демо</a></li>
+</ul>
+<p>Табличное пространство это указание на каталог в котором хранятся данные.
+Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</p>
+<h4 id="изучим-табличные-пространства">Изучим табличные пространства</h4>
+<pre><code>select * from pg_tablespace;
+  spcname   | spcowner | spcacl | spcoptions
+------------+----------+--------+------------
+ pg_default |       10 | [NULL] | [NULL]
+ pg_global  |       10 | [NULL] | [NULL]
+(2 rows)
+</code></pre><h4 id="как-создать-табличное-пространство">Как создать табличное пространство</h4>
+<ul>
+<li>Создадим раздел
+<pre><code>su postgres
+cd ~
+mkdir tablespace
+</code></pre></li>
+<li>Создадим базу, табличное пространство и назначим её табличное пространство
+<pre><code>127.0.0.1 postgres@separate_tablespace=# create tablespace ts location '/home/postgres/tablespace';
+CREATE TABLESPACE
+Time: 1.821 ms
+127.0.0.1 postgres@separate_tablespace=# \db
+                List of tablespaces
+    Name    |  Owner   |         Location
+------------+----------+---------------------------
+ pg_default | postgres |
+ pg_global  | postgres |
+ ts         | postgres | /home/postgres/ta
+ 127.0.0.1 postgres@separate_tablespace=# create database spdb tablespace ts;
+ create database
+ time: 270.478 ms
+</code></pre></li>
+<li>Можно таблице в базе назначить своё табличное пространство</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

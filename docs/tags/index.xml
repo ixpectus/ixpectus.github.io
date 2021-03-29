@@ -5,10 +5,69 @@
     <link>http://www.example.com/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 21 Jun 2020 14:06:19 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>postgresql</title>
+      <link>http://www.example.com/tags/postgresql/</link>
+      <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="http://www.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>репликация</title>
+      <link>http://www.example.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
+      <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>monitoring</title>
+      <link>http://www.example.com/tags/monitoring/</link>
+      <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tablespaces</title>
+      <link>http://www.example.com/tags/tablespaces/</link>
+      <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/tablespaces/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system catalog</title>
+      <link>http://www.example.com/tags/system-catalog/</link>
+      <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/system-catalog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scheme</title>
+      <link>http://www.example.com/tags/scheme/</link>
+      <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/scheme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>buffer cache</title>
+      <link>http://www.example.com/tags/buffer-cache/</link>
+      <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/buffer-cache/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>acid</title>
@@ -38,15 +97,6 @@
     </item>
     
     <item>
-      <title>postgresql</title>
-      <link>http://www.example.com/tags/postgresql/</link>
-      <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
-      
-      <guid>http://www.example.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>архитектура</title>
       <link>http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
@@ -56,11 +106,29 @@
     </item>
     
     <item>
+      <title>configs</title>
+      <link>http://www.example.com/tags/configs/</link>
+      <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/configs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>psql</title>
       <link>http://www.example.com/tags/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
       <guid>http://www.example.com/tags/psql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>install</title>
+      <link>http://www.example.com/tags/install/</link>
+      <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
+      
+      <guid>http://www.example.com/tags/install/</guid>
       <description></description>
     </item>
     

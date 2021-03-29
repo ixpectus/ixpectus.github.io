@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tablespaces on ixpectus notes</title>
+    <link>http://www.example.com/tags/tablespaces/</link>
+    <description>Recent content in tablespaces on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 10 Jul 2020 17:47:36 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/tablespaces/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Табличные пространства</title>
+      <link>http://www.example.com/posts/storage/postgresql/tablespaces/</link>
+      <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
+      
+      <guid>http://www.example.com/posts/storage/postgresql/tablespaces/</guid>
+      <description>Табличное пространство это указание на каталог в котором хранятся данные.Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,19 +5,14 @@
     <link>http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
     <description>Recent content in архитектура on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 20 Jun 2020 22:50:08 +0300</lastBuildDate>
-    
-	<atom:link href="http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 20 Jun 2020 22:50:08 +0300</lastBuildDate><atom:link href="http://www.example.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Общее устройство postgresql</title>
       <link>http://www.example.com/posts/storage/postgresql/basestructure/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
       <guid>http://www.example.com/posts/storage/postgresql/basestructure/</guid>
-      <description>Слайды  Описание устройства в целом В целом, как и у любой бд есть
- клиент сервер протокол взаимодействия клиента и сервера сервер умеет  разбирать запрос формировать план выполнения выполнять запрос    Интересные нюансы postgresql  postgresql создаёт по процессу на каждое клиентское соединение если клиент решит использовать подготовленный запрос(prepared statement), то он может это сделать и его prepared statement должен будет обработать именно созданный под этого клиента процесс место, необходимое для выполнения запроса(план запроса, prepared statement, позиция курсора) хранится в памяти порождённого обслуживающего процесса.</description>
+      <description>Верхнеуровневое описание устройства postgresql и его основных процессов</description>
     </item>
     
   </channel>

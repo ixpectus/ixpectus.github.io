@@ -4,10 +4,6 @@
     <title>Authors on ixpectus notes</title>
     <link>http://www.example.com/authors/</link>
     <description>Recent content in Authors on ixpectus notes</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="http://www.example.com/authors/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://www.example.com/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

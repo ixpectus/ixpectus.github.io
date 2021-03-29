@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Системный каталог | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="http://www.example.com/posts/storage/postgresql/systemcatalog/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="http://www.example.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/postgresql/">#postgresql</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/system-catalog/">#system catalog</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">July 9, 2020</h2>
+    <h1 class="title">Системный каталог</h1>
+    
+    <div class="content">
+      <p>В postgres, как и в других базах данных есть таблицы, которые хранят информацию о всех сущностях в базе</p>
+<h4 id="таблицы-системного-каталога">Таблицы системного каталога</h4>
+<ul>
+<li><code>pg_database</code> хранит информацию о базах данных</li>
+<li><code>pg_namespace</code> о схемах</li>
+<li><code>pg_class</code> о таблицах, индексах, последовательностях(о всех отношениях relations)</li>
+<li><code>pg_views</code> о views</li>
+<li><code>pg_attribute</code> колонки таблиц</li>
+</ul>
+<h4 id="команды-psql-для-получения-доступа-к-системному-каталогу">Команды psql для получения доступа к системному каталогу</h4>
+<ul>
+<li><code>\d*</code> все &ldquo;отношения&rdquo;</li>
+<li><code>\dt</code> таблицы</li>
+<li><code>\dv</code> views</li>
+<li><code>\dt+</code> расширенная информация о таблицах</li>
+<li><code>\d some_table</code> получаем информацию о конкретной таблице</li>
+<li><code>\d+ some_table</code> получаем расширенную информацию о конкретной таблице</li>
+<li><code>\df</code>  функции, например <code>\df pg_catalog.*</code></li>
+<li><code>\sf</code> показывает тело функции
+<pre><code>\sf pg_catalog.xmlexists
+CREATE OR REPLACE FUNCTION pg_catalog.&quot;xmlexists&quot;(text, xml)
+ RETURNS boolean
+ LANGUAGE internal
+ IMMUTABLE PARALLEL SAFE STRICT
+AS $function$xmlexists$function$
+</code></pre></li>
+</ul>
+<h4 id="oid">OID</h4>
+<p>У всех таблиц системного каталоге есть поле <code>oid</code>, обозначает уникальный идентификатор. Поле по умолчанию не выводится.<br>
+Чтобы вывелось нужно указать явно</p>
+<pre><code>select oid,* from pg_namespace;
+</code></pre><h4 id="echo_hidden">ECHO_HIDDEN</h4>
+<p>Можно посмотреть, какие именно команды sql выполняют команды psql, для этого нужно установить флаг</p>
+<pre><code>\set ECHO_HIDDEN on
+</code></pre><p>Например</p>
+<pre><code>127.0.0.1 postgres@test=# \dt
+********* QUERY **********
+SELECT n.nspname as &quot;Schema&quot;,
+  c.relname as &quot;Name&quot;,
+  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 's' THEN 'special' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as &quot;Type&quot;,
+  pg_catalog.pg_get_userbyid(c.relowner) as &quot;Owner&quot;
+FROM pg_catalog.pg_class c
+     LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+WHERE c.relkind IN ('r','p','')
+      AND n.nspname &lt;&gt; 'pg_catalog'
+      AND n.nspname &lt;&gt; 'information_schema'
+      AND n.nspname !~ '^pg_toast'
+  AND pg_catalog.pg_table_is_visible(c.oid)
+ORDER BY 1,2;
+**************************
+</code></pre><h5 id="запросы-при-получении-списка-колонок">Запросы при получении списка колонок</h5>
+<p>А вот <code>\d texts</code> превратится в большое количество запросов</p>
+<h5 id="получение-списка-колонок-таблиц">Получение списка колонок таблиц</h5>
+<p>Так можно получить список всех колонок из всех таблиц</p>
+<pre><code> select relname,attname from pg_class pc join pg_attribute pa on pa.attrelid=pc.oid;
+</code></pre><p>Так можно получить все несистемные схемы</p>
+<pre><code> select nspname from pg_namespace where nspname !~ '^(pg|information).\*';
+</code></pre><pre><code> select 
+   pn.nspname,relname,attname 
+ from 
+  pg_class pc join pg_attribute pa on pa.attrelid=pc.oid join pg_namespace pn on pn.oid = pc.relnamespace
+ where pn.nspname !~ '^(pg|information).\*';
+</code></pre><h5 id="как-получить-колонки-только-одной-таблицы">Как получить колонки только одной таблицы</h5>
+<pre><code>SELECT a.attname
+FROM pg_attribute a
+WHERE a.attrelid = 'texts'::regclass
+AND a.attnum &gt; 0;
+</code></pre>
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+
