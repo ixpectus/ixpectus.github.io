@@ -1,5 +1,5 @@
 ---
-title: "Низкий уровень"
+title: "Низкий уровень postrgesql"
 date: 2020-07-10T18:12:28+03:00
 tags:
   - postgresql

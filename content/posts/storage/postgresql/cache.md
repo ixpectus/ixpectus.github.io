@@ -1,5 +1,5 @@
 ---
-title: "Буфферный кэш"
+title: "Буфферный кэш в postgresql"
 date: 2020-06-24T10:09:28+03:00
 tags:
   - postgresql

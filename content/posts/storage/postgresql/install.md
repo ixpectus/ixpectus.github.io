@@ -1,5 +1,5 @@
 ---
-title: "Install"
+title: "Установка postrgesql из исходников"
 date: 2020-06-08T11:43:07+03:00
 tags:
   - postgresql

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 24 Jun 2020 10:09:28 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/buffer-cache/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Буфферный кэш</title>
+      <title>Буфферный кэш в postgresql</title>
       <link>https://ixpectus.com/posts/storage/postgresql/cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       

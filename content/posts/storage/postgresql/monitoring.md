@@ -1,5 +1,5 @@
 ---
-title: "Мониторинг"
+title: "Мониторинг postgresql"
 date: 2020-07-17T10:22:46+03:00
 tags:
   - postgresql

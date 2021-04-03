@@ -1,5 +1,5 @@
 ---
-title: "Репликация"
+title: "Репликация postrgesql"
 date: 2020-07-20T10:26:55+03:00
 summary: "Виды репликации в Postgresql"
 tags:

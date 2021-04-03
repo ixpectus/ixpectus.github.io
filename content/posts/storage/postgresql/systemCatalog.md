@@ -1,5 +1,5 @@
 ---
-title: "Системный каталог"
+title: "Системный каталог в postrgesql"
 date: 2020-07-09T10:11:39+03:00
 tags:
   - postgresql
