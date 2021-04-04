@@ -5,7 +5,16 @@
     <link>https://ixpectus.com/tags/network/</link>
     <description>Recent content in network on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Apr 2021 22:14:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Apr 2021 22:17:24 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Процесс загрузки котика из интернета в очень общих словах</title>
+      <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>
+      <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/wholeprocess/</guid>
+      <description>Что реально происходит, когда мы загружаем контент в интернете</description>
+    </item>
+    
     <item>
       <title>UDP протокол</title>
       <link>https://ixpectus.com/posts/administrate/networking/udp/</link>
