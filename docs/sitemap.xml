@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ixpectus.com/posts/storage/</loc>
-    <lastmod>2020-07-20T10:26:55+03:00</lastmod>
+    <loc>https://ixpectus.com/posts/administrate/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ixpectus.com/posts/administrate/</loc>
-    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
+    <loc>https://ixpectus.com/posts/storage/</loc>
+    <lastmod>2020-07-20T10:26:55+03:00</lastmod>
   </url>
   
   <url>
@@ -18,7 +18,62 @@
   
   <url>
     <loc>https://ixpectus.com/</loc>
-    <lastmod>2020-07-20T10:26:55+03:00</lastmod>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/linux/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/network/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/posts/administrate/networking/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/posts/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/tcp/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/posts/administrate/networking/tcp/</loc>
+    <lastmod>2021-04-03T21:46:58+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/posts/administrate/networking/bgp/</loc>
+    <lastmod>2021-04-03T21:40:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/bgp/</loc>
+    <lastmod>2021-04-03T21:40:44+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/posts/administrate/networking/dns/</loc>
+    <lastmod>2021-04-03T21:25:04+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ixpectus.com/tags/dns/</loc>
+    <lastmod>2021-04-03T21:25:04+03:00</lastmod>
   </url>
   
   <url>
@@ -28,16 +83,6 @@
   
   <url>
     <loc>https://ixpectus.com/posts/storage/postgresql/</loc>
-    <lastmod>2020-07-20T10:26:55+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ixpectus.com/posts/</loc>
-    <lastmod>2020-07-20T10:26:55+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ixpectus.com/tags/</loc>
     <lastmod>2020-07-20T10:26:55+03:00</lastmod>
   </url>
   
@@ -183,21 +228,6 @@
   
   <url>
     <loc>https://ixpectus.com/posts/linux/tools/dd/</loc>
-    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ixpectus.com/tags/linux/</loc>
-    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ixpectus.com/tags/network/</loc>
-    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ixpectus.com/posts/administrate/networking/</loc>
     <lastmod>2020-05-31T15:25:35+03:00</lastmod>
   </url>
   

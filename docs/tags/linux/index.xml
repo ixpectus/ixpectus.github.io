@@ -5,7 +5,34 @@
     <link>https://ixpectus.com/tags/linux/</link>
     <description>Recent content in linux on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 31 May 2020 15:25:35 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Apr 2021 21:46:58 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TCP протокол</title>
+      <link>https://ixpectus.com/posts/administrate/networking/tcp/</link>
+      <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/tcp/</guid>
+      <description>Описание базовых особенностей протокола TCP</description>
+    </item>
+    
+    <item>
+      <title>BGP</title>
+      <link>https://ixpectus.com/posts/administrate/networking/bgp/</link>
+      <pubDate>Sat, 03 Apr 2021 21:40:44 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/bgp/</guid>
+      <description>Border gateway protocol</description>
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>https://ixpectus.com/posts/administrate/networking/dns/</link>
+      <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/dns/</guid>
+      <description>Какие бывают dns сервера и как понять с каким dns сервером идёт работа</description>
+    </item>
+    
     <item>
       <title>arp</title>
       <link>https://ixpectus.com/posts/administrate/networking/arp/</link>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DNS | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.com/posts/administrate/networking/dns/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/linux/">#linux</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/network/">#network</a>
+  
+  | <a class="subtitle is-6" href="/tags/dns/">#dns</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">April 3, 2021</h2>
+    <h1 class="title">DNS</h1>
+    
+    <div class="content">
+      <h3 id="dns-сервер">DNS сервер</h3>
+<p>По имени хоста(например yandex.ru) отдаёт ip адрес, по которому можно обратиться и получить данные</p>
+<h4 id="типы-dns-серверов">Типы dns серверов</h4>
+<ul>
+<li><code>authoritative</code>  отдают адрес сами</li>
+<li><code>recursive</code> знают, к каким authoritative серверам обратиться, чтобы получить адрес, похоже на прокси,
+обычно кэшируют данные, каждая запись имеет TTL(time to live)</li>
+</ul>
+<h4 id="как-понять-какой-dns-сервер-отдаёт-ip-адрес">Как понять, какой dns сервер отдаёт ip адрес</h4>
+<pre><code> dig jvns.ca
+ ;; ANSWER SECTION:
+ jvns.ca.                122     IN      A       104.28.7.94
+ jvns.ca.                122     IN      A       104.28.6.94
+
+ ;; AUTHORITY SECTION:
+ jvns.ca.                84954   IN      NS      roxy.ns.cloudflare.com.
+ jvns.ca.                84954   IN      NS      art.ns.cloudflare.com.
+
+ ;; SERVER: 192.168.4.6#53(192.168.4.6)
+</code></pre><ul>
+<li><code>A</code> значит ip</li>
+<li><code>SERVER: 192.168.4.6#53(192.168.4.6)</code> используемый dns сервер</li>
+</ul>
+<h4 id="как-увидеть-весь-путь-поиска-dns-сервера-для-адреса">Как увидеть весь путь поиска dns сервера для адреса</h4>
+<p>Для того, чтобы увидеть какую работу выполняют recursive dns сервера можно вызвать утилиту <code>dig</code> с флагом <code>+trace</code></p>
+<pre><code>dig +trace yandex.ru // делает тоже, самое, что и recursive dns сервер, опрашивает, у кого есть адрес
+                     // Сначала идут рут сервера(корневые сервера)
+;; global options: +cmd
+.                       284396  IN      NS      m.root-servers.net.
+.                       284396  IN      NS      h.root-servers.net.
+.                       284396  IN      NS      d.root-servers.net.
+...
+// Потом сервера зоны ру
+ru.                     172800  IN      NS      a.dns.ripn.net.
+ru.                     172800  IN      NS      b.dns.ripn.net.
+ru.                     172800  IN      NS      d.dns.ripn.net.
+ru.                     172800  IN      NS      e.dns.ripn.net.
+// Потом те, кто относятся к яндексу NS
+yandex.ru.              345600  IN      NS      ns1.yandex.ru.
+yandex.ru.              345600  IN      NS      ns2.yandex.ru.
+// Потом с ip
+yandex.ru.              300     IN      A       5.255.255.70
+yandex.ru.              300     IN      A       77.88.55.77
+yandex.ru.              300     IN      A       77.88.55.70
+</code></pre><h4 id="полезные-сетевые-утилиты">Полезные сетевые утилиты</h4>
+<ul>
+<li><code>dig</code> утилита для исследования dns серверов, имеет кучу флагов и возможностей, в arch входит в пакет <code>bind-tools</code></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

@@ -5,7 +5,52 @@
     <link>https://ixpectus.com/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 20 Jul 2020 10:26:55 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Apr 2021 21:46:58 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://ixpectus.com/tags/linux/</link>
+      <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://ixpectus.com/tags/network/</link>
+      <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tcp</title>
+      <link>https://ixpectus.com/tags/tcp/</link>
+      <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/tcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bgp</title>
+      <link>https://ixpectus.com/tags/bgp/</link>
+      <pubDate>Sat, 03 Apr 2021 21:40:44 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/bgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dns</title>
+      <link>https://ixpectus.com/tags/dns/</link>
+      <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/dns/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>postgresql</title>
       <link>https://ixpectus.com/tags/postgresql/</link>
@@ -138,24 +183,6 @@
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://ixpectus.com/tags/linux/</link>
-      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>https://ixpectus.com/tags/network/</link>
-      <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/network/</guid>
       <description></description>
     </item>
     

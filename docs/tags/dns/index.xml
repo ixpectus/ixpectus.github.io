@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dns on ixpectus notes</title>
+    <link>https://ixpectus.com/tags/dns/</link>
+    <description>Recent content in dns on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 03 Apr 2021 21:25:04 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DNS</title>
+      <link>https://ixpectus.com/posts/administrate/networking/dns/</link>
+      <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/dns/</guid>
+      <description>Какие бывают dns сервера и как понять с каким dns сервером идёт работа</description>
+    </item>
+    
+  </channel>
+</rss>
