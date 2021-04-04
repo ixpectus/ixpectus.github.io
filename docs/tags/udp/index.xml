@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>udp on ixpectus notes</title>
+    <link>https://ixpectus.com/tags/udp/</link>
+    <description>Recent content in udp on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 04 Apr 2021 22:14:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/udp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UDP протокол</title>
+      <link>https://ixpectus.com/posts/administrate/networking/udp/</link>
+      <pubDate>Sun, 04 Apr 2021 22:14:13 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/udp/</guid>
+      <description>Описание базовых особенностей протокола UDP</description>
+    </item>
+    
+  </channel>
+</rss>

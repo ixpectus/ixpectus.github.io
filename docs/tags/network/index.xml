@@ -5,7 +5,16 @@
     <link>https://ixpectus.com/tags/network/</link>
     <description>Recent content in network on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 03 Apr 2021 21:46:58 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Apr 2021 22:14:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UDP протокол</title>
+      <link>https://ixpectus.com/posts/administrate/networking/udp/</link>
+      <pubDate>Sun, 04 Apr 2021 22:14:13 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/administrate/networking/udp/</guid>
+      <description>Описание базовых особенностей протокола UDP</description>
+    </item>
+    
     <item>
       <title>TCP протокол</title>
       <link>https://ixpectus.com/posts/administrate/networking/tcp/</link>
