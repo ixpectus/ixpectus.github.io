@@ -86,7 +86,7 @@
 </ul>
 <h2 id="как-применять-функции">Как применять функции</h2>
 <ul>
-<li>Применение функции идёт без дополнительных скобок, сначала пишется функция, а потом через пробел её аргументы
+<li>Применение функции идёт без дополнительных скобок, в префиксном стиле, сначала пишется функция, а потом через пробел её аргументы
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
 <span style="color:#ae81ff">13</span>
 </code></pre></div></li>
@@ -126,7 +126,10 @@
 </code></pre></div></li>
 </ul>
 <p>В haskell не нужно делать ничего дополнительного для того, чтобы функцию можно было применять частично</p>
-
+<h2 id="условные-операторы">Условные операторы</h2>
+<p>В отличие от императивных операторов у условных операторов в haskell всегда должно быть заполнено условие then</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div>
       
     </div>
     

@@ -5,7 +5,16 @@
     <link>https://ixpectus.com/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 May 2021 12:37:49 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 15:07:20 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Операторы в haskell</title>
+      <link>https://ixpectus.com/posts/backend/languages/haskell/operators/</link>
+      <pubDate>Mon, 03 May 2021 15:07:20 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/backend/languages/haskell/operators/</guid>
+      <description>Операторы и их приоритеты в haskell</description>
+    </item>
+    
     <item>
       <title>Применение функций в haskell</title>
       <link>https://ixpectus.com/posts/backend/languages/haskell/functions/</link>
