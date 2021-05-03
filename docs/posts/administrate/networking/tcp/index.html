@@ -138,6 +138,33 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 </li>
 <li>Для того, чтобы гарантировать доставку для каждого сообщения из пакета друга сторона должна ответить <code>ack</code></li>
 </ul>
+<h4 id="порты-в-tcpudp">Порты в TCP/UDP</h4>
+<ul>
+<li>В TCP/UDP на порт отводится 2 байта, т.е. значение от 0 до 65536. Т.о. порт не может быть больше</li>
+<li>TCP port 999 и UDP port 999 это разные порты, видимо может быть, как один, так и другой</li>
+<li>Пример простой программы на go, которая слушает 2 порта
+<pre><code> func main() {
+  log.SetOutput(os.Stderr)
+  log.SetOutput(os.Stdout)
+  pc, err := net.ListenPacket(&quot;udp&quot;, &quot;127.0.0.1:8888&quot;)
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer pc.Close()
+  l, err := net.Listen(&quot;tcp&quot;, &quot;127.0.0.1:8888&quot;)
+  if err != nil {
+    log.Fatal(err)
+  }
+  for true {
+  }
+  defer l.Close()
+}
+</code></pre></li>
+<li>Запущенная программка ./code/main.go будет использовать 2 порта 8888, для udp и tcp
+<pre><code>  35   │ main       5081 ixpectus    3u  IPv4 460739631      0t0  UDP 127.0.0.1:8888 
+  36   │ main       5081 ixpectus    5u  IPv4 460739632      0t0  TCP 127.0.0.1:8888 (LISTEN)
+</code></pre></li>
+</ul>
 <h4 id="почитать">Почитать</h4>
 <ul>
 <li><a href="http://packetlife.net/blog/2011/mar/2/tcp-flags-psh-and-urg/">Про флаги tcp</a></li>

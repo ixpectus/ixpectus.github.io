@@ -5,7 +5,25 @@
     <link>https://ixpectus.com/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Apr 2021 22:17:24 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 May 2021 12:37:49 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Применение функций в haskell</title>
+      <link>https://ixpectus.com/posts/backend/languages/haskell/functions/</link>
+      <pubDate>Mon, 03 May 2021 12:37:49 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/backend/languages/haskell/functions/</guid>
+      <description>Как работать с функциями в haskell</description>
+    </item>
+    
+    <item>
+      <title>Haskell начало</title>
+      <link>https://ixpectus.com/posts/backend/languages/haskell/start/</link>
+      <pubDate>Sat, 01 May 2021 22:19:27 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/backend/languages/haskell/start/</guid>
+      <description>Как установить haskell на linux</description>
+    </item>
+    
     <item>
       <title>Процесс загрузки котика из интернета в очень общих словах</title>
       <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>

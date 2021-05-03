@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Применение функций в haskell | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.com/posts/backend/languages/haskell/functions/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/haskell/">#haskell</a>
+
+
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">May 3, 2021</h2>
+    <h1 class="title">Применение функций в haskell</h1>
+    
+    <div class="content">
+      <h2 id="как-определять-функции">Как определять функции</h2>
+<ul>
+<li>Определение функции с двумя аргументами <code>x</code> и <code>y</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">sumSquares</span> x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
+</code></pre></div></li>
+<li>Определение функции без аргументов
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">three</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</code></pre></div></li>
+</ul>
+<h2 id="как-применять-функции">Как применять функции</h2>
+<ul>
+<li>Применение функции идёт без дополнительных скобок, сначала пишется функция, а потом через пробел её аргументы
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+<span style="color:#ae81ff">13</span>
+</code></pre></div></li>
+<li>В аргументе функции может быть другая функция, например <code>three</code>, описанная выше
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> three
+<span style="color:#ae81ff">13</span>
+</code></pre></div></li>
+<li>Если функция в аргументе ожидает других аргументов, то их нужно окружить скобками
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span>  sumSquares <span style="color:#ae81ff">2</span> (sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>)
+<span style="color:#ae81ff">173</span>
+</code></pre></div></li>
+</ul>
+<h2 id="частичное-применение-функций">Частичное применение функций</h2>
+<p>Любую функцию в haskell можно применить частично(вообще любую). Частично значит, что для функции n аргументов можно задать один аргумент и мы получим функцию n-1 аргументов</p>
+<ul>
+<li>Пример частичного применения на haskell
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
+<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#f92672">=</span> sumSquares <span style="color:#ae81ff">3</span>
+<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#ae81ff">1</span>
+<span style="color:#ae81ff">10</span>
+</code></pre></div></li>
+<li>Как такая же логика выглядела бы на go
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">sumSquares3</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#ae81ff">3</span>)
+  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sumSquares3</span>(<span style="color:#ae81ff">1</span>))
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>
+  }
+}
+</code></pre></div></li>
+</ul>
+<p>В haskell не нужно делать ничего дополнительного для того, чтобы функцию можно было применять частично</p>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+
