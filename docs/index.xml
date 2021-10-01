@@ -5,7 +5,25 @@
     <link>https://ixpectus.com/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 May 2021 21:02:21 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Sep 2021 22:40:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Быстрый старт в react</title>
+      <link>https://ixpectus.com/posts/javascript/react/start/</link>
+      <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/javascript/react/start/</guid>
+      <description>Быстрый старт в react</description>
+    </item>
+    
+    <item>
+      <title>Рекурсия в haskell</title>
+      <link>https://ixpectus.com/posts/backend/languages/haskell/recurse/</link>
+      <pubDate>Fri, 07 May 2021 22:10:25 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/backend/languages/haskell/recurse/</guid>
+      <description>Рекурсия в haskell</description>
+    </item>
+    
     <item>
       <title>Базовые типы в haskell</title>
       <link>https://ixpectus.com/posts/backend/languages/haskell/basetypes/</link>

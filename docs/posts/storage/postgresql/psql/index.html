@@ -229,19 +229,19 @@ SELECT 'pg_policy: '|| count(*) FROM pg_policy;
   -------------------
    pg_statistic: 393
   (1 row)
-     
+
   Time: 0.602 ms
      ?column?
   --------------
    pg_type: 375
   (1 row)
-     
+
   Time: 0.212 ms
      ?column?
   --------------
    pg_policy: 0
   (1 row)
-     
+
   Time: 0.220 ms
 </code></pre><p>Видно, что тут нет настроек <code>\t \a</code> и в заголовке выводится странная запись <code>?column?</code>, можно в начале скрипта добавить <code>\t \a </code></p>
 <ul>

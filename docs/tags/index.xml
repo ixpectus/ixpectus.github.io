@@ -5,11 +5,29 @@
     <link>https://ixpectus.com/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 03 May 2021 21:02:21 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Sep 2021 22:40:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javascript</title>
+      <link>https://ixpectus.com/tags/javascript/</link>
+      <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://ixpectus.com/tags/react/</link>
+      <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/react/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>haskell</title>
       <link>https://ixpectus.com/tags/haskell/</link>
-      <pubDate>Mon, 03 May 2021 21:02:21 +0300</pubDate>
+      <pubDate>Fri, 07 May 2021 22:10:25 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/haskell/</guid>
       <description></description>

@@ -1,0 +1,430 @@
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+---
+title: "Базовые типы в haskell"
+date: 2021-05-03T21:02:21+03:00
+tags:
+  - haskell 
+summary: "Базовые типы в haskell"
+
+Быстрый старт в react
+Быстрый старт в react
+Быстрый старт в react
+Быстрый старт в react
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <div>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </div>
+    );
+  }
+}
+```
+
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <div>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </div>
+    );
+  }
+}
+```
+
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <div>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </div>
+    );
+  }
+}
+```
+
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <div>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </div>
+    );
+  }
+}
+```
+
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <div>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </div>
+    );
+  }
+}
+```
+
+Если `<div>` с точки зрения верстки не нужен, то можно переписать так
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <React.Fragment>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+Если `<div>` с точки зрения верстки не нужен, то можно переписать так
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <React.Fragment>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+Если `<div>` с точки зрения верстки не нужен, то можно переписать так
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <React.Fragment>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+Если `<div>` с точки зрения верстки не нужен, то можно переписать так
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <React.Fragment>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+Если `<div>` с точки зрения верстки не нужен, то можно переписать так
+```javasript
+class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      <React.Fragment>
+        <h2>{header}</h2>
+        <div>{body}</div>
+      </React.Fragment>
+    );
+  }
+}
+```
+
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+- Изменение элемент в массиве
+  - На чистом js
+    ```javascript
+      const index = items.findIndex((item) => item.id === id);
+      const newItem = { ...items[index], value: 'another value' };
+      const newItems = [...items.slice(0, index), newItem, ...items.slice(index + 1)];
+    ```
+  - С помощью immutability-helper
+    ```javascript
+      const collection = { children: ['zero', 'one', 'two'] };
+      const index = 1;
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+      // { children: ['zero', 1, 'two'] }
+    ```
+ 
+---
+
+---
+
+      import update from 'immutability-helper';
+
+      const newCollection = update(collection, { children: { [index]: { $set: 1 } } });
+
+    const newItems = items.filter((item) => item.id !== id);
+
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
+    const newItems = items.filter((item) => item.id !== id);
+
+    const newItems = items.filter((item) => item.id !== id);
+
+    const newItems = items.filter((item) => item.id !== id);
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+
+	return activeContract.startTime.Equal(up.CreateTime) &&
+		activeContract.finishTime.Equal(up.ExpireTime.V) &&
+		up.MaxViews == int(activeContract.maxViews) &&
+		activeContract.orderItemID == upOrderItemID
+

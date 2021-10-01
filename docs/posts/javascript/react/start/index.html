@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Быстрый старт в react | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.com/posts/javascript/react/start/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/react/">#react</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/javascript/">#javascript</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">September 17, 2021</h2>
+    <h1 class="title">Быстрый старт в react</h1>
+    
+    <div class="content">
+      <h2 id="команды">Команды</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">-</span><span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
+<span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span><span style="color:#f92672">/</span>
+<span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">start</span>
+</code></pre></div><h2 id="jsx">jsx</h2>
+<p>Корректное выражение</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">paragraph</span>&lt;/<span style="color:#f92672">p</span>&gt;}&lt;/<span style="color:#f92672">div</span>&gt;;
+</code></pre></div><h2 id="что-делать-когда-компоненту-нужно-отдавать-несколько-компонент-без-корневого-элемента">Что делать когда компоненту нужно отдавать несколько компонент без корневого элемента</h2>
+<p>Например компонент должен вернуть что-то такое</p>
+<pre><code class="language-javasript" data-lang="javasript">class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;{header}&lt;/h2&gt;
+        &lt;div&gt;{body}&lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre><p>Если <code>&lt;div&gt;</code> с точки зрения верстки не нужен, то можно переписать так</p>
+<pre><code class="language-javasript" data-lang="javasript">class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      &lt;React.Fragment&gt;
+        &lt;h2&gt;{header}&lt;/h2&gt;
+        &lt;div&gt;{body}&lt;/div&gt;
+      &lt;/React.Fragment&gt;
+    );
+  }
+}
+</code></pre><p>Короткая версия выглядит так</p>
+<pre><code class="language-javasript" data-lang="javasript">class Section extends React.Component {
+  render() {
+    const { header, body } = this.props;
+
+    return (
+      &lt;&gt;
+        &lt;h2&gt;{header}&lt;/h2&gt;
+        &lt;div&gt;{body}&lt;/div&gt;
+      &lt;/&gt;
+    );
+  }
+}
+</code></pre><h2 id="классы">Классы</h2>
+<p>Для того, чтобы написать имя класса для div нужно его заменить на className, например</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;super-class&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">content</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+
+</code></pre></div><h2 id="функциональные-компоненты">Функциональные компоненты</h2>
+<p>Если компонент реакт не должен содержать состояния то правильно использовать функциональные компоненты, пример</p>
+<pre><code>const FuncList = (props) =&gt; {
+  return (
+    &lt;ul&gt;
+      {props.items.map((v) =&gt; (
+        &lt;li&gt;{v}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+};
+export default FuncList;
+</code></pre><h2 id="как-вывести-все-вложенные-элементы-в-компоненте">Как вывести все вложенные элементы в компоненте</h2>
+<p>Для этого можно использовать свойство <code>children</code> из <code>this.props</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">children</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert alert-primary&#34;</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
+  }
+</code></pre></div><p>Пример использования</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Alert2</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">hr</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-0&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Alert2&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</code></pre></div><h2 id="иммутабельность">Иммутабельность</h2>
+<p>В реакте всё построено на иммутабельности и могут возникнуть сложности при изменении одного из элементов</p>
+<h3 id="массивы">Массивы</h3>
+<ul>
+<li>Добавление элемента в массив
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#e6db74">&#39;three&#39;</span>];
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;four&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">item</span>];
+<span style="color:#75715e">// [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;];
+</span></code></pre></div></li>
+<li>Удаление элемента из массива
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">id</span>);
+</code></pre></div></li>
+<li>Изменение элемент в массиве
+<ul>
+<li>На чистом js
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>);
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItem</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>[<span style="color:#a6e22e">index</span>], <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;another value&#39;</span> };
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span>), <span style="color:#a6e22e">newItem</span>, ...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)];
+</code></pre></div></li>
+<li>С помощью immutability-helper
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;zero&#39;</span>, <span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>] };
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">collection</span>, { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> { [<span style="color:#a6e22e">index</span>]<span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } } });
+  <span style="color:#75715e">// { children: [&#39;zero&#39;, 1, &#39;two&#39;] }
+</span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h3 id="объекты">Объекты</h3>
+<ul>
+<li>Добавить элемент в объекте
+<ul>
+<li>Если ключ известен
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
+    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
+</span></code></pre></div></li>
+<li>Если ключ динамический
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, [<span style="color:#a6e22e">key</span>]<span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
+    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>Удаление ключа в объекте
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">deletedKey</span>, ...<span style="color:#a6e22e">newState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>;
+</code></pre></div></li>
+<li>Глубокая вложенность
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myData</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> } },
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>] },
+};
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">myData</span>, {
+  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> } } },
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$push</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">9</span>] } }
+});
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newData</span>)
+<span style="color:#75715e">// =&gt; { x: { y: { z: 7 } }, a: { b: [ 1, 2, 9 ] } }
+</span></code></pre></div></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+
