@@ -1,5 +1,5 @@
 ---
-title: "Functions"
+title: "Функции"
 date: 2021-10-03T21:19:14+03:00
 tags:
   - programming
@@ -50,3 +50,5 @@ summary: "О функциях в языках программирования"
 Это функции, которые принимают на вход или возвращают другие функции.  
 На примере javascript функции высшего порядка `map`, `filter`
 
+### Полезные ссылки 
+- https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/

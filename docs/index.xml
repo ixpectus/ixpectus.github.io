@@ -21,15 +21,11 @@
       <pubDate>Mon, 04 Oct 2021 08:23:52 +0300</pubDate>
       
       <guid>https://ixpectus.com/posts/javascript/functions/</guid>
-      <description>Упаковка аргументов Можно передать любое количество аргументов с помощью ...
-const sum = (...numbers) =&amp;gt; { let result = 0; for (let num of numbers) { result += num; } return result; }; Также можно и сделать распаковку аргументов
-const numbers = [1, 7, 4]; sum(...numbers); // 12 Это эквивалентно
-sum(numbers[0], numbers[1], numbers[2]); Сокращенное объявление анонимных функций const sum = (a, b) =&amp;gt; a + b; Эта запись эквивалентна
-const sum = function(a, b) {a + b}; Деструктуризация массивов и объектов В javascript есть конструкция для деструктуризации массива или объекта.</description>
+      <description>Особенности функций в javascript</description>
     </item>
     
     <item>
-      <title>Functions</title>
+      <title>Функции</title>
       <link>https://ixpectus.com/posts/programming/functions/</link>
       <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
       
