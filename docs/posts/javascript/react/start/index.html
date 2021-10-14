@@ -223,7 +223,49 @@ export default FuncList;
 <span style="color:#75715e">// =&gt; { x: { y: { z: 7 } }, a: { b: [ 1, 2, 9 ] } }
 </span></code></pre></div></li>
 </ul>
+<h3 id="жизненный-цикл-компонента">Жизненный цикл компонента</h3>
+<h4 id="монитрование">Монитрование</h4>
+<ul>
+<li>constructor</li>
+<li>static getDerivedStateFromProps()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h4 id="обновление">Обновление</h4>
+<ul>
+<li>static getDerivedStateFromProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>render()</li>
+<li>getSnapshotBeforeUpdate()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h4 id="удаление">Удаление</h4>
+<ul>
+<li>componentWillUnmount()</li>
+</ul>
+<h4 id="пример">Пример</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Clock</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() };
+  }
 
+  <span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(() =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() }), <span style="color:#ae81ff">1000</span>);
+  }
+
+  <span style="color:#a6e22e">componentWillUnmount</span>() {
+    <span style="color:#a6e22e">clearInterval</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span>);
+  }
+
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">date</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>;
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toLocaleTimeString</span>()}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+    );
+  }
+}
+</code></pre></div>
       
     </div>
     

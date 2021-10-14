@@ -5,7 +5,38 @@
     <link>https://ixpectus.com/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Sep 2021 22:40:13 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 09:53:33 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>О парадигмах языков программирования</title>
+      <link>https://ixpectus.com/posts/programming/paradigms/</link>
+      <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/paradigms/</guid>
+      <description>Кратко о некоторых парадигмах языков программирования</description>
+    </item>
+    
+    <item>
+      <title>Функции в javascript</title>
+      <link>https://ixpectus.com/posts/javascript/functions/</link>
+      <pubDate>Mon, 04 Oct 2021 08:23:52 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/javascript/functions/</guid>
+      <description>Упаковка аргументов Можно передать любое количество аргументов с помощью ...
+const sum = (...numbers) =&amp;gt; { let result = 0; for (let num of numbers) { result += num; } return result; }; Также можно и сделать распаковку аргументов
+const numbers = [1, 7, 4]; sum(...numbers); // 12 Это эквивалентно
+sum(numbers[0], numbers[1], numbers[2]); Сокращенное объявление анонимных функций const sum = (a, b) =&amp;gt; a + b; Эта запись эквивалентна
+const sum = function(a, b) {a + b}; Деструктуризация массивов и объектов В javascript есть конструкция для деструктуризации массива или объекта.</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://ixpectus.com/posts/programming/functions/</link>
+      <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/functions/</guid>
+      <description>О функциях в языках программирования</description>
+    </item>
+    
     <item>
       <title>Быстрый старт в react</title>
       <link>https://ixpectus.com/posts/javascript/react/start/</link>

@@ -428,3 +428,330 @@ https://docs.k.avito.ru/other/job-docs/team-a/transfer/cvInTariffs/
 		up.MaxViews == int(activeContract.maxViews) &&
 		activeContract.orderItemID == upOrderItemID
 
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+  static Body = (props) => {
+    return <div className="modal-body">{props.children}</div>;
+  };
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+tags:
+  - react
+  - javascript
+summary: "Быстрый старт в react"
+
+```
+const sum = (a, b) => a + b;
+```
+
+```
+const sum = (a, b) => a + b;
+```
+
+```
+const sum = (a, b) => a + b;
+```
+
+delete from chat where job_seeker_id = 673717357;
+delete from job_seekers_communication where id = 673717357;
+insert into job_seekers_communication(id, state, cv_id, flow, source_id) values(673717357, 0, 2701089369, 40, 7);
+
+delete from chat where job_seeker_id = 673717357;
+delete from job_seekers_communication where id = 673717357;
+insert into job_seekers_communication(id, state, cv_id, flow, source_id) values(673717357, 0, 2701089369, 40, 7);
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+### Пример деструктуризации массива
+```javascript
+const arr2 = [3, 10, 30];
+const [var1, var2] = arr2;
+console.log(var2); // выведет 3
+```
+
+acceptDestructuredObject
+acceptDestructuredObject
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+## Пример для объекта
+Деструктуризацию можно провести прямо в объявлении функции
+```javascript
+const acceptFullObject = (obj) => console.log(obj);
+const acceptDestructuredObject = ({ prop3 }) => console.log(prop3);
+acceptFullObject(obj); // выведет { prop1: 'hiii', prop3: 33 }
+acceptDestructuredObject(obj); // выведет 33
+```
+
+tags:
+  - programming
+  - functions
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+tags:
+  - programming
+  - functions
+summary: "О функциях в языках программирования"
+
+## Типичные представители 
+
+## Основные особенности 
+
+## Основные особенности 
+
+## Основные особенности 
+
+## Основные особенности 
+
+## Основные особенности 
+

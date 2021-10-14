@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>functions on ixpectus notes</title>
+    <link>https://ixpectus.com/tags/functions/</link>
+    <description>Recent content in functions on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 13 Oct 2021 09:53:33 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/functions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>О парадигмах языков программирования</title>
+      <link>https://ixpectus.com/posts/programming/paradigms/</link>
+      <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/paradigms/</guid>
+      <description>Кратко о некоторых парадигмах языков программирования</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>https://ixpectus.com/posts/programming/functions/</link>
+      <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/functions/</guid>
+      <description>О функциях в языках программирования</description>
+    </item>
+    
+  </channel>
+</rss>

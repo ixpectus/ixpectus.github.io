@@ -172,3 +172,43 @@ export default FuncList;
     console.log(newData)
     // => { x: { y: { z: 7 } }, a: { b: [ 1, 2, 9 ] } }
     ```
+
+### Жизненный цикл компонента 
+#### Монитрование 
+- constructor
+- static getDerivedStateFromProps()
+- render()
+- componentDidMount()
+#### Обновление
+- static getDerivedStateFromProps()
+- shouldComponentUpdate()
+- render()
+- getSnapshotBeforeUpdate()
+- componentDidUpdate()
+#### Удаление 
+- componentWillUnmount()
+#### Пример 
+```javascript
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    this.timerId = setInterval(() => this.setState({ date: new Date() }), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  render() {
+    const { date } = this.state;
+    return (
+      <div>{date.toLocaleTimeString()}</div>
+    );
+  }
+}
+```
+
