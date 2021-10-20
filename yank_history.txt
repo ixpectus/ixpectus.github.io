@@ -816,3 +816,39 @@ summary: "Особенности функций в javascript"
 ./node_modules/.bin/prettier
 - `npx eslint .` запуск линтера
 
+tags:
+  - haskell 
+
+tags:
+  - haskell 
+
+tags:
+  - haskell 
+
+  - environment 
+
+  - environment 
+
+  - environment 
+  - javascript 
+
+tags:
+  - environment 
+  - javascript 
+
+tags:
+  - environment 
+  - javascript 
+
+tags:
+  - environment 
+  - javascript 
+
+tags:
+  - environment 
+  - javascript 
+
+tags:
+  - environment 
+  - javascript 
+

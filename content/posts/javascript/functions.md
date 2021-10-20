@@ -2,6 +2,9 @@
 title: "Функции в javascript"
 date: 2021-10-04T08:23:52+03:00
 summary: "Особенности функций в javascript"
+tags:
+  - functions 
+  - javascript 
 ---
 
 ## Упаковка аргументов 
