@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>dd | ixpectus notes</title>
+<title>Xsv ещё одна мощная cli утилита на rust | ixpectus notes</title>
 
 
 
@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://ixpectus.com/posts/linux/tools/dd/">
+<link rel="canonical" href="https://ixpectus.com/posts/linux/tools/xsv/">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
@@ -75,26 +75,52 @@
 
       
     </div>
-    <h2 class="subtitle is-6">May 31, 2020</h2>
-    <h1 class="title">dd</h1>
+    <h2 class="subtitle is-6">December 18, 2021</h2>
+    <h1 class="title">Xsv ещё одна мощная cli утилита на rust</h1>
     
     <div class="content">
-      <h3 id="dd">dd</h3>
-<p>умеет читать побайтово с устройства</p>
-<h4 id="flags">flags</h4>
+      <h3 id="xsv">xsv</h3>
+<p><a href="https://github.com/BurntSushi/xsv/">https://github.com/BurntSushi/xsv/</a></p>
+<h4 id="флаги">Флаги</h4>
 <ul>
-<li><code>if</code> откуда читать</li>
-<li><code>of</code> куда писать</li>
-<li><code>bs</code> сколько бит читать</li>
+<li><code>-d</code> можно задать разделитель для csv файла, например <code>xsv -d &quot;;&quot;</code></li>
+<li><code>-n</code> не показывать заголовки</li>
 </ul>
-<h4 id="example">example</h4>
-<p>прочитает первые 512 бит диска /dev/sda</p>
-<pre tabindex="0"><code>sudo dd uf=/dev/sda bs=512
-</code></pre><h4 id="how-to-calculate-readwrite-speed">How to calculate read/write speed</h4>
+<h4 id="примеры">Примеры</h4>
 <ul>
-<li><code>dd if=/dev/zero of=~/test.tmp bs=500K count=1024</code></li>
-<li><code>sync; echo 3 | sudo tee /proc/sys/vm/drop_caches</code> reset cache</li>
-<li><code>dd if=~/test.tmp of=/dev/null bs=500K count=1024</code> write</li>
+<li><code>xsv headers ./file.csv</code> выводит заголовки csv файла
+<pre tabindex="0"><code>  1   Country
+  2   City
+  3   AccentCity
+  4   Region
+  5   Population
+  6   Latitude
+  7   Longitude
+</code></pre></li>
+<li><code>xsv partition column1 tmp1 ./file.csv</code> строит партиции на основе колонки <code>column1</code> из файла
+<ul>
+<li>Данные по каждой партиции будут в отдельном фале в директории <code>tmp1</code></li>
+</ul>
+</li>
+<li><code>xsv sample 10</code> отдаёт 10 случайных записей из файла</li>
+<li><code>xsv table</code> превращает csv в удобную таблицу с табами</li>
+<li><code>xsv index ./file.csv</code> стоит индекс на базе файла в той же директории</li>
+<li><code>xsv split ./splits2 -s1000 ./file.csv</code> делит файл на много файликов размером 1000 строк и складывает их в директорию <code>splits2</code></li>
+<li><code>xsv split -h</code> показывает help по конкретной команде <code>split</code>, работает для всех команд</li>
+<li><code>xsv select City,Latitude,Longitude worldcitiespop.csv</code> выводит конкретные поля из файла</li>
+<li><code>xsv select City,Latitude,Longitude worldcitiespop.csv | xsv sample 10 | xsv table</code> выводит 10 случайных записей с разделителями табами
+<pre tabindex="0"><code>City           Latitude    Longitude
+shar           34.479722   67.328334
+qol-e qobi     34.546692   68.199249
+petralonon     39.0111111  21.8175
+caserio salar  38.014705   -1.055148
+zhongshi       31.931917   121.531692
+bungo          11.566389   122.820278
+veyleh-ye do   34.3786     46.3589
+nizami banda   32.458333   71.173889
+gangra         31.101      98.101
+birecik        37.029444   37.990278
+</code></pre></li>
 </ul>
 
       

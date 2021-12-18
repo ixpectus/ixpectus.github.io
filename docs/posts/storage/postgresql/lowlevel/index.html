@@ -107,26 +107,24 @@
 <h4 id="практика">Практика</h4>
 <ul>
 <li>Как посмотреть имя файла для таблицы относительно PGDATA, где t - таблица
-<pre><code>postgres@127:data_lowlevel&gt; select pg_relation_filepath('t');
+<pre tabindex="0"><code>postgres@127:data_lowlevel&gt; select pg_relation_filepath('t');
 +------------------------+
 | pg_relation_filepath   |
 |------------------------|
 | base/24642/24645       |
 +------------------------+
 SELECT 1
-</code></pre><p>В директории <code>/usr/local/psql/data/base/24642</code> лежат 2 файла 24645, 24645_fsm</p>
-</li>
+</code></pre>В директории <code>/usr/local/psql/data/base/24642</code> лежат 2 файла 24645, 24645_fsm</li>
 <li>Директорию базы данных можно узнать так
-<pre><code>  postgres@127:data_lowlevel&gt; SELECT OID FROM pg_database WHERE datname = 'data_lowlevel';
+<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT OID FROM pg_database WHERE datname = 'data_lowlevel';
 +-------+
 | oid   |
 |-------|
 | 24642 |
 +-------+
-</code></pre><p>Имя директории соответствует oid базы</p>
-</li>
+</code></pre>Имя директории соответствует oid базы</li>
 <li>Отдельно имя файла для таблицы можно узнать так
-<pre><code>  postgres@127:data_lowlevel&gt; SELECT relfilenode FROM pg_class WHERE relname = 't';
+<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT relfilenode FROM pg_class WHERE relname = 't';
 +---------------+
 | relfilenode   |
 |---------------|
@@ -135,25 +133,25 @@ SELECT 1
 SELECT 1
 </code></pre></li>
 <li>Как посмотреть размер каждого слоя
-<pre><code>SELECT pg_size_pretty(pg_relation_size('t','main')) main,
+<pre tabindex="0"><code>SELECT pg_size_pretty(pg_relation_size('t','main')) main,
 pg_size_pretty(pg_relation_size('t','fsm')) fsm,
 pg_size_pretty(pg_relation_size('t','vm')) vm;
 </code></pre></li>
 <li>Как посмотреть размер таблицы
-<pre><code>SELECT pg_table_size('t');
+<pre tabindex="0"><code>SELECT pg_table_size('t');
 </code></pre></li>
 <li>Как посмотреть размер индекса
-<pre><code>SELECT pg_indexes_size('t');
+<pre tabindex="0"><code>SELECT pg_indexes_size('t');
 </code></pre></li>
 <li>Как посмотреть размер всей таблицы
-<pre><code>SELECT pg_total_relation_size('t');
+<pre tabindex="0"><code>SELECT pg_total_relation_size('t');
 </code></pre></li>
 </ul>
 <h5 id="toast">Toast</h5>
 <ul>
 <li>Как узнать используется ли toast для хранения колонки или нет
-<pre><code>\d+ t
-</code></pre><p>Если в колонке storage указано extended, то используется</p>
+<pre tabindex="0"><code>\d+ t
+</code></pre>Если в колонке storage указано extended, то используется
 <ul>
 <li>plain - TOAST не применяется (тип имеет фиксированную длину);</li>
 <li>main - приоритет сжатия;</li>

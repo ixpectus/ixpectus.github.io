@@ -90,7 +90,7 @@
 обычно кэшируют данные, каждая запись имеет TTL(time to live)</li>
 </ul>
 <h4 id="как-понять-какой-dns-сервер-отдаёт-ip-адрес">Как понять, какой dns сервер отдаёт ip адрес</h4>
-<pre><code> dig jvns.ca
+<pre tabindex="0"><code> dig jvns.ca
  ;; ANSWER SECTION:
  jvns.ca.                122     IN      A       104.28.7.94
  jvns.ca.                122     IN      A       104.28.6.94
@@ -106,7 +106,7 @@
 </ul>
 <h4 id="как-увидеть-весь-путь-поиска-dns-сервера-для-адреса">Как увидеть весь путь поиска dns сервера для адреса</h4>
 <p>Для того, чтобы увидеть какую работу выполняют recursive dns сервера можно вызвать утилиту <code>dig</code> с флагом <code>+trace</code></p>
-<pre><code>dig +trace yandex.ru // делает тоже, самое, что и recursive dns сервер, опрашивает, у кого есть адрес
+<pre tabindex="0"><code>dig +trace yandex.ru // делает тоже, самое, что и recursive dns сервер, опрашивает, у кого есть адрес
                      // Сначала идут рут сервера(корневые сервера)
 ;; global options: +cmd
 .                       284396  IN      NS      m.root-servers.net.

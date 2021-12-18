@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql on ixpectus notes</title>
+    <link>https://ixpectus.com/tags/sql/</link>
+    <description>Recent content in sql on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Dec 2021 16:29:33 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Запросы в sql</title>
+      <link>https://ixpectus.com/posts/sql/quieries/</link>
+      <pubDate>Fri, 03 Dec 2021 16:29:33 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/sql/quieries/</guid>
+      <description>Полезные приемы в sql запросах</description>
+    </item>
+    
+  </channel>
+</rss>

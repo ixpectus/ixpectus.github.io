@@ -118,28 +118,26 @@
 <h4 id="поэкспериментируем">Поэкспериментируем</h4>
 <ul>
 <li>Создадим базу и таблицу
-<pre><code> create database test;
+<pre tabindex="0"><code> create database test;
  create table texts(s1 text,s2 text);
 </code></pre></li>
 <li>Посмотрим xmin, xmax
-<pre><code>127.0.0.1 postgres@test=# select xmax,xmin from texts;
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# select xmax,xmin from texts;
  xmax | xmin
 ------+------
 (0 rows)
-</code></pre><p>Ничего нет, что логично</p>
-</li>
+</code></pre>Ничего нет, что логично</li>
 <li>Вставим строку и посмотрим на xmin, xmax
-<pre><code>127.0.0.1 postgres@test=# insert into texts(s1,s2) values('qqq', 'wwwwwww');
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# insert into texts(s1,s2) values('qqq', 'wwwwwww');
 INSERT 0 1
 127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
  s1  |   s2    | xmin | xmax
 -----+---------+------+------
  qqq | wwwwwww |  565 |    0
 (1 row)
-</code></pre><p>xmin установлен, а xmax = 0, что говорит о том, что данные актуальны</p>
-</li>
+</code></pre>xmin установлен, а xmax = 0, что говорит о том, что данные актуальны</li>
 <li>Обновим строку и снова посмотрим
-<pre><code>127.0.0.1 postgres@test=# update texts set s2='wwwwww' where s1='qqq';
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# update texts set s2='wwwwww' where s1='qqq';
 UPDATE 1
 Time: 1.329 ms
 127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
@@ -149,12 +147,11 @@ Time: 1.329 ms
 (1 row)
 
 Time: 0.626 ms
-</code></pre><p>Видно, что версия обновилась, но старых данных не видно, интересно</p>
-</li>
+</code></pre>Видно, что версия обновилась, но старых данных не видно, интересно</li>
 <li>Попробуем в 2-х терминалах
 <ul>
 <li>Терминал 1
-<pre><code>127.0.0.1 postgres@test=# begin transaction;
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# begin transaction;
 BEGIN
 Time: 0.364 ms
 127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
@@ -176,7 +173,7 @@ Time: 0.627 ms
 Time: 0.481 ms
 </code></pre></li>
 <li>Терминал 2
-<pre><code>begin transaction;
+<pre tabindex="0"><code>begin transaction;
 127.0.0.1 postgres@test=# select *, xmin, xmax from texts;
  s1  |   s2   | xmin | xmax
 -----+--------+------+------
@@ -194,7 +191,7 @@ select txid_current();
 <ul>
 <li>Что будет, если в первом терминале сделать rollback ? Я предположил, что в этом случае появится новая версия строки с большим xmin и xmax=0, но в первом терминале после rollback я увидел следующее</li>
 </ul>
-<pre><code>127.0.0.1 postgres@test=# update texts set s2='zzz' where s1='qqq';
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# update texts set s2='zzz' where s1='qqq';
 UPDATE 1
 Time: 0.228 ms
 127.0.0.1 postgres@test=# rollback;
@@ -206,7 +203,7 @@ Time: 0.187 ms
  qqq | yyy |  567 |  569
 (1 row)
 </code></pre><p>В момент выполнения этого запроса во втором терминале</p>
-<pre><code>127.0.0.1 postgres@test=# select txid_current();
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# select txid_current();
  txid_current
 --------------
           568
@@ -219,13 +216,13 @@ Time: 0.187 ms
 <li>Serializable</li>
 </ul>
 <p>Можно установить уровень транзакции при старте транзакции</p>
-<pre><code>begin isolation level repeatable read;
+<pre tabindex="0"><code>begin isolation level repeatable read;
 </code></pre><h4 id="эксперимент-со-счётчиком">Эксперимент со счётчиком</h4>
 <p>Судя по тому, что я узнал если сделать таблицу с одной строчкой и 10 тысяч раз её изменить, то размер таблицы увеличится, проверим</p>
 <ul>
 <li>Создадим таблицу и вставим строку</li>
 </ul>
-<pre><code>127.0.0.1 postgres@test=# create table some_table(id int, counter int, text1 text, text2 text);
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# create table some_table(id int, counter int, text1 text, text2 text);
 CREATE TABLE
 Time: 12.475 ms
 127.0.0.1 postgres@test=# insert into some_table(id, counter, text1, text2) values(1,0,'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq','wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
@@ -234,7 +231,7 @@ Time: 2.613 ms
 </code></pre><ul>
 <li>Посмотрим размер таблицы</li>
 </ul>
-<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
  pg_size_pretty
 ----------------
  16 kB
@@ -242,7 +239,7 @@ Time: 2.613 ms
 </code></pre><ul>
 <li>Посмотрим файлы на диске</li>
 </ul>
-<pre><code>ixpectus# ls -lh $PGDATA
+<pre tabindex="0"><code>ixpectus# ls -lh $PGDATA
 6 postgres postgres 4.0K Jun 21 22:06 base
 drwx------ 2 postgres postgres 4.0K Jun 21 22:08 global
 drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_commit_ts
@@ -270,11 +267,11 @@ drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_xact
 </code></pre><ul>
 <li>Увеличим counter 10000 раз</li>
 </ul>
-<pre><code>for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1';done;
+<pre tabindex="0"><code>for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1';done;
 </code></pre><ul>
 <li>Размер таблицы не изменился практически</li>
 </ul>
-<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
  pg_size_pretty
 ----------------
  16 kB
@@ -284,9 +281,9 @@ drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_xact
 <ul>
 <li>Попробуем запустить скрипт немного по-другому</li>
 </ul>
-<pre><code> for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1' &amp;;done;
+<pre tabindex="0"><code> for i in {01..10000}; do psql -h 127.0.0.1 -d test -c 'update some_table set counter=counter+1 where id=1' &amp;;done;
 </code></pre><p>В конце команды добавил знак <code>&amp;</code>, что приведёт к тому, что команды начнут запускаться не последовательно, а параллельно</p>
-<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
  pg_size_pretty
 ----------------
  1008 kB
@@ -296,7 +293,7 @@ drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_xact
 <li>Теперь увеличим счётчик еще на 10000 раз и посмотрим, какие файлы на диске изменились по размеру<br>
 Текущее состояние</li>
 </ul>
-<pre><code>du -h | sort -h
+<pre tabindex="0"><code>du -h | sort -h
 4.0K    ./pg_commit_ts
 4.0K    ./pg_dynshmem
 4.0K    ./pg_logical/mappings
@@ -324,7 +321,7 @@ drwx------ 2 postgres postgres 4.0K Jun 16 10:42 pg_xact
 17M     ./pg_wal
 30M     ./base
 </code></pre><p>После увеличения счётчика на 10000 раз размер базы не увеличился, т.к. вероятно пришёл vacuum и удалил старые строки. Увеличим сразу на 20000. Размер базы вообще уменьшился и размер файлов тоже существенно не увеличился</p>
-<pre><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# SELECT pg_size_pretty( pg_total_relation_size('some_table') );
  pg_size_pretty
 ----------------
  280 kB

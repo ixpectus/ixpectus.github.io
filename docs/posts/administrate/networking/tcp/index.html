@@ -86,7 +86,7 @@
 <ul>
 <li>TCP гарантирует доставку сообщения</li>
 <li>TCP заголовок
-<pre><code>Source Port | Destination Port
+<pre tabindex="0"><code>Source Port | Destination Port
 -----------------------------
     Sequence number
 -----------------------------
@@ -101,7 +101,7 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <ul>
 <li>TCP handshake</li>
 </ul>
-<pre><code>    me --&gt; syn
+<pre tabindex="0"><code>    me --&gt; syn
               &lt;--syn 
               &lt;--ack
     me --&gt; ack
@@ -112,7 +112,7 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <li>Нужно начать слушать tcp соединение. Для этого в одной консоли нужно набрать<code>sudo tcpdump host jvns.ca</code>,</li>
 <li>В другой консоли <code>curl jvns.ca</code>, и мы увидим</li>
 </ul>
-<pre><code>09:55:56.520909 IP archlinux.58068 &gt; 104.28.7.94.http: Flags [SEW], seq 1101291073, win 29200, options [mss 1460,sackOK,TS val 521376349 ecr 0,nop,wscale 7], length 0                                            
+<pre tabindex="0"><code>09:55:56.520909 IP archlinux.58068 &gt; 104.28.7.94.http: Flags [SEW], seq 1101291073, win 29200, options [mss 1460,sackOK,TS val 521376349 ecr 0,nop,wscale 7], length 0                                            
 09:55:56.523234 IP 104.28.7.94.http &gt; archlinux.58068: Flags [S.E], seq 1641165503, ack 1101291074, win 29200, options [mss 1460,nop,nop,sackOK,nop,wscale 10], length 0                                          
 09:55:56.523259 IP archlinux.58068 &gt; 104.28.7.94.http: Flags [.], ack 1, win 229, length 0
 </code></pre><ul>
@@ -131,11 +131,10 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <li>Другая сторона говорит, какие пакеты получила</li>
 <li>Другая сторона должна собрать полученные пакеты в правильном порядке. Для этого используется понятие sequence number.
 Допустим
-<pre><code>  &quot;unce upon a&quot; &gt; bytes 0-13
+<pre tabindex="0"><code>  &quot;unce upon a&quot; &gt; bytes 0-13
   &quot;agical master&quot; &gt; bytes 30-42
   &quot;time there was a m&quot; &gt; bytes 13-30 
-</code></pre><p>Первое число, т.е. 0, 30, 13 и есть sequence number</p>
-</li>
+</code></pre>Первое число, т.е. 0, 30, 13 и есть sequence number</li>
 <li>Для того, чтобы гарантировать доставку для каждого сообщения из пакета друга сторона должна ответить <code>ack</code></li>
 </ul>
 <h4 id="порты-в-tcpudp">Порты в TCP/UDP</h4>
@@ -143,7 +142,7 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <li>В TCP/UDP на порт отводится 2 байта, т.е. значение от 0 до 65536. Т.о. порт не может быть больше</li>
 <li>TCP port 999 и UDP port 999 это разные порты, видимо может быть, как один, так и другой</li>
 <li>Пример простой программы на go, которая слушает 2 порта
-<pre><code> func main() {
+<pre tabindex="0"><code> func main() {
   log.SetOutput(os.Stderr)
   log.SetOutput(os.Stdout)
   pc, err := net.ListenPacket(&quot;udp&quot;, &quot;127.0.0.1:8888&quot;)
@@ -161,7 +160,7 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 }
 </code></pre></li>
 <li>Запущенная программка ./code/main.go будет использовать 2 порта 8888, для udp и tcp
-<pre><code>  35   │ main       5081 ixpectus    3u  IPv4 460739631      0t0  UDP 127.0.0.1:8888 
+<pre tabindex="0"><code>  35   │ main       5081 ixpectus    3u  IPv4 460739631      0t0  UDP 127.0.0.1:8888 
   36   │ main       5081 ixpectus    5u  IPv4 460739632      0t0  TCP 127.0.0.1:8888 (LISTEN)
 </code></pre></li>
 </ul>

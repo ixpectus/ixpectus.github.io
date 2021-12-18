@@ -92,13 +92,13 @@
 <li><code>\dt public.*</code> так можно посмотреть все таблицы в какой-то одной схеме</li>
 </ul>
 <h5 id="как-создать-схему">Как создать схему</h5>
-<pre><code>create schema test;
+<pre tabindex="0"><code>create schema test;
 </code></pre><h4 id="в-какой-схеме-будет-происходить-поиск-таблицы-если-она-не-указана-явно">В какой схеме будет происходить поиск таблицы, если она не указана явно</h4>
 <p>Зависит от значения <code>search_path</code></p>
 <ul>
 <li>Можно посмотреть так</li>
 </ul>
-<pre><code>show search_path;
+<pre tabindex="0"><code>show search_path;
 +-----------------+
 | search_path     |
 |-----------------|
@@ -107,7 +107,7 @@
 </code></pre><ul>
 <li>Или так</li>
 </ul>
-<pre><code>postgres@127:test&gt; select current_schemas(true);
+<pre tabindex="0"><code>postgres@127:test&gt; select current_schemas(true);
 +--------------------------+
 | current_schemas          |
 |--------------------------|
@@ -117,7 +117,7 @@
 <ul>
 <li>Можно создать временную таблицу, которая будет жить только во время текущего сеанса</li>
 </ul>
-<pre><code>postgres@127:test&gt; CREATE TEMP TABLE t(s text);
+<pre tabindex="0"><code>postgres@127:test&gt; CREATE TEMP TABLE t(s text);
 postgres@127:test&gt; select current_schemas(true);
 +---------------------------------------+
 | current_schemas                       |

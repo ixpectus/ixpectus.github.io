@@ -83,12 +83,11 @@
     <div class="content">
       <ul>
 <li>По имени сайта получаем ip
-<pre><code>curl jvns.ca 
+<pre tabindex="0"><code>curl jvns.ca 
 trace -f  curl jvns.ca 4 -v 2&gt;&amp;1 | grep getaddrinfo
 getaddrinfo //находит dns server
 getaddrinfo //запрашивает у dns сервера ip адрес
-</code></pre><p>Обычно dns сервер лежит в /etc/resolv.conf</p>
-</li>
+</code></pre>Обычно dns сервер лежит в /etc/resolv.conf</li>
 <li>Идёт обращение по ip, обращение идёт через множество маршрутизаторов, их количество можно увидеть <code>traceroute google.com</code>. Для того, чтобы роутеры могли друг друга находить используется протокол bgp</li>
 <li>Общение происходит с помощью сокетов ОС
 <ul>
@@ -110,7 +109,7 @@ getaddrinfo //запрашивает у dns сервера ip адрес
 </ul>
 </li>
 <li>Инициация общения по TCP
-<pre><code>    me --&gt; syn
+<pre tabindex="0"><code>    me --&gt; syn
             &lt;--syn 
             &lt;--ack
     me --&gt; ack

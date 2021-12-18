@@ -86,7 +86,7 @@
 <p>Табличное пространство это указание на каталог в котором хранятся данные.
 Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</p>
 <h4 id="изучим-табличные-пространства">Изучим табличные пространства</h4>
-<pre><code>select * from pg_tablespace;
+<pre tabindex="0"><code>select * from pg_tablespace;
   spcname   | spcowner | spcacl | spcoptions
 ------------+----------+--------+------------
  pg_default |       10 | [NULL] | [NULL]
@@ -95,12 +95,12 @@
 </code></pre><h4 id="как-создать-табличное-пространство">Как создать табличное пространство</h4>
 <ul>
 <li>Создадим раздел
-<pre><code>su postgres
+<pre tabindex="0"><code>su postgres
 cd ~
 mkdir tablespace
 </code></pre></li>
 <li>Создадим базу, табличное пространство и назначим её табличное пространство
-<pre><code>127.0.0.1 postgres@separate_tablespace=# create tablespace ts location '/home/postgres/tablespace';
+<pre tabindex="0"><code>127.0.0.1 postgres@separate_tablespace=# create tablespace ts location '/home/postgres/tablespace';
 CREATE TABLESPACE
 Time: 1.821 ms
 127.0.0.1 postgres@separate_tablespace=# \db

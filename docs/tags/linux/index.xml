@@ -5,7 +5,16 @@
     <link>https://ixpectus.com/tags/linux/</link>
     <description>Recent content in linux on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Apr 2021 22:17:24 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Dec 2021 22:25:15 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xsv ещё одна мощная cli утилита на rust</title>
+      <link>https://ixpectus.com/posts/linux/tools/xsv/</link>
+      <pubDate>Sat, 18 Dec 2021 22:25:15 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/linux/tools/xsv/</guid>
+      <description>xsv позволяет в консоли эффективно работать с csv</description>
+    </item>
+    
     <item>
       <title>Процесс загрузки котика из интернета в очень общих словах</title>
       <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>

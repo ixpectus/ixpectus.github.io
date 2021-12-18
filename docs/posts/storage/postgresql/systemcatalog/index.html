@@ -98,7 +98,7 @@
 <li><code>\d+ some_table</code> получаем расширенную информацию о конкретной таблице</li>
 <li><code>\df</code>  функции, например <code>\df pg_catalog.*</code></li>
 <li><code>\sf</code> показывает тело функции
-<pre><code>\sf pg_catalog.xmlexists
+<pre tabindex="0"><code>\sf pg_catalog.xmlexists
 CREATE OR REPLACE FUNCTION pg_catalog.&quot;xmlexists&quot;(text, xml)
  RETURNS boolean
  LANGUAGE internal
@@ -109,12 +109,12 @@ AS $function$xmlexists$function$
 <h4 id="oid">OID</h4>
 <p>У всех таблиц системного каталоге есть поле <code>oid</code>, обозначает уникальный идентификатор. Поле по умолчанию не выводится.<br>
 Чтобы вывелось нужно указать явно</p>
-<pre><code>select oid,* from pg_namespace;
+<pre tabindex="0"><code>select oid,* from pg_namespace;
 </code></pre><h4 id="echo_hidden">ECHO_HIDDEN</h4>
 <p>Можно посмотреть, какие именно команды sql выполняют команды psql, для этого нужно установить флаг</p>
-<pre><code>\set ECHO_HIDDEN on
+<pre tabindex="0"><code>\set ECHO_HIDDEN on
 </code></pre><p>Например</p>
-<pre><code>127.0.0.1 postgres@test=# \dt
+<pre tabindex="0"><code>127.0.0.1 postgres@test=# \dt
 ********* QUERY **********
 SELECT n.nspname as &quot;Schema&quot;,
   c.relname as &quot;Name&quot;,
@@ -133,16 +133,16 @@ ORDER BY 1,2;
 <p>А вот <code>\d texts</code> превратится в большое количество запросов</p>
 <h5 id="получение-списка-колонок-таблиц">Получение списка колонок таблиц</h5>
 <p>Так можно получить список всех колонок из всех таблиц</p>
-<pre><code> select relname,attname from pg_class pc join pg_attribute pa on pa.attrelid=pc.oid;
+<pre tabindex="0"><code> select relname,attname from pg_class pc join pg_attribute pa on pa.attrelid=pc.oid;
 </code></pre><p>Так можно получить все несистемные схемы</p>
-<pre><code> select nspname from pg_namespace where nspname !~ '^(pg|information).\*';
-</code></pre><pre><code> select 
+<pre tabindex="0"><code> select nspname from pg_namespace where nspname !~ '^(pg|information).\*';
+</code></pre><pre tabindex="0"><code> select 
    pn.nspname,relname,attname 
  from 
   pg_class pc join pg_attribute pa on pa.attrelid=pc.oid join pg_namespace pn on pn.oid = pc.relnamespace
  where pn.nspname !~ '^(pg|information).\*';
 </code></pre><h5 id="как-получить-колонки-только-одной-таблицы">Как получить колонки только одной таблицы</h5>
-<pre><code>SELECT a.attname
+<pre tabindex="0"><code>SELECT a.attname
 FROM pg_attribute a
 WHERE a.attrelid = 'texts'::regclass
 AND a.attnum &gt; 0;

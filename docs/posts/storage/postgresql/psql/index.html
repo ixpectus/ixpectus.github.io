@@ -90,7 +90,7 @@
 <code>\help</code> показывает список команды, по которым можно получить документацию, например <code>help alter table</code><br>
 <code>\q</code> выход<br>
 <code>\conninfo</code> информация о соединении</p>
-<pre><code>You are connected to database &quot;postgres&quot; as user &quot;postgres&quot; on host &quot;127.0.0.1&quot; at port &quot;5432&quot;.
+<pre tabindex="0"><code>You are connected to database &quot;postgres&quot; as user &quot;postgres&quot; on host &quot;127.0.0.1&quot; at port &quot;5432&quot;.
 </code></pre><p><code>\a</code> включает/выключает выравнивание при выводе<br>
 <code>\t</code> включает/выключает вывод заголовков<br>
 <code>\pset fieldsep ' '</code> устанавливает другой разделитель для строк, может использоваться для сохранения csv<br>
@@ -106,13 +106,13 @@
 <h4 id="конфигурационные-файлы">Конфигурационные файлы</h4>
 <h5 id="общий-конфигурационный-файл">Общий конфигурационный файл</h5>
 <p><code>pg_config --sysconfdir</code> показывает директорию с настройками postgres</p>
-<pre><code>pg_config --sysconfdir
+<pre tabindex="0"><code>pg_config --sysconfdir
 /etc/postgresql
 </code></pre><p>В моём случае директория <code>/etc/postgresql</code> отсутствовала</p>
 <h5 id="конфигурационный-файл-конкретного-пользователя">Конфигурационный файл конкретного пользователя</h5>
 <p>Располагается в <code>~/.psqlrc</code><br>
 Пример файла от <a href="thoughtbot">https://github.com/thoughtbot/dotfiles/blob/master/psqlrc</a></p>
-<pre><code>-- Official docs: http://www.postgresql.org/docs/9.3/static/app-psql.html
+<pre tabindex="0"><code>-- Official docs: http://www.postgresql.org/docs/9.3/static/app-psql.html
 -- Unofficial docs: http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
 
 -- Don't display the &quot;helpful&quot; message on startup.
@@ -137,7 +137,7 @@
 \unset QUIET
 </code></pre><h4 id="формат-вывода">Формат вывода</h4>
 <h5 id="с-выравниванием-используется-по-умолчанию">С выравниванием (используется по умолчанию)</h5>
-<pre><code>127.0.0.1 postgres@postgres=# SELECT schemaname, tablename, tableowner FROM pg_tables LIMIT 5;
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# SELECT schemaname, tablename, tableowner FROM pg_tables LIMIT 5;
  schemaname |    tablename    | tableowner
 ------------+-----------------+------------
  pg_catalog | pg_statistic    | postgres
@@ -147,7 +147,7 @@
  pg_catalog | pg_user_mapping | postgres
 (5 rows)
 </code></pre><h5 id="без-выравнивания">Без выравнивания</h5>
-<pre><code>\a
+<pre tabindex="0"><code>\a
 SELECT schemaname, tablename, tableowner FROM pg_tables LIMIT 5;
 schemaname|tablename|tableowner
 pg_catalog|pg_statistic|postgres
@@ -158,7 +158,7 @@ pg_catalog|pg_user_mapping|postgres
 (5 rows)
 Time: 1.400 ms
 </code></pre><h5 id="без-заголовков">Без заголовков</h5>
-<pre><code>\t
+<pre tabindex="0"><code>\t
 Tuples only is on.
 127.0.0.1 postgres@postgres=# SELECT schemaname, tablename, tableowner FROM pg_tables LIMIT 5;
 pg_catalog|pg_statistic|postgres
@@ -168,7 +168,7 @@ pg_catalog|pg_authid|postgres
 pg_catalog|pg_user_mapping|postgres
 Time: 1.326 ms
 </code></pre><h5 id="расширенныйвертикальный-вывод-столбца">Расширенный(вертикальный вывод столбца)</h5>
-<pre><code>\x
+<pre tabindex="0"><code>\x
 Expanded display is on.
 127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = 'pg_class';
 -[ RECORD 1 ]-----------
@@ -185,24 +185,23 @@ Time: 1.754 ms
 </code></pre><h5 id="взаимодействие-с-ос">Взаимодействие с ОС</h5>
 <ul>
 <li>Можно выполнять команды обычного shell
-<pre><code>\! whoami
+<pre tabindex="0"><code>\! whoami
 ixpectus
 </code></pre></li>
 <li>Установка переменной окружения
-<pre><code>=&gt; \setenv TEST Hello
+<pre tabindex="0"><code>=&gt; \setenv TEST Hello
 </code></pre></li>
 <li>Запись результатов вывода в файл
-<pre><code>\o some_file
+<pre tabindex="0"><code>\o some_file
 127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = 'pg_class';
 Time: 1.532 ms
 127.0.0.1 postgres@postgres=#
-</code></pre><p>На экран ничего не выведется данные запишутся в файл. Можно поменять разделители и получить csv файл</p>
-</li>
+</code></pre>На экран ничего не выведется данные запишутся в файл. Можно поменять разделители и получить csv файл</li>
 </ul>
 <h5 id="запуск-скриптов">Запуск скриптов</h5>
 <ul>
 <li>Как подготовить простой скрипт
-<pre><code>\t
+<pre tabindex="0"><code>\t
 Tuples only is off.
 127.0.0.1 postgres@postgres=# \a
 Output format is aligned.
@@ -215,7 +214,7 @@ Output format is unaligned.
 Time: 1.119 ms
 </code></pre></li>
 <li>В результате в файле <code>~/tmp/psql_script1</code> окажется набор sql запросов
-<pre><code>SELECT 'pg_statistic: '|| count(*) FROM pg_statistic;
+<pre tabindex="0"><code>SELECT 'pg_statistic: '|| count(*) FROM pg_statistic;
 SELECT 'pg_type: '|| count(*) FROM pg_type;
 SELECT 'pg_policy: '|| count(*) FROM pg_policy;
 </code></pre></li>
@@ -224,7 +223,7 @@ SELECT 'pg_policy: '|| count(*) FROM pg_policy;
 <li><code>\i ~/tmp/psql_script1</code> в запущенном psql</li>
 <li>подав на вход psql файл</li>
 </ul>
-<pre><code>  psql -h 127.0.0.1 -f ~/tmp/psql_script1
+<pre tabindex="0"><code>  psql -h 127.0.0.1 -f ~/tmp/psql_script1
        ?column?
   -------------------
    pg_statistic: 393
@@ -243,7 +242,7 @@ SELECT 'pg_policy: '|| count(*) FROM pg_policy;
   (1 row)
 
   Time: 0.220 ms
-</code></pre><p>Видно, что тут нет настроек <code>\t \a</code> и в заголовке выводится странная запись <code>?column?</code>, можно в начале скрипта добавить <code>\t \a </code></p>
+</code></pre>Видно, что тут нет настроек <code>\t \a</code> и в заголовке выводится странная запись <code>?column?</code>, можно в начале скрипта добавить <code>\t \a </code>
 <ul>
 <li>подать файл на вход можно другим синтаксисом ``psql -h 127.0.0.1 &lt; ~/tmp/psql_script1</li>
 </ul>
@@ -258,13 +257,12 @@ SELECT 'pg_policy: '|| count(*) FROM pg_policy;
 <li><code>SELECT now() AS curr_time \gset</code> можно результат запроса сразу установить в переменную
 <code>\echo :curr_time</code></li>
 <li>В переменную можно записать запрос и потом его выполнять
-<pre><code>\set top5 'SELECT tablename, pg_total_relation_size(schemaname||''.''||tablename) AS bytes FROM pg_tables ORDER BY bytes DESC LIMIT 5;'
+<pre tabindex="0"><code>\set top5 'SELECT tablename, pg_total_relation_size(schemaname||''.''||tablename) AS bytes FROM pg_tables ORDER BY bytes DESC LIMIT 5;'
 :top5
-</code></pre><p>Можно полезные запросы записывать в .psqlrc</p>
-</li>
+</code></pre>Можно полезные запросы записывать в .psqlrc</li>
 </ul>
 <h5 id="как-подключиться-к-базе-и-сделать-запрос">Как подключиться к базе и сделать запрос</h5>
-<pre><code>psql -h 127.0.0.1 -d test -c 'select count(*) from some_table;';
+<pre tabindex="0"><code>psql -h 127.0.0.1 -d test -c 'select count(*) from some_table;';
 </code></pre><ul>
 <li>Флаг <code>-c</code> обозначает команду, которую нужно выполнить</li>
 <li>Флаг <code>-d</code> обозначает базу, к которой нужно подключиться</li>

@@ -81,7 +81,7 @@
     <div class="content">
       <h2 id="упаковка-аргументов">Упаковка аргументов</h2>
 <p>Можно передать любое количество аргументов с помощью <code>...</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (...<span style="color:#a6e22e">numbers</span>) =&gt; {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (...<span style="color:#a6e22e">numbers</span>) =&gt; {
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">numbers</span>) {
     <span style="color:#a6e22e">result</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>;
@@ -89,22 +89,22 @@
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
 };
 </code></pre></div><p>Также можно и сделать распаковку аргументов</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">4</span>];
 <span style="color:#a6e22e">sum</span>(...<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// 12
 </span></code></pre></div><p>Это эквивалентно</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">2</span>]);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">numbers</span>[<span style="color:#ae81ff">2</span>]);
 </code></pre></div><h2 id="сокращенное-объявление-анонимных-функций">Сокращенное объявление анонимных функций</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
 </code></pre></div><p>Эта запись эквивалентна</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>};
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>};
 </code></pre></div><h2 id="деструктуризация-массивов-и-объектов">Деструктуризация массивов и объектов</h2>
 <p>В javascript есть конструкция для деструктуризации массива или объекта. Деструктуризация по сути это разложение массива или объекта на переменные</p>
 <h3 id="пример-деструктуризации-массива">Пример деструктуризации массива</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">30</span>];
 <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">var1</span>, <span style="color:#a6e22e">var2</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr2</span>;
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">var2</span>); <span style="color:#75715e">// выведет 3
 </span></code></pre></div><h3 id="пример-деструктуризации-объекта">Пример деструктуризации объекта</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">prop1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hiii&#34;</span>,
   <span style="color:#a6e22e">prop3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">33</span>,
 };
@@ -114,7 +114,7 @@
 <p>Деструктуризацию можно провести прямо в объявлении функции. Это довольно интересная особенность, которую можно использовать для уменьшения связности.
 К пример функция принимает объект из 10 элементов и явно в своем определении говорит, какие именно из полей будет использовать.</p>
 <h2 id="пример-для-объекта">Пример для объекта</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">prop1</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;hiii&#34;</span>,
   <span style="color:#a6e22e">prop3</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">33</span>,
 };
@@ -123,14 +123,14 @@
 <span style="color:#a6e22e">acceptFullObject</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// выведет { prop1: &#39;hiii&#39;, prop3: 33 }
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">acceptDestructuredObject</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// выведет 33
 </span></code></pre></div><h2 id="пример-для-массива">Пример для массива</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">acceptFullArr</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">arr</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">acceptDestructuredArr</span> <span style="color:#f92672">=</span> ([<span style="color:#a6e22e">var1</span>]) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">var1</span>);
 <span style="color:#a6e22e">acceptFullArr</span>(<span style="color:#a6e22e">arr</span>);<span style="color:#75715e">// выведет [1, 2, 3]
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">acceptDestructuredArr</span>(<span style="color:#a6e22e">arr</span>); <span style="color:#75715e">// выведет 1
 </span></code></pre></div><h2 id="filter-sort-map">filter, sort, map</h2>
 <h3 id="пример-использования-filter-и-sort">Пример использования filter и sort</h3>
-<pre><code>const users = [
+<pre tabindex="0"><code>const users = [
   { name: &quot;Tirion&quot;, birthday: &quot;Nov 19, 1988&quot; },
   { name: &quot;Sam&quot;, birthday: &quot;Nov 22, 1999&quot; },
   { name: &quot;Rob&quot;, birthday: &quot;Jan 11, 1975&quot; },
@@ -154,11 +154,11 @@ const takeOldest = (items, num) =&gt; {
 };
 console.log(takeOldest(users));
 </code></pre><h3 id="пример-использования-map">Пример использования map</h3>
-<pre><code>const items = [3, 4, 5, 7];
+<pre tabindex="0"><code>const items = [3, 4, 5, 7];
 const res = items.map((item) =&gt; item * 2);
 console.log(res);// [ 6, 8, 10, 14 ]
 </code></pre><h3 id="пример-использования-reduce">Пример использования reduce</h3>
-<pre><code>function groupBy(arr, fieldName) {
+<pre tabindex="0"><code>function groupBy(arr, fieldName) {
   return arr.reduce((acc, item) =&gt; {
     console.log(item);
     if (acc[item[fieldName]] == undefined) {

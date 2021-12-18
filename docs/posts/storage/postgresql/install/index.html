@@ -85,29 +85,29 @@
 <li><a href="https://edu.postgrespro.ru/dba1/dba1_01_tools_install.html">Делаю по инструкции</a></li>
 </ul>
 <h4 id="сам-процесс-установки">Сам процесс установки</h4>
-<pre><code>tar -xzf postgresql-10.0.tar.gz
+<pre tabindex="0"><code>tar -xzf postgresql-10.0.tar.gz
 cd ./postgresql-10.0.0
 ./configure
 </code></pre><p>С версией 10.0.0 возникла ошибка при установке</p>
-<pre><code>copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’
+<pre tabindex="0"><code>copy_fetch.c:161:1: error: conflicting types for ‘copy_file_range’
  copy_file_range(const char *path, off_t begin, off_t end, bool trunc)
 </code></pre><p>Взял версию 10.0.13. Всё установилось, но не был создан пользователь postgres, от имени которого должен запускаться сам postgres. Добавил его руками</p>
-<pre><code>sudo useradd postgres
+<pre tabindex="0"><code>sudo useradd postgres
 sudo passwd postgres
 sudo mkdir /home/postgres
 sudo chown postgres /home/postgres
 su postgres
 </code></pre><p>Последним шагом вошёл в систему от имени пользователя postgres и добавил в .bashrc</p>
-<pre><code>export PGDATA=&quot;/usr/local/psql/data&quot;
+<pre tabindex="0"><code>export PGDATA=&quot;/usr/local/psql/data&quot;
 export PATH=$PATH:/usr/local/pgsql/bin/;
 </code></pre><h5 id="добавление-psql-директории-для-хранения-данных">Добавление psql директории для хранения данных</h5>
-<pre><code>sudo mkdir /usr/local/psql/
+<pre tabindex="0"><code>sudo mkdir /usr/local/psql/
 sudo chown postgres /usr/local/psql/
 </code></pre><p>После добавление директории psql нужно выполнить от имени пользователя postgres <code>initdb -k</code></p>
 <h5 id="запуск-сервера">Запуск сервера</h5>
-<pre><code>pg_ctl -w -l /home/postgres/logfile -D /usr/local/psql/data start
+<pre tabindex="0"><code>pg_ctl -w -l /home/postgres/logfile -D /usr/local/psql/data start
 </code></pre><p>Postgresql стартовал</p>
-<pre><code>ps aux | grep postgres
+<pre tabindex="0"><code>ps aux | grep postgres
 ...
 postgres  102850  0.0  0.0 160184  2736 ?        Ss   10:44   0:00 postgres: checkpointer process
 postgres  102851  0.0  0.0 160184  5004 ?        Ss   10:44   0:00 postgres: writer process
@@ -116,25 +116,25 @@ postgres  102853  0.0  0.0 160596  5804 ?        Ss   10:44   0:00 postgres: aut
 postgres  102854  0.0  0.0  15132  2644 ?        Ss   10:44   0:00 postgres: stats collector process
 ...
 </code></pre><p>Но не удаётся подключится к нему</p>
-<pre><code>psql
+<pre tabindex="0"><code>psql
 psql: error: could not connect to server
 </code></pre><p>Попробовал скопировать конфиги и поменять <code>listen_addresses</code></p>
-<pre><code>sudo cp /usr/local/pgsql/share/postgresql.conf.sample /usr/local/pgsql/share/postgresql.conf
+<pre tabindex="0"><code>sudo cp /usr/local/pgsql/share/postgresql.conf.sample /usr/local/pgsql/share/postgresql.conf
 </code></pre><p>Нужно было указать host</p>
-<pre><code>psql -h 127.0.0.1
+<pre tabindex="0"><code>psql -h 127.0.0.1
 </code></pre><h5 id="установка-расширения-pgcrypto">Установка расширения pgcrypto</h5>
-<pre><code>cd ./postgresql-10.13/contrib/pgcrypto
+<pre tabindex="0"><code>cd ./postgresql-10.13/contrib/pgcrypto
 make 
 sudo make install
 </code></pre><p>Установка прошли успешно, проверяем установленные расширения</p>
-<pre><code>select * from pg_available_extensions;
+<pre tabindex="0"><code>select * from pg_available_extensions;
    name   | default_version | installed_version |           comment
 ----------+-----------------+-------------------+------------------------------
  plpgsql  | 1.0             | 1.0               | PL/pgSQL procedural language
  pgcrypto | 1.3             |                   | cryptographic functions
 (2 rows)
 </code></pre><h5 id="установка-всех-расширений-из-директории-contrib">Установка всех расширений из директории contrib</h5>
-<pre><code>cd ./postgresql-10.13/contrib/
+<pre tabindex="0"><code>cd ./postgresql-10.13/contrib/
 sudo make install
         name        | default_version | installed_version |                               comment
 --------------------+-----------------+-------------------+----------------------------------------------------------------------
@@ -161,7 +161,7 @@ sudo make install
  ...
 
 </code></pre><h5 id="остановка-сервера">Остановка сервера</h5>
-<pre><code>pg_ctl stop -m fast
+<pre tabindex="0"><code>pg_ctl stop -m fast
 </code></pre><p>Можно написать просто <code>pg_ctl stop</code>, по умолчанию режим остановки как раз буде fast.
 Режимы остановки</p>
 <ul>

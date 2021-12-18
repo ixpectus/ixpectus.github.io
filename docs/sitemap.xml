@@ -10,19 +10,37 @@
   </url><url>
     <loc>https://ixpectus.com/posts/linux/tools/</loc>
   </url><url>
+    <loc>https://ixpectus.com/tags/cli/</loc>
+    <lastmod>2021-12-18T22:25:15+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/</loc>
+    <lastmod>2021-12-18T22:25:15+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/linux/</loc>
+    <lastmod>2021-12-18T22:25:15+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/</loc>
+    <lastmod>2021-12-18T22:25:15+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/linux/tools/xsv/</loc>
+    <lastmod>2021-12-18T22:25:15+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/</loc>
+    <lastmod>2021-12-03T16:29:33+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/select/</loc>
+    <lastmod>2021-12-03T16:29:33+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/sql/</loc>
+    <lastmod>2021-12-03T16:29:33+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/sql/quieries/</loc>
+    <lastmod>2021-12-03T16:29:33+03:00</lastmod>
+  </url><url>
     <loc>https://ixpectus.com/tags/environment/</loc>
     <lastmod>2021-10-18T10:17:50+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/</loc>
-    <lastmod>2021-10-18T10:17:50+03:00</lastmod>
-  </url><url>
     <loc>https://ixpectus.com/tags/javascript/</loc>
-    <lastmod>2021-10-18T10:17:50+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/posts/</loc>
-    <lastmod>2021-10-18T10:17:50+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/tags/</loc>
     <lastmod>2021-10-18T10:17:50+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/posts/javascript/environment/</loc>
@@ -68,9 +86,6 @@
     <lastmod>2021-05-01T22:19:27+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/architecture/</loc>
-    <lastmod>2021-04-04T22:17:24+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/tags/linux/</loc>
     <lastmod>2021-04-04T22:17:24+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/network/</loc>
@@ -191,9 +206,6 @@
     <lastmod>2020-05-31T23:14:55+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/posts/administrate/networking/arp/</loc>
-    <lastmod>2020-05-31T15:25:35+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/tags/cli/</loc>
     <lastmod>2020-05-31T15:25:35+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/posts/linux/tools/dd/</loc>

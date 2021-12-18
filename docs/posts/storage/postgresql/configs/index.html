@@ -85,7 +85,7 @@
 </ul>
 <h4 id="посмотреть-настройки-конфигурационного-файла">Посмотреть настройки конфигурационного файла</h4>
 <p>Можно прямо в postgres, есть табличка, которая соответствует конфигурационному файлу</p>
-<pre><code>select * from pg_file_settings;
+<pre tabindex="0"><code>select * from pg_file_settings;
               sourcefile              | sourceline | seqno |            name            |      setting       | applied | error
 --------------------------------------+------------+-------+----------------------------+--------------------+---------+--------
  /usr/local/psql/data/postgresql.conf |         64 |     1 | max_connections            | 100                | t       | [NULL]
@@ -104,10 +104,10 @@
 <h3 id="где-посмотреть-конфигурационные-параметры-текущей-сессии">Где посмотреть конфигурационные параметры текущей сессии</h3>
 <ul>
 <li>Посмотреть все текущие настройки(там много всего)
-<pre><code>select * from pg_settings;
+<pre tabindex="0"><code>select * from pg_settings;
 </code></pre></li>
 <li>Узнать имя текущего конфигурационного файла
-<pre><code>select * from pg_settings where name='config_file';
+<pre tabindex="0"><code>select * from pg_settings where name='config_file';
 -[ RECORD 1 ]---+-------------------------------------------
 name            | config_file
 setting         | /usr/local/psql/data/postgresql.conf
@@ -126,7 +126,7 @@ reset_val       | /usr/local/psql/data/postgresql.conf
 sourcefile      | [NULL]
 sourceline      | [NULL]
 pending_restart | f
-</code></pre><p>Видим, что файл расположен в <code>/usr/local/psql/data/postgresql.conf</code></p>
+</code></pre>Видим, что файл расположен в <code>/usr/local/psql/data/postgresql.conf</code>
 <ul>
 <li><code>setting</code> текущее значение параметра</li>
 <li><code>reset_val</code> значение по умолчанию, если выполнить команду <code>reset</code> то оно будет установлено</li>
@@ -135,7 +135,7 @@ pending_restart | f
 </li>
 <li>Узнать значение параметра <code>work_mem</code> - максимальное количество памяти, которое может быть выделено для текущего процесса</li>
 </ul>
-<pre><code>select * from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>select * from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
 name            | work_mem
 setting         | 4096
@@ -166,7 +166,7 @@ pending_restart | f
 <ul>
 <li>Можно посмотреть список возможных значений параметра context</li>
 </ul>
-<pre><code>  select distinct context from pg_settings;
+<pre tabindex="0"><code>  select distinct context from pg_settings;
         context
   -------------------
    postmaster
@@ -189,42 +189,39 @@ pending_restart | f
 <h4 id="попробуем-изменить-значения-параметра-work_mem">Попробуем изменить значения параметра <code>work_mem</code></h4>
 <ul>
 <li>Изменим значение в конфигурационном файле
-<pre><code>work_mem = 24MB
+<pre tabindex="0"><code>work_mem = 24MB
 </code></pre></li>
 <li>Посмотрим значения в отображении <code>pg_file_settings</code>
-<pre><code>127.0.0.1 postgres@postgres=# select * from pg_file_settings where name='work_mem';
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_file_settings where name='work_mem';
               sourcefile              | sourceline | seqno |   name   | setting | applied | error
 --------------------------------------+------------+-------+----------+---------+---------+--------
  /usr/local/psql/data/postgresql.conf |        122 |     3 | work_mem | 24MB    | t       | [NULL]
 (1 row)
-</code></pre><p>Видим, что значение установлено</p>
-</li>
+</code></pre>Видим, что значение установлено</li>
 <li>Посмотрим значение в <code>pg_settings</code>
-<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]-
 setting | 4096
-</code></pre><p>Значение не поменялось</p>
-</li>
+</code></pre>Значение не поменялось</li>
 <li>Для того, чтобы изменить значение нужно выполнить
-<pre><code>select pg_reload_conf();
+<pre tabindex="0"><code>select pg_reload_conf();
 </code></pre></li>
 <li>Посмотрим на параметр
-<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]--
 setting | 24576
-</code></pre><p>Изменился!</p>
-</li>
+</code></pre>Изменился!</li>
 </ul>
 <h4 id="изменение-параметров-без-ручной-правки-конфигурационного-файла">Изменение параметров без ручной правки конфигурационного файла</h4>
 <p>Есть команда <code>ALTER SYSTEM</code>, которая позволяет изменить значение параметра прямо в sql. Будет создан новый конфигурационный файл <code>postgresql.auto.conf</code>, значения параметров там будут перекрывать значения в <code>postgresql.conf</code></p>
 <ul>
 <li>Изменим <code>work_mem</code>
-<pre><code>127.0.0.1 postgres@postgres=# alter system set work_mem to '10MB';
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# alter system set work_mem to '10MB';
 ALTER SYSTEM
 Time: 5.099 ms
 </code></pre></li>
 <li>Смотрим, не изменилось
-<pre><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]--
 setting | 24576
 </code></pre></li>
@@ -235,7 +232,7 @@ setting | 24576
 <ul>
 <li><code>SET work_mem to '26MB'</code></li>
 <li>Проверим, видим, что значение изменилось, и что источник ``
-<pre><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name='work_mem'\gx
 -[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
 name            | work_mem
 setting         | 26624
