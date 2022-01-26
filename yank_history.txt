@@ -1045,3 +1045,439 @@ summary: "dd умеет читать побайтово с устройства"
 
 - `-d` можно задать разделитель для csv файла, например `xsv -d ";"`
 
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+---
+title: "psql"
+date: 2020-06-17T10:34:36+03:00
+tags:
+  - postgresql
+  - psql
+summary: "Основные команды psql"
+---
+
+create table some_data
+(
+    id         bigint,
+    count      int, 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int, 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int, 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int, 
+);
+
+pg_size_pretty
+pg_size_pretty
+pg_size_pretty
+pg_size_pretty
+pg_size_pretty
+pg_size_pretty
+####
+####
+####
+####
+#### Шаг 1. Создание таблицы 
+
+#### Шаг 1. Создание таблицы 
+
+#### Шаг 1. Создание таблицы 
+
+#### Шаг 1. Создание таблицы 
+
+Размер таблицы
+```sql
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+```
+
+Размер таблицы
+```sql
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+```
+
+Размер таблицы
+```sql
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+```
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+create table some_data
+(
+    id         bigint,
+    count      int 
+);
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+#### Шаг 3. Многократные апдейты одной строки 
+
+idle in transaction
+idle in transaction
+idle in transaction
+idle in transaction
+idle in transaction
+idle in transaction
+idle in transaction
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+```bash
+ for i in {01..1000}; do psql -h 0.0.0.0 -d postgres -p 5433 -d some_db -c "update some_data set count=2;"; done
+```
+
+select
+  autovacuum_count,
+  last_autovacuum
+from
+  pg_stat_user_tables
+where
+  relname = 'some_data';
+
+select
+  autovacuum_count,
+  last_autovacuum
+from
+  pg_stat_user_tables
+where
+  relname = 'some_data';
+
+select
+  autovacuum_count,
+  last_autovacuum
+from
+  pg_stat_user_tables
+where
+  relname = 'some_data';
+
+select
+  autovacuum_count,
+  last_autovacuum
+from
+  pg_stat_user_tables
+where
+  relname = 'some_data';
+
+#### Шаг 4. Многократные апдейты одной строки c параллельно открытой транзакцией
+
+#### Шаг 4. Многократные апдейты одной строки c параллельно открытой транзакцией
+
+#### Шаг 4. Многократные апдейты одной строки c параллельно открытой транзакцией
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+
+```sql
+select
+  n_live_tup, /*актуальные строки*/
+  n_dead_tup  /*удаленные строки*/
+from
+  pg_stat_all_tables
+where
+  relname = 'some_data';
+```
+```
+ n_live_tup | n_dead_tup 
+------------+------------
+          1 |       1000
+```
+

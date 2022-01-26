@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Особенности MVCC в postgresql на простом примере | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.com/posts/storage/postgresql/mvccinaction/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.com">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/postgresql/">#postgresql</a>
+
+
+
+  
+  | <a class="subtitle is-6" href="/tags/psql/">#psql</a>
+  
+  | <a class="subtitle is-6" href="/tags/experiments/">#experiments</a>
+  
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">January 25, 2022</h2>
+    <h1 class="title">Особенности MVCC в postgresql на простом примере</h1>
+    
+    <div class="content">
+      <h3 id="экспериментируем-с-mvcc-в-postgresql">Экспериментируем с mvcc в postgresql</h3>
+<h4 id="шаг-1-создание-таблицы">Шаг 1. Создание таблицы</h4>
+<p>Создаём таблицу</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> some_data
+(
+    id         bigint,
+    <span style="color:#66d9ef">count</span>      int 
+);
+</code></pre></div><p>Размер таблицы</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
+</code></pre></div><p>Результат</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> pg_size_pretty                
+<span style="color:#75715e">---------------- 
+</span><span style="color:#75715e"></span> <span style="color:#ae81ff">0</span> bytes         
+</code></pre></div><h4 id="шаг-2-создание-записи">Шаг 2. Создание записи</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> some_data(id, <span style="color:#66d9ef">count</span>) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
+</code></pre></div><p>Размер таблицы</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
+</code></pre></div><p>Результат</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> pg_size_pretty 
+<span style="color:#75715e">----------------
+</span><span style="color:#75715e"></span> <span style="color:#ae81ff">8192</span> bytes
+</code></pre></div><h4 id="шаг-3-многократные-апдейты-одной-строки">Шаг 3. Многократные апдейты одной строки</h4>
+<p>В цикле запускаем обновление строки</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
+</code></pre></div><p>Проверяем размер таблицы</p>
+<pre tabindex="0"><code> pg_size_pretty 
+----------------
+ 8192 bytes 
+</code></pre><p>Получается размер таблицы не изменился, хотя согласно модели каждый запрос <code>update</code> должен приводить к insert-у новой записи, и delete старой.<br>
+Если размер вообще не изменился, значит должен был работать автовакуум</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
+  autovacuum_count,
+  last_autovacuum
+<span style="color:#66d9ef">from</span>
+  pg_stat_user_tables
+<span style="color:#66d9ef">where</span>
+  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> autovacuum_count <span style="color:#f92672">|</span> last_autovacuum 
+<span style="color:#75715e">------------------+-----------------
+</span><span style="color:#75715e"></span>                <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> 
+</code></pre></div><p>Но автовакуум не работал, видимо у postgres есть оптимизации на этот случай</p>
+<h4 id="шаг-4-многократные-апдейты-одной-строки-c-параллельно-открытой-транзакцией">Шаг 4. Многократные апдейты одной строки c параллельно открытой транзакцией</h4>
+<p>Открываем транзакцию</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">begin</span> <span style="color:#66d9ef">transaction</span>;
+</code></pre></div><p>Проверяем количество открытых транзакций</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> 
+    pid
+    ,datname
+    ,usename
+    ,application_name
+    ,<span style="color:#66d9ef">state</span>
+<span style="color:#66d9ef">FROM</span> pg_stat_activity <span style="color:#66d9ef">where</span> datname<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;some_db&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  pid  <span style="color:#f92672">|</span>     datname     <span style="color:#f92672">|</span> usename  <span style="color:#f92672">|</span> application_name <span style="color:#f92672">|</span>        <span style="color:#66d9ef">state</span>        
+<span style="color:#75715e">-------+-----------------+----------+------------------+---------------------
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">105</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> idle <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">transaction</span>
+ <span style="color:#ae81ff">37870</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> active
+</code></pre></div><p>Здесь видно, что появился процесс со статусом <code>idle in transaction</code> - транзакция открыта, но запросов не идёт.<br>
+Посмотрим номер транзакции в открытой транзакции</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> txid_current();
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> some_db<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> txid_current();
+ txid_current                            
+<span style="color:#75715e">--------------                           
+</span><span style="color:#75715e"></span>        <span style="color:#ae81ff">42600</span>                            
+</code></pre></div><p>Если повторить запрос многократно номер у текущей транзакции не изменится.
+Снова запускаем апдейт много раз</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
+</code></pre></div><p>Проверяем размер</p>
+<pre tabindex="0"><code>SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+</code></pre><pre tabindex="0"><code> pg_size_pretty 
+----------------
+ 80 kB
+</code></pre><p>И вот тут уже всё сработало ожидаемо, из-за открытой транзакции таблица выросла.<br>
+Когда открыта висящая транзакция <code>autovacuum</code> фактически не работает, он приходит и видит, что есть эта старая транзакция и ничего не делает.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
+  autovacuum_count,
+  last_autovacuum
+<span style="color:#66d9ef">from</span>
+  pg_stat_user_tables
+<span style="color:#66d9ef">where</span>
+  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</code></pre></div><pre tabindex="0"><code> autovacuum_count |        last_autovacuum        
+------------------+-------------------------------
+               16 | 2022-01-25 22:22:13.330422+03
+</code></pre><p>Тут видно, что autovacuum ответственно приходит, но без толку.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
+  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
+  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
+<span style="color:#66d9ef">from</span>
+  pg_stat_all_tables
+<span style="color:#66d9ef">where</span>
+  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
+<span style="color:#75715e">------------+------------
+</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">1000</span>
+</code></pre></div><p>Тут видно, что актуальная запись 1 и 1000 мертвых(уже удаленных)</p>
+<h4 id="шаг-5-закрытие-висящей-транзакции">Шаг 5. Закрытие висящей транзакции</h4>
+<p>Делаем <code>Commit;</code> в висящей транзакции<br>
+Как только придёт autovacuum, <code>n_dead_tup</code> обнулятся</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
+  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
+  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
+<span style="color:#66d9ef">from</span>
+  pg_stat_all_tables
+<span style="color:#66d9ef">where</span>
+  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
+<span style="color:#75715e">------------+------------
+</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">0</span>
+</code></pre></div><p>А вот размер таблицы останется таким же, размеров в 80кб</p>
+<h4 id="мораль">Мораль</h4>
+<ul>
+<li>Когда висят долгие транзакции autovacuum фактически не работает</li>
+<li>Когда autovacuum не работает
+<ul>
+<li>для каждого апдейта создаётся новая запись,</li>
+<li>старая не помечается удаленной и не может быть занята новыми данными, так как есть клиенты со старым id транзакций</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

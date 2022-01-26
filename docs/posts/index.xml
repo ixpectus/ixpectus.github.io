@@ -5,7 +5,7 @@
     <link>https://ixpectus.com/posts/</link>
     <description>Recent content in posts on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Dec 2021 16:29:33 +0300</lastBuildDate><atom:link href="https://ixpectus.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 19:18:38 +0300</lastBuildDate><atom:link href="https://ixpectus.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Запросы в sql</title>
       <link>https://ixpectus.com/posts/sql/quieries/</link>
@@ -13,6 +13,36 @@
       
       <guid>https://ixpectus.com/posts/sql/quieries/</guid>
       <description>Полезные приемы в sql запросах</description>
+    </item>
+    
+    <item>
+      <title>Заметки с курсов хекслета по javascript</title>
+      <link>https://ixpectus.com/posts/programming/inversion/</link>
+      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/inversion/</guid>
+      <description>Инверсия зависимостей Зависимости передаются на вход в функцию или объект, в котором они необходимы. Помимо всего прочего это облегчит тестирование.
+Может быть так, что с точки зрения бизнес логики зависимость передавать и не надо, к примеру в может быть обращение к системной функции определения текущего времени.
+Но это может существенно затруднить написание тестов и можно передавать текущее время на вход функции.
+Помеченные данные В курсе хекслет &amp;ldquo;Программирование, управляемое данными&amp;rdquo; на базе пар рассматривают разные вещи</description>
+    </item>
+    
+    <item>
+      <title>Vim Tips после vimconf 2021</title>
+      <link>https://ixpectus.com/posts/vim/tips/</link>
+      <pubDate>Thu, 04 Nov 2021 21:29:27 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/vim/tips/</guid>
+      <description>Полезные вещи в vim после vimconf 2021</description>
+    </item>
+    
+    <item>
+      <title>Абстракции</title>
+      <link>https://ixpectus.com/posts/programming/abstractions/</link>
+      <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/abstractions/</guid>
+      <description>Немного об абстракциях</description>
     </item>
     
     <item>

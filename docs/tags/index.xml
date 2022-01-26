@@ -5,7 +5,34 @@
     <link>https://ixpectus.com/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 18 Dec 2021 22:25:15 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 19:18:38 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>experiments</title>
+      <link>https://ixpectus.com/tags/experiments/</link>
+      <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://ixpectus.com/tags/postgresql/</link>
+      <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psql</title>
+      <link>https://ixpectus.com/tags/psql/</link>
+      <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/psql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>cli</title>
       <link>https://ixpectus.com/tags/cli/</link>
@@ -43,6 +70,60 @@
     </item>
     
     <item>
+      <title>hexlet</title>
+      <link>https://ixpectus.com/tags/hexlet/</link>
+      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/hexlet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>inversion</title>
+      <link>https://ixpectus.com/tags/inversion/</link>
+      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/inversion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://ixpectus.com/tags/programming/</link>
+      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tagged data</title>
+      <link>https://ixpectus.com/tags/tagged-data/</link>
+      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/tagged-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://ixpectus.com/tags/vim/</link>
+      <pubDate>Thu, 04 Nov 2021 21:29:27 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>abstractions</title>
+      <link>https://ixpectus.com/tags/abstractions/</link>
+      <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/abstractions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>environment</title>
       <link>https://ixpectus.com/tags/environment/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
@@ -66,15 +147,6 @@
       <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://ixpectus.com/tags/programming/</link>
-      <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/programming/</guid>
       <description></description>
     </item>
     
@@ -147,15 +219,6 @@
       <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/dns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>postgresql</title>
-      <link>https://ixpectus.com/tags/postgresql/</link>
-      <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/postgresql/</guid>
       <description></description>
     </item>
     
@@ -255,15 +318,6 @@
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/configs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>psql</title>
-      <link>https://ixpectus.com/tags/psql/</link>
-      <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/psql/</guid>
       <description></description>
     </item>
     
