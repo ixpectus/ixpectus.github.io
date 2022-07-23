@@ -84,114 +84,114 @@
       <h3 id="экспериментируем-с-mvcc-в-postgresql">Экспериментируем с mvcc в postgresql</h3>
 <h4 id="шаг-1-создание-таблицы">Шаг 1. Создание таблицы</h4>
 <p>Создаём таблицу</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> some_data
-(
-    id         bigint,
-    <span style="color:#66d9ef">count</span>      int 
-);
-</code></pre></div><p>Размер таблицы</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
-</code></pre></div><p>Результат</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> pg_size_pretty                
-<span style="color:#75715e">---------------- 
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">0</span> bytes         
-</code></pre></div><h4 id="шаг-2-создание-записи">Шаг 2. Создание записи</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> some_data(id, <span style="color:#66d9ef">count</span>) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
-</code></pre></div><p>Размер таблицы</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
-</code></pre></div><p>Результат</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> pg_size_pretty 
-<span style="color:#75715e">----------------
-</span><span style="color:#75715e"></span> <span style="color:#ae81ff">8192</span> bytes
-</code></pre></div><h4 id="шаг-3-многократные-апдейты-одной-строки">Шаг 3. Многократные апдейты одной строки</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> some_data
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    id         bigint,
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">count</span>      int 
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Размер таблицы</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
+</span></span></code></pre></div><p>Результат</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> pg_size_pretty                
+</span></span><span style="display:flex;"><span><span style="color:#75715e">---------------- 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">0</span> bytes         
+</span></span></code></pre></div><h4 id="шаг-2-создание-записи">Шаг 2. Создание записи</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> some_data(id, <span style="color:#66d9ef">count</span>) <span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>);
+</span></span></code></pre></div><p>Размер таблицы</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> pg_size_pretty( pg_total_relation_size(<span style="color:#e6db74">&#39;some_data&#39;</span>) );
+</span></span></code></pre></div><p>Результат</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> pg_size_pretty 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span> <span style="color:#ae81ff">8192</span> bytes
+</span></span></code></pre></div><h4 id="шаг-3-многократные-апдейты-одной-строки">Шаг 3. Многократные апдейты одной строки</h4>
 <p>В цикле запускаем обновление строки</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
-</code></pre></div><p>Проверяем размер таблицы</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Проверяем размер таблицы</p>
 <pre tabindex="0"><code> pg_size_pretty 
 ----------------
  8192 bytes 
 </code></pre><p>Получается размер таблицы не изменился, хотя согласно модели каждый запрос <code>update</code> должен приводить к insert-у новой записи, и delete старой.<br>
 Если размер вообще не изменился, значит должен был работать автовакуум</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
-  autovacuum_count,
-  last_autovacuum
-<span style="color:#66d9ef">from</span>
-  pg_stat_user_tables
-<span style="color:#66d9ef">where</span>
-  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> autovacuum_count <span style="color:#f92672">|</span> last_autovacuum 
-<span style="color:#75715e">------------------+-----------------
-</span><span style="color:#75715e"></span>                <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> 
-</code></pre></div><p>Но автовакуум не работал, видимо у postgres есть оптимизации на этот случай</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>  autovacuum_count,
+</span></span><span style="display:flex;"><span>  last_autovacuum
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span>
+</span></span><span style="display:flex;"><span>  pg_stat_user_tables
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> autovacuum_count <span style="color:#f92672">|</span> last_autovacuum 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------------+-----------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> 
+</span></span></code></pre></div><p>Но автовакуум не работал, видимо у postgres есть оптимизации на этот случай</p>
 <h4 id="шаг-4-многократные-апдейты-одной-строки-c-параллельно-открытой-транзакцией">Шаг 4. Многократные апдейты одной строки c параллельно открытой транзакцией</h4>
 <p>Открываем транзакцию</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">begin</span> <span style="color:#66d9ef">transaction</span>;
-</code></pre></div><p>Проверяем количество открытых транзакций</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> 
-    pid
-    ,datname
-    ,usename
-    ,application_name
-    ,<span style="color:#66d9ef">state</span>
-<span style="color:#66d9ef">FROM</span> pg_stat_activity <span style="color:#66d9ef">where</span> datname<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;some_db&#39;</span>;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">  pid  <span style="color:#f92672">|</span>     datname     <span style="color:#f92672">|</span> usename  <span style="color:#f92672">|</span> application_name <span style="color:#f92672">|</span>        <span style="color:#66d9ef">state</span>        
-<span style="color:#75715e">-------+-----------------+----------+------------------+---------------------
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">105</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> idle <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">transaction</span>
- <span style="color:#ae81ff">37870</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> active
-</code></pre></div><p>Здесь видно, что появился процесс со статусом <code>idle in transaction</code> - транзакция открыта, но запросов не идёт.<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">begin</span> <span style="color:#66d9ef">transaction</span>;
+</span></span></code></pre></div><p>Проверяем количество открытых транзакций</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span>    pid
+</span></span><span style="display:flex;"><span>    ,datname
+</span></span><span style="display:flex;"><span>    ,usename
+</span></span><span style="display:flex;"><span>    ,application_name
+</span></span><span style="display:flex;"><span>    ,<span style="color:#66d9ef">state</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> pg_stat_activity <span style="color:#66d9ef">where</span> datname<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;some_db&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  pid  <span style="color:#f92672">|</span>     datname     <span style="color:#f92672">|</span> usename  <span style="color:#f92672">|</span> application_name <span style="color:#f92672">|</span>        <span style="color:#66d9ef">state</span>        
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-------+-----------------+----------+------------------+---------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>   <span style="color:#ae81ff">105</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> idle <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">transaction</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">37870</span> <span style="color:#f92672">|</span> assistant_local <span style="color:#f92672">|</span> postgres <span style="color:#f92672">|</span> psql             <span style="color:#f92672">|</span> active
+</span></span></code></pre></div><p>Здесь видно, что появился процесс со статусом <code>idle in transaction</code> - транзакция открыта, но запросов не идёт.<br>
 Посмотрим номер транзакции в открытой транзакции</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> txid_current();
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> some_db<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> txid_current();
- txid_current                            
-<span style="color:#75715e">--------------                           
-</span><span style="color:#75715e"></span>        <span style="color:#ae81ff">42600</span>                            
-</code></pre></div><p>Если повторить запрос многократно номер у текущей транзакции не изменится.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> txid_current();
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> some_db<span style="color:#f92672">=#</span> <span style="color:#66d9ef">select</span> txid_current();
+</span></span><span style="display:flex;"><span> txid_current                            
+</span></span><span style="display:flex;"><span><span style="color:#75715e">--------------                           
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#ae81ff">42600</span>                            
+</span></span></code></pre></div><p>Если повторить запрос многократно номер у текущей транзакции не изменится.
 Снова запускаем апдейт много раз</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
-</code></pre></div><p>Проверяем размер</p>
-<pre tabindex="0"><code>SELECT pg_size_pretty( pg_total_relation_size('some_data') );
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>01..1000<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> psql -h 0.0.0.0 -d postgres -p <span style="color:#ae81ff">5433</span> -d some_db -c <span style="color:#e6db74">&#34;update some_data set count=2;&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Проверяем размер</p>
+<pre tabindex="0"><code>SELECT pg_size_pretty( pg_total_relation_size(&#39;some_data&#39;) );
 </code></pre><pre tabindex="0"><code> pg_size_pretty 
 ----------------
  80 kB
 </code></pre><p>И вот тут уже всё сработало ожидаемо, из-за открытой транзакции таблица выросла.<br>
 Когда открыта висящая транзакция <code>autovacuum</code> фактически не работает, он приходит и видит, что есть эта старая транзакция и ничего не делает.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
-  autovacuum_count,
-  last_autovacuum
-<span style="color:#66d9ef">from</span>
-  pg_stat_user_tables
-<span style="color:#66d9ef">where</span>
-  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
-</code></pre></div><pre tabindex="0"><code> autovacuum_count |        last_autovacuum        
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>  autovacuum_count,
+</span></span><span style="display:flex;"><span>  last_autovacuum
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span>
+</span></span><span style="display:flex;"><span>  pg_stat_user_tables
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</span></span></code></pre></div><pre tabindex="0"><code> autovacuum_count |        last_autovacuum        
 ------------------+-------------------------------
                16 | 2022-01-25 22:22:13.330422+03
 </code></pre><p>Тут видно, что autovacuum ответственно приходит, но без толку.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
-  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
-  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
-<span style="color:#66d9ef">from</span>
-  pg_stat_all_tables
-<span style="color:#66d9ef">where</span>
-  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
-<span style="color:#75715e">------------+------------
-</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">1000</span>
-</code></pre></div><p>Тут видно, что актуальная запись 1 и 1000 мертвых(уже удаленных)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
+</span></span><span style="display:flex;"><span>  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span>
+</span></span><span style="display:flex;"><span>  pg_stat_all_tables
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------+------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">1000</span>
+</span></span></code></pre></div><p>Тут видно, что актуальная запись 1 и 1000 мертвых(уже удаленных)</p>
 <h4 id="шаг-5-закрытие-висящей-транзакции">Шаг 5. Закрытие висящей транзакции</h4>
 <p>Делаем <code>Commit;</code> в висящей транзакции<br>
 Как только придёт autovacuum, <code>n_dead_tup</code> обнулятся</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span>
-  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
-  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
-<span style="color:#66d9ef">from</span>
-  pg_stat_all_tables
-<span style="color:#66d9ef">where</span>
-  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
-<span style="color:#75715e">------------+------------
-</span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">0</span>
-</code></pre></div><p>А вот размер таблицы останется таким же, размеров в 80кб</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>  n_live_tup, <span style="color:#75715e">/*актуальные строки*/</span>
+</span></span><span style="display:flex;"><span>  n_dead_tup  <span style="color:#75715e">/*удаленные строки*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span>
+</span></span><span style="display:flex;"><span>  pg_stat_all_tables
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>  relname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;some_data&#39;</span>;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span> n_live_tup <span style="color:#f92672">|</span> n_dead_tup 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">------------+------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>       <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>А вот размер таблицы останется таким же, размеров в 80кб</p>
 <h4 id="мораль">Мораль</h4>
 <ul>
 <li>Когда висят долгие транзакции autovacuum фактически не работает</li>

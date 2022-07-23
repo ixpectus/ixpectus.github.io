@@ -107,13 +107,13 @@
 <pre tabindex="0"><code>select * from pg_settings;
 </code></pre></li>
 <li>Узнать имя текущего конфигурационного файла
-<pre tabindex="0"><code>select * from pg_settings where name='config_file';
+<pre tabindex="0"><code>select * from pg_settings where name=&#39;config_file&#39;;
 -[ RECORD 1 ]---+-------------------------------------------
 name            | config_file
 setting         | /usr/local/psql/data/postgresql.conf
 unit            | [NULL]
 category        | File Locations
-short_desc      | Sets the server's main configuration file.
+short_desc      | Sets the server&#39;s main configuration file.
 extra_desc      | [NULL]
 context         | postmaster
 vartype         | string
@@ -135,7 +135,7 @@ pending_restart | f
 </li>
 <li>Узнать значение параметра <code>work_mem</code> - максимальное количество памяти, которое может быть выделено для текущего процесса</li>
 </ul>
-<pre tabindex="0"><code>select * from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>select * from pg_settings where name=&#39;work_mem&#39;\gx
 -[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
 name            | work_mem
 setting         | 4096
@@ -192,14 +192,14 @@ pending_restart | f
 <pre tabindex="0"><code>work_mem = 24MB
 </code></pre></li>
 <li>Посмотрим значения в отображении <code>pg_file_settings</code>
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_file_settings where name='work_mem';
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_file_settings where name=&#39;work_mem&#39;;
               sourcefile              | sourceline | seqno |   name   | setting | applied | error
 --------------------------------------+------------+-------+----------+---------+---------+--------
  /usr/local/psql/data/postgresql.conf |        122 |     3 | work_mem | 24MB    | t       | [NULL]
 (1 row)
 </code></pre>Видим, что значение установлено</li>
 <li>Посмотрим значение в <code>pg_settings</code>
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name=&#39;work_mem&#39;\gx
 -[ RECORD 1 ]-
 setting | 4096
 </code></pre>Значение не поменялось</li>
@@ -207,7 +207,7 @@ setting | 4096
 <pre tabindex="0"><code>select pg_reload_conf();
 </code></pre></li>
 <li>Посмотрим на параметр
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name=&#39;work_mem&#39;\gx
 -[ RECORD 1 ]--
 setting | 24576
 </code></pre>Изменился!</li>
@@ -216,12 +216,12 @@ setting | 24576
 <p>Есть команда <code>ALTER SYSTEM</code>, которая позволяет изменить значение параметра прямо в sql. Будет создан новый конфигурационный файл <code>postgresql.auto.conf</code>, значения параметров там будут перекрывать значения в <code>postgresql.conf</code></p>
 <ul>
 <li>Изменим <code>work_mem</code>
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# alter system set work_mem to '10MB';
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# alter system set work_mem to &#39;10MB&#39;;
 ALTER SYSTEM
 Time: 5.099 ms
 </code></pre></li>
 <li>Смотрим, не изменилось
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select setting from pg_settings where name=&#39;work_mem&#39;\gx
 -[ RECORD 1 ]--
 setting | 24576
 </code></pre></li>
@@ -232,7 +232,7 @@ setting | 24576
 <ul>
 <li><code>SET work_mem to '26MB'</code></li>
 <li>Проверим, видим, что значение изменилось, и что источник ``
-<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name='work_mem'\gx
+<pre tabindex="0"><code>127.0.0.1 postgres@postgres=# select * from pg_settings where name=&#39;work_mem&#39;\gx
 -[ RECORD 1 ]---+----------------------------------------------------------------------------------------------------------------------
 name            | work_mem
 setting         | 26624

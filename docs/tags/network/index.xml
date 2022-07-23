@@ -5,7 +5,16 @@
     <link>https://ixpectus.com/tags/network/</link>
     <description>Recent content in network on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 04 Apr 2021 22:17:24 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 20:31:18 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Websocket vs Http</title>
+      <link>https://ixpectus.com/posts/programming/network/websocket-vs-http/</link>
+      <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/network/websocket-vs-http/</guid>
+      <description>Когда стоит использовать http, а когда websocket</description>
+    </item>
+    
     <item>
       <title>Процесс загрузки котика из интернета в очень общих словах</title>
       <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>

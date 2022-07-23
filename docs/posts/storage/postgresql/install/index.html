@@ -98,7 +98,7 @@ sudo mkdir /home/postgres
 sudo chown postgres /home/postgres
 su postgres
 </code></pre><p>Последним шагом вошёл в систему от имени пользователя postgres и добавил в .bashrc</p>
-<pre tabindex="0"><code>export PGDATA=&quot;/usr/local/psql/data&quot;
+<pre tabindex="0"><code>export PGDATA=&#34;/usr/local/psql/data&#34;
 export PATH=$PATH:/usr/local/pgsql/bin/;
 </code></pre><h5 id="добавление-psql-директории-для-хранения-данных">Добавление psql директории для хранения данных</h5>
 <pre tabindex="0"><code>sudo mkdir /usr/local/psql/
@@ -159,7 +159,6 @@ sudo make install
  btree_gist         | 1.5             |                   | support for indexing common datatypes in GiST
  ltree
  ...
-
 </code></pre><h5 id="остановка-сервера">Остановка сервера</h5>
 <pre tabindex="0"><code>pg_ctl stop -m fast
 </code></pre><p>Можно написать просто <code>pg_ctl stop</code>, по умолчанию режим остановки как раз буде fast.

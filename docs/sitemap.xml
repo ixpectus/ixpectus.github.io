@@ -10,10 +10,40 @@
   </url><url>
     <loc>https://ixpectus.com/posts/linux/tools/</loc>
   </url><url>
-    <loc>https://ixpectus.com/tags/experiments/</loc>
-    <lastmod>2022-01-25T19:18:38+03:00</lastmod>
-  </url><url>
     <loc>https://ixpectus.com/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/programming/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/system-design/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/programming/system-design-twitter/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/</loc>
+    <lastmod>2022-01-30T23:06:48+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/http/</loc>
+    <lastmod>2022-01-28T20:31:18+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/network/</loc>
+    <lastmod>2022-01-28T20:31:18+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/programming/system-design-bit-ly/</loc>
+    <lastmod>2022-01-28T20:31:18+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/websocket/</loc>
+    <lastmod>2022-01-28T20:31:18+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/programming/network/websocket-vs-http/</loc>
+    <lastmod>2022-01-28T20:31:18+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/tags/experiments/</loc>
     <lastmod>2022-01-25T19:18:38+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/postgresql/</loc>
@@ -22,13 +52,7 @@
     <loc>https://ixpectus.com/posts/storage/postgresql/</loc>
     <lastmod>2022-01-25T19:18:38+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/posts/</loc>
-    <lastmod>2022-01-25T19:18:38+03:00</lastmod>
-  </url><url>
     <loc>https://ixpectus.com/tags/psql/</loc>
-    <lastmod>2022-01-25T19:18:38+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/tags/</loc>
     <lastmod>2022-01-25T19:18:38+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/posts/storage/postgresql/mvccinaction/</loc>
@@ -56,9 +80,6 @@
     <lastmod>2021-11-09T09:18:26+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/inversion/</loc>
-    <lastmod>2021-11-09T09:18:26+03:00</lastmod>
-  </url><url>
-    <loc>https://ixpectus.com/tags/programming/</loc>
     <lastmod>2021-11-09T09:18:26+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/tagged-data/</loc>
@@ -127,9 +148,6 @@
     <loc>https://ixpectus.com/tags/architecture/</loc>
     <lastmod>2021-04-04T22:17:24+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/tags/network/</loc>
-    <lastmod>2021-04-04T22:17:24+03:00</lastmod>
-  </url><url>
     <loc>https://ixpectus.com/posts/administrate/networking/</loc>
     <lastmod>2021-04-04T22:17:24+03:00</lastmod>
   </url><url>
@@ -148,16 +166,16 @@
     <loc>https://ixpectus.com/posts/administrate/networking/tcp/</loc>
     <lastmod>2021-04-03T21:46:58+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/posts/administrate/networking/bgp/</loc>
-    <lastmod>2021-04-03T21:40:44+03:00</lastmod>
-  </url><url>
     <loc>https://ixpectus.com/tags/bgp/</loc>
     <lastmod>2021-04-03T21:40:44+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/posts/administrate/networking/dns/</loc>
-    <lastmod>2021-04-03T21:25:04+03:00</lastmod>
+    <loc>https://ixpectus.com/posts/administrate/networking/bgp/</loc>
+    <lastmod>2021-04-03T21:40:44+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/dns/</loc>
+    <lastmod>2021-04-03T21:25:04+03:00</lastmod>
+  </url><url>
+    <loc>https://ixpectus.com/posts/administrate/networking/dns/</loc>
     <lastmod>2021-04-03T21:25:04+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</loc>
@@ -211,10 +229,10 @@
     <loc>https://ixpectus.com/posts/storage/postgresql/isolation/</loc>
     <lastmod>2020-06-21T14:06:19+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/posts/storage/postgresql/basestructure/</loc>
+    <loc>https://ixpectus.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</loc>
     <lastmod>2020-06-20T22:50:08+03:00</lastmod>
   </url><url>
-    <loc>https://ixpectus.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</loc>
+    <loc>https://ixpectus.com/posts/storage/postgresql/basestructure/</loc>
     <lastmod>2020-06-20T22:50:08+03:00</lastmod>
   </url><url>
     <loc>https://ixpectus.com/tags/configs/</loc>

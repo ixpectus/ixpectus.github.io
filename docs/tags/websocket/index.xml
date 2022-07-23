@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>websocket on ixpectus notes</title>
+    <link>https://ixpectus.com/tags/websocket/</link>
+    <description>Recent content in websocket on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Jan 2022 20:31:18 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Websocket vs Http</title>
+      <link>https://ixpectus.com/posts/programming/network/websocket-vs-http/</link>
+      <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/posts/programming/network/websocket-vs-http/</guid>
+      <description>Когда стоит использовать http, а когда websocket</description>
+    </item>
+    
+  </channel>
+</rss>

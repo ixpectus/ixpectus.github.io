@@ -99,7 +99,7 @@
 <li><code>\df</code>  функции, например <code>\df pg_catalog.*</code></li>
 <li><code>\sf</code> показывает тело функции
 <pre tabindex="0"><code>\sf pg_catalog.xmlexists
-CREATE OR REPLACE FUNCTION pg_catalog.&quot;xmlexists&quot;(text, xml)
+CREATE OR REPLACE FUNCTION pg_catalog.&#34;xmlexists&#34;(text, xml)
  RETURNS boolean
  LANGUAGE internal
  IMMUTABLE PARALLEL SAFE STRICT
@@ -116,16 +116,16 @@ AS $function$xmlexists$function$
 </code></pre><p>Например</p>
 <pre tabindex="0"><code>127.0.0.1 postgres@test=# \dt
 ********* QUERY **********
-SELECT n.nspname as &quot;Schema&quot;,
-  c.relname as &quot;Name&quot;,
-  CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'i' THEN 'index' WHEN 'S' THEN 'sequence' WHEN 's' THEN 'special' WHEN 'f' THEN 'foreign table' WHEN 'p' THEN 'partitioned table' WHEN 'I' THEN 'partitioned index' END as &quot;Type&quot;,
-  pg_catalog.pg_get_userbyid(c.relowner) as &quot;Owner&quot;
+SELECT n.nspname as &#34;Schema&#34;,
+  c.relname as &#34;Name&#34;,
+  CASE c.relkind WHEN &#39;r&#39; THEN &#39;table&#39; WHEN &#39;v&#39; THEN &#39;view&#39; WHEN &#39;m&#39; THEN &#39;materialized view&#39; WHEN &#39;i&#39; THEN &#39;index&#39; WHEN &#39;S&#39; THEN &#39;sequence&#39; WHEN &#39;s&#39; THEN &#39;special&#39; WHEN &#39;f&#39; THEN &#39;foreign table&#39; WHEN &#39;p&#39; THEN &#39;partitioned table&#39; WHEN &#39;I&#39; THEN &#39;partitioned index&#39; END as &#34;Type&#34;,
+  pg_catalog.pg_get_userbyid(c.relowner) as &#34;Owner&#34;
 FROM pg_catalog.pg_class c
      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
-WHERE c.relkind IN ('r','p','')
-      AND n.nspname &lt;&gt; 'pg_catalog'
-      AND n.nspname &lt;&gt; 'information_schema'
-      AND n.nspname !~ '^pg_toast'
+WHERE c.relkind IN (&#39;r&#39;,&#39;p&#39;,&#39;&#39;)
+      AND n.nspname &lt;&gt; &#39;pg_catalog&#39;
+      AND n.nspname &lt;&gt; &#39;information_schema&#39;
+      AND n.nspname !~ &#39;^pg_toast&#39;
   AND pg_catalog.pg_table_is_visible(c.oid)
 ORDER BY 1,2;
 **************************
@@ -135,16 +135,16 @@ ORDER BY 1,2;
 <p>Так можно получить список всех колонок из всех таблиц</p>
 <pre tabindex="0"><code> select relname,attname from pg_class pc join pg_attribute pa on pa.attrelid=pc.oid;
 </code></pre><p>Так можно получить все несистемные схемы</p>
-<pre tabindex="0"><code> select nspname from pg_namespace where nspname !~ '^(pg|information).\*';
+<pre tabindex="0"><code> select nspname from pg_namespace where nspname !~ &#39;^(pg|information).\*&#39;;
 </code></pre><pre tabindex="0"><code> select 
    pn.nspname,relname,attname 
  from 
   pg_class pc join pg_attribute pa on pa.attrelid=pc.oid join pg_namespace pn on pn.oid = pc.relnamespace
- where pn.nspname !~ '^(pg|information).\*';
+ where pn.nspname !~ &#39;^(pg|information).\*&#39;;
 </code></pre><h5 id="как-получить-колонки-только-одной-таблицы">Как получить колонки только одной таблицы</h5>
 <pre tabindex="0"><code>SELECT a.attname
 FROM pg_attribute a
-WHERE a.attrelid = 'texts'::regclass
+WHERE a.attrelid = &#39;texts&#39;::regclass
 AND a.attnum &gt; 0;
 </code></pre>
       

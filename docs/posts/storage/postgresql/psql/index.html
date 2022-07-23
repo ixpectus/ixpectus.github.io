@@ -90,7 +90,7 @@
 <code>\help</code> показывает список команды, по которым можно получить документацию, например <code>help alter table</code><br>
 <code>\q</code> выход<br>
 <code>\conninfo</code> информация о соединении</p>
-<pre tabindex="0"><code>You are connected to database &quot;postgres&quot; as user &quot;postgres&quot; on host &quot;127.0.0.1&quot; at port &quot;5432&quot;.
+<pre tabindex="0"><code>You are connected to database &#34;postgres&#34; as user &#34;postgres&#34; on host &#34;127.0.0.1&#34; at port &#34;5432&#34;.
 </code></pre><p><code>\a</code> включает/выключает выравнивание при выводе<br>
 <code>\t</code> включает/выключает вывод заголовков<br>
 <code>\pset fieldsep ' '</code> устанавливает другой разделитель для строк, может использоваться для сохранения csv<br>
@@ -115,15 +115,15 @@
 <pre tabindex="0"><code>-- Official docs: http://www.postgresql.org/docs/9.3/static/app-psql.html
 -- Unofficial docs: http://robots.thoughtbot.com/improving-the-command-line-postgres-experience
 
--- Don't display the &quot;helpful&quot; message on startup.
+-- Don&#39;t display the &#34;helpful&#34; message on startup.
 \set QUIET 1
-\pset null '[NULL]'
+\pset null &#39;[NULL]&#39;
 
 -- http://www.postgresql.org/docs/9.3/static/app-psql.html#APP-PSQL-PROMPTING
-\set PROMPT1 '%[%033[1m%]%M %n@%/%R%[%033[0m%]%# '
+\set PROMPT1 &#39;%[%033[1m%]%M %n@%/%R%[%033[0m%]%# &#39;
 -- PROMPT2 is printed when the prompt expects more input, like when you type
 -- SELECT * FROM&lt;enter&gt;. %R shows what type of input it expects.
-\set PROMPT2 '[more] %R &gt; '
+\set PROMPT2 &#39;[more] %R &gt; &#39;
 
 -- Show how long each query takes to execute
 \timing
@@ -170,7 +170,7 @@ Time: 1.326 ms
 </code></pre><h5 id="расширенныйвертикальный-вывод-столбца">Расширенный(вертикальный вывод столбца)</h5>
 <pre tabindex="0"><code>\x
 Expanded display is on.
-127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = 'pg_class';
+127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = &#39;pg_class&#39;;
 -[ RECORD 1 ]-----------
 schemaname  | pg_catalog
 tablename   | pg_class
@@ -193,7 +193,7 @@ ixpectus
 </code></pre></li>
 <li>Запись результатов вывода в файл
 <pre tabindex="0"><code>\o some_file
-127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = 'pg_class';
+127.0.0.1 postgres@postgres=# SELECT * FROM pg_tables WHERE tablename = &#39;pg_class&#39;;
 Time: 1.532 ms
 127.0.0.1 postgres@postgres=#
 </code></pre>На экран ничего не выведется данные запишутся в файл. Можно поменять разделители и получить csv файл</li>
@@ -209,14 +209,14 @@ Output format is aligned.
 Tuples only is on.
 Output format is unaligned.
 127.0.0.1 postgres@postgres=# \o ~/tmp/psql_script1
-127.0.0.1 postgres@postgres=# SELECT 'SELECT '''||tablename||': ''|| count(*) FROM '||tablename||';'
+127.0.0.1 postgres@postgres=# SELECT &#39;SELECT &#39;&#39;&#39;||tablename||&#39;: &#39;&#39;|| count(*) FROM &#39;||tablename||&#39;;&#39;
    FROM pg_tables LIMIT 3;
 Time: 1.119 ms
 </code></pre></li>
 <li>В результате в файле <code>~/tmp/psql_script1</code> окажется набор sql запросов
-<pre tabindex="0"><code>SELECT 'pg_statistic: '|| count(*) FROM pg_statistic;
-SELECT 'pg_type: '|| count(*) FROM pg_type;
-SELECT 'pg_policy: '|| count(*) FROM pg_policy;
+<pre tabindex="0"><code>SELECT &#39;pg_statistic: &#39;|| count(*) FROM pg_statistic;
+SELECT &#39;pg_type: &#39;|| count(*) FROM pg_type;
+SELECT &#39;pg_policy: &#39;|| count(*) FROM pg_policy;
 </code></pre></li>
 <li>Выполнить их можно разными способами
 <ul>
@@ -257,12 +257,12 @@ SELECT 'pg_policy: '|| count(*) FROM pg_policy;
 <li><code>SELECT now() AS curr_time \gset</code> можно результат запроса сразу установить в переменную
 <code>\echo :curr_time</code></li>
 <li>В переменную можно записать запрос и потом его выполнять
-<pre tabindex="0"><code>\set top5 'SELECT tablename, pg_total_relation_size(schemaname||''.''||tablename) AS bytes FROM pg_tables ORDER BY bytes DESC LIMIT 5;'
+<pre tabindex="0"><code>\set top5 &#39;SELECT tablename, pg_total_relation_size(schemaname||&#39;&#39;.&#39;&#39;||tablename) AS bytes FROM pg_tables ORDER BY bytes DESC LIMIT 5;&#39;
 :top5
 </code></pre>Можно полезные запросы записывать в .psqlrc</li>
 </ul>
 <h5 id="как-подключиться-к-базе-и-сделать-запрос">Как подключиться к базе и сделать запрос</h5>
-<pre tabindex="0"><code>psql -h 127.0.0.1 -d test -c 'select count(*) from some_table;';
+<pre tabindex="0"><code>psql -h 127.0.0.1 -d test -c &#39;select count(*) from some_table;&#39;;
 </code></pre><ul>
 <li>Флаг <code>-c</code> обозначает команду, которую нужно выполнить</li>
 <li>Флаг <code>-d</code> обозначает базу, к которой нужно подключиться</li>

@@ -78,58 +78,58 @@
       <h2 id="как-определять-функции">Как определять функции</h2>
 <ul>
 <li>Определение функции с двумя аргументами <code>x</code> и <code>y</code>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">sumSquares</span> x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">sumSquares</span> x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div></li>
 <li>Определение функции без аргументов
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">three</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">three</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="как-применять-функции">Как применять функции</h2>
 <ul>
 <li>Применение функции идёт без дополнительных скобок, в префиксном стиле, сначала пишется функция, а потом через пробел её аргументы
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
-<span style="color:#ae81ff">13</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">13</span>
+</span></span></code></pre></div></li>
 <li>В аргументе функции может быть другая функция, например <code>three</code>, описанная выше
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> three
-<span style="color:#ae81ff">13</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares <span style="color:#ae81ff">2</span> three
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">13</span>
+</span></span></code></pre></div></li>
 <li>Если функция в аргументе ожидает других аргументов, то их нужно окружить скобками
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span>  sumSquares <span style="color:#ae81ff">2</span> (sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>)
-<span style="color:#ae81ff">173</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span>  sumSquares <span style="color:#ae81ff">2</span> (sumSquares <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">173</span>
+</span></span></code></pre></div></li>
 </ul>
 <h2 id="частичное-применение-функций">Частичное применение функций</h2>
 <p>Любую функцию в haskell можно применить частично(вообще любую). Частично значит, что для функции n аргументов можно задать один аргумент и мы получим функцию n-1 аргументов</p>
 <ul>
 <li>Пример частичного применения на haskell
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
-<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#f92672">=</span> sumSquares <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#ae81ff">1</span>
-<span style="color:#ae81ff">10</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares x y <span style="color:#f92672">=</span> x <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> y <span style="color:#f92672">^</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#f92672">=</span> sumSquares <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Prelude</span><span style="color:#f92672">&gt;</span> sumSquares3 <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">10</span>
+</span></span></code></pre></div></li>
 <li>Как такая же логика выглядела бы на go
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#a6e22e">sumSquares3</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#ae81ff">3</span>)
-  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sumSquares3</span>(<span style="color:#ae81ff">1</span>))
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>
-  }
-}
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sumSquares3</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">sumSquares3</span>(<span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sumSquaresPart</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
 </ul>
 <p>В haskell не нужно делать ничего дополнительного для того, чтобы функцию можно было применять частично</p>
 <h2 id="условные-операторы">Условные операторы</h2>
 <p>В отличие от императивных операторов у условных операторов в haskell всегда должно быть заполнено условие then</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> x <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">then</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> (<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div>
       
     </div>
     

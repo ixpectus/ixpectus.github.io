@@ -131,9 +131,9 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <li>Другая сторона говорит, какие пакеты получила</li>
 <li>Другая сторона должна собрать полученные пакеты в правильном порядке. Для этого используется понятие sequence number.
 Допустим
-<pre tabindex="0"><code>  &quot;unce upon a&quot; &gt; bytes 0-13
-  &quot;agical master&quot; &gt; bytes 30-42
-  &quot;time there was a m&quot; &gt; bytes 13-30 
+<pre tabindex="0"><code>  &#34;unce upon a&#34; &gt; bytes 0-13
+  &#34;agical master&#34; &gt; bytes 30-42
+  &#34;time there was a m&#34; &gt; bytes 13-30 
 </code></pre>Первое число, т.е. 0, 30, 13 и есть sequence number</li>
 <li>Для того, чтобы гарантировать доставку для каждого сообщения из пакета друга сторона должна ответить <code>ack</code></li>
 </ul>
@@ -145,12 +145,12 @@ Flags (SYN, ACK, RST, FIN, PSH, URG, E(ECN Echo), W(ECN Cwnd Reduced))
 <pre tabindex="0"><code> func main() {
   log.SetOutput(os.Stderr)
   log.SetOutput(os.Stdout)
-  pc, err := net.ListenPacket(&quot;udp&quot;, &quot;127.0.0.1:8888&quot;)
+  pc, err := net.ListenPacket(&#34;udp&#34;, &#34;127.0.0.1:8888&#34;)
   if err != nil {
     log.Fatal(err)
   }
   defer pc.Close()
-  l, err := net.Listen(&quot;tcp&quot;, &quot;127.0.0.1:8888&quot;)
+  l, err := net.Listen(&#34;tcp&#34;, &#34;127.0.0.1:8888&#34;)
   if err != nil {
     log.Fatal(err)
   }

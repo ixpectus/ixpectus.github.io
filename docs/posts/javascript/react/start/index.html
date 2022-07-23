@@ -80,13 +80,13 @@
     
     <div class="content">
       <h2 id="команды">Команды</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">-</span><span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
-<span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span><span style="color:#f92672">/</span>
-<span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">start</span>
-</code></pre></div><h2 id="jsx">jsx</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">-</span><span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cd</span> <span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span><span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">start</span>
+</span></span></code></pre></div><h2 id="jsx">jsx</h2>
 <p>Корректное выражение</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">paragraph</span>&lt;/<span style="color:#f92672">p</span>&gt;}&lt;/<span style="color:#f92672">div</span>&gt;;
-</code></pre></div><h2 id="что-делать-когда-компоненту-нужно-отдавать-несколько-компонент-без-корневого-элемента">Что делать когда компоненту нужно отдавать несколько компонент без корневого элемента</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">name</span>}&gt;{&lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">paragraph</span>&lt;/<span style="color:#f92672">p</span>&gt;}&lt;/<span style="color:#f92672">div</span>&gt;;
+</span></span></code></pre></div><h2 id="что-делать-когда-компоненту-нужно-отдавать-несколько-компонент-без-корневого-элемента">Что делать когда компоненту нужно отдавать несколько компонент без корневого элемента</h2>
 <p>Например компонент должен вернуть что-то такое</p>
 <pre tabindex="0"><code class="language-javasript" data-lang="javasript">class Section extends React.Component {
   render() {
@@ -128,9 +128,8 @@
 }
 </code></pre><h2 id="классы">Классы</h2>
 <p>Для того, чтобы написать имя класса для div нужно его заменить на className, например</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;super-class&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">content</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-
-</code></pre></div><h2 id="функциональные-компоненты">Функциональные компоненты</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;super-class&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">content</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span></code></pre></div><h2 id="функциональные-компоненты">Функциональные компоненты</h2>
 <p>Если компонент реакт не должен содержать состояния то правильно использовать функциональные компоненты, пример</p>
 <pre tabindex="0"><code>const FuncList = (props) =&gt; {
   return (
@@ -144,46 +143,46 @@
 export default FuncList;
 </code></pre><h2 id="как-вывести-все-вложенные-элементы-в-компоненте">Как вывести все вложенные элементы в компоненте</h2>
 <p>Для этого можно использовать свойство <code>children</code> из <code>this.props</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#a6e22e">render</span>() {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">children</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>;
-    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert alert-primary&#34;</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
-  }
-</code></pre></div><p>Пример использования</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Alert2</span><span style="color:#f92672">&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">hr</span> <span style="color:#f92672">/&gt;</span>
-        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-0&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
-      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Alert2&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-</code></pre></div><h2 id="иммутабельность">Иммутабельность</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">children</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alert alert-primary&#34;</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">children</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>Пример использования</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Alert2</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">hr</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">p</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mb-0&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Paragraph</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/p&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Alert2&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span></code></pre></div><h2 id="иммутабельность">Иммутабельность</h2>
 <p>В реакте всё построено на иммутабельности и могут возникнуть сложности при изменении одного из элементов</p>
 <h3 id="массивы">Массивы</h3>
 <ul>
 <li>Добавление элемента в массив
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#e6db74">&#39;three&#39;</span>];
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;four&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">item</span>];
-<span style="color:#75715e">// [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;];
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#e6db74">&#39;three&#39;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">item</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;four&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">item</span>];
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;];
+</span></span></span></code></pre></div></li>
 <li>Удаление элемента из массива
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">id</span>);
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">id</span>);
+</span></span></code></pre></div></li>
 <li>Изменение элемент в массиве
 <ul>
 <li>На чистом js
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>);
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItem</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>[<span style="color:#a6e22e">index</span>], <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;another value&#39;</span> };
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span>), <span style="color:#a6e22e">newItem</span>, ...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)];
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">findIndex</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">id</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItem</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>[<span style="color:#a6e22e">index</span>], <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;another value&#39;</span> };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> [...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">index</span>), <span style="color:#a6e22e">newItem</span>, ...<span style="color:#a6e22e">items</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">index</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)];
+</span></span></code></pre></div></li>
 <li>С помощью immutability-helper
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
-
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;zero&#39;</span>, <span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>] };
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">collection</span>, { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> { [<span style="color:#a6e22e">index</span>]<span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } } });
-  <span style="color:#75715e">// { children: [&#39;zero&#39;, 1, &#39;two&#39;] }
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">collection</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;zero&#39;</span>, <span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>] };
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">collection</span>, { <span style="color:#a6e22e">children</span><span style="color:#f92672">:</span> { [<span style="color:#a6e22e">index</span>]<span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } } });
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// { children: [&#39;zero&#39;, 1, &#39;two&#39;] }
+</span></span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -192,36 +191,36 @@ export default FuncList;
 <li>Добавить элемент в объекте
 <ul>
 <li>Если ключ известен
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
-    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
+</span></span></span></code></pre></div></li>
 <li>Если ключ динамический
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>;
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, [<span style="color:#a6e22e">key</span>]<span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
-    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newItems</span> <span style="color:#f92672">=</span> { ...<span style="color:#a6e22e">items</span>, [<span style="color:#a6e22e">key</span>]<span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// { a: 1, b: 2, c: 3 }
+</span></span></span></code></pre></div></li>
 </ul>
 </li>
 <li>Удаление ключа в объекте
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">deletedKey</span>, ...<span style="color:#a6e22e">newState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>;
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">deletedKey</span>, ...<span style="color:#a6e22e">newState</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">state</span>;
+</span></span></code></pre></div></li>
 <li>Глубокая вложенность
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myData</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> } },
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>] },
-};
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">myData</span>, {
-  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> } } },
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$push</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">9</span>] } }
-});
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newData</span>)
-<span style="color:#75715e">// =&gt; { x: { y: { z: 7 } }, a: { b: [ 1, 2, 9 ] } }
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">update</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;immutability-helper&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">myData</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> } },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>] },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newData</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">myData</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">7</span> } } },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">$push</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">9</span>] } }
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">newData</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// =&gt; { x: { y: { z: 7 } }, a: { b: [ 1, 2, 9 ] } }
+</span></span></span></code></pre></div></li>
 </ul>
 <h3 id="жизненный-цикл-компонента">Жизненный цикл компонента</h3>
 <h4 id="монитрование">Монитрование</h4>
@@ -244,28 +243,28 @@ export default FuncList;
 <li>componentWillUnmount()</li>
 </ul>
 <h4 id="пример">Пример</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Clock</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
-  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
-    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() };
-  }
-
-  <span style="color:#a6e22e">componentDidMount</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(() =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() }), <span style="color:#ae81ff">1000</span>);
-  }
-
-  <span style="color:#a6e22e">componentWillUnmount</span>() {
-    <span style="color:#a6e22e">clearInterval</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span>);
-  }
-
-  <span style="color:#a6e22e">render</span>() {
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">date</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>;
-    <span style="color:#66d9ef">return</span> (
-      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toLocaleTimeString</span>()}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
-    );
-  }
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Clock</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentDidMount</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setInterval</span>(() =&gt; <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date() }), <span style="color:#ae81ff">1000</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">componentWillUnmount</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">clearInterval</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">timerId</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">date</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>{<span style="color:#a6e22e">date</span>.<span style="color:#a6e22e">toLocaleTimeString</span>()}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
       
     </div>
     

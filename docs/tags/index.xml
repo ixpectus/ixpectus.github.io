@@ -5,7 +5,52 @@
     <link>https://ixpectus.com/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 25 Jan 2022 19:18:38 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming</title>
+      <link>https://ixpectus.com/tags/programming/</link>
+      <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system design</title>
+      <link>https://ixpectus.com/tags/system-design/</link>
+      <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/system-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>https://ixpectus.com/tags/http/</link>
+      <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://ixpectus.com/tags/network/</link>
+      <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>https://ixpectus.com/tags/websocket/</link>
+      <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
+      
+      <guid>https://ixpectus.com/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>experiments</title>
       <link>https://ixpectus.com/tags/experiments/</link>
@@ -88,15 +133,6 @@
     </item>
     
     <item>
-      <title>programming</title>
-      <link>https://ixpectus.com/tags/programming/</link>
-      <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>tagged data</title>
       <link>https://ixpectus.com/tags/tagged-data/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
@@ -174,15 +210,6 @@
       <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
       
       <guid>https://ixpectus.com/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>https://ixpectus.com/tags/network/</link>
-      <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
-      
-      <guid>https://ixpectus.com/tags/network/</guid>
       <description></description>
     </item>
     

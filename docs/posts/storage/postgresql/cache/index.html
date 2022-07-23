@@ -125,7 +125,7 @@ WAL прежде всего нужен для восстановления по�
 <li>Сохраним текущий lsn
 <pre tabindex="0"><code>127.0.0.1 postgres@test=# SELECT pg_current_wal_lsn() AS pos1 \gset
 Time: 0.586 ms
-127.0.0.1 postgres@test=# select :'pos1'::pg_lsn;
+127.0.0.1 postgres@test=# select :&#39;pos1&#39;::pg_lsn;
   pg_lsn
 -----------
  0/2826B70
@@ -137,14 +137,14 @@ INSERT 0 1
 Time: 2.196 ms
 127.0.0.1 postgres@test=# SELECT pg_current_wal_lsn() AS pos2 \gset
 Time: 0.602 ms
-127.0.0.1 postgres@test=# select :'pos2'::pg_lsn;
+127.0.0.1 postgres@test=# select :&#39;pos2&#39;::pg_lsn;
   pg_lsn
 -----------
  0/2826DD8
 (1 row)
 
 Time: 0.579 ms
-127.0.0.1 postgres@test=# SELECT :'pos2'::pg_lsn - :'pos1'::pg_lsn;
+127.0.0.1 postgres@test=# SELECT :&#39;pos2&#39;::pg_lsn - :&#39;pos1&#39;::pg_lsn;
  ?column?
 ----------
       616

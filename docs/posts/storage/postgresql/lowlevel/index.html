@@ -107,7 +107,7 @@
 <h4 id="практика">Практика</h4>
 <ul>
 <li>Как посмотреть имя файла для таблицы относительно PGDATA, где t - таблица
-<pre tabindex="0"><code>postgres@127:data_lowlevel&gt; select pg_relation_filepath('t');
+<pre tabindex="0"><code>postgres@127:data_lowlevel&gt; select pg_relation_filepath(&#39;t&#39;);
 +------------------------+
 | pg_relation_filepath   |
 |------------------------|
@@ -116,7 +116,7 @@
 SELECT 1
 </code></pre>В директории <code>/usr/local/psql/data/base/24642</code> лежат 2 файла 24645, 24645_fsm</li>
 <li>Директорию базы данных можно узнать так
-<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT OID FROM pg_database WHERE datname = 'data_lowlevel';
+<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT OID FROM pg_database WHERE datname = &#39;data_lowlevel&#39;;
 +-------+
 | oid   |
 |-------|
@@ -124,7 +124,7 @@ SELECT 1
 +-------+
 </code></pre>Имя директории соответствует oid базы</li>
 <li>Отдельно имя файла для таблицы можно узнать так
-<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT relfilenode FROM pg_class WHERE relname = 't';
+<pre tabindex="0"><code>  postgres@127:data_lowlevel&gt; SELECT relfilenode FROM pg_class WHERE relname = &#39;t&#39;;
 +---------------+
 | relfilenode   |
 |---------------|
@@ -133,18 +133,18 @@ SELECT 1
 SELECT 1
 </code></pre></li>
 <li>Как посмотреть размер каждого слоя
-<pre tabindex="0"><code>SELECT pg_size_pretty(pg_relation_size('t','main')) main,
-pg_size_pretty(pg_relation_size('t','fsm')) fsm,
-pg_size_pretty(pg_relation_size('t','vm')) vm;
+<pre tabindex="0"><code>SELECT pg_size_pretty(pg_relation_size(&#39;t&#39;,&#39;main&#39;)) main,
+pg_size_pretty(pg_relation_size(&#39;t&#39;,&#39;fsm&#39;)) fsm,
+pg_size_pretty(pg_relation_size(&#39;t&#39;,&#39;vm&#39;)) vm;
 </code></pre></li>
 <li>Как посмотреть размер таблицы
-<pre tabindex="0"><code>SELECT pg_table_size('t');
+<pre tabindex="0"><code>SELECT pg_table_size(&#39;t&#39;);
 </code></pre></li>
 <li>Как посмотреть размер индекса
-<pre tabindex="0"><code>SELECT pg_indexes_size('t');
+<pre tabindex="0"><code>SELECT pg_indexes_size(&#39;t&#39;);
 </code></pre></li>
 <li>Как посмотреть размер всей таблицы
-<pre tabindex="0"><code>SELECT pg_total_relation_size('t');
+<pre tabindex="0"><code>SELECT pg_total_relation_size(&#39;t&#39;);
 </code></pre></li>
 </ul>
 <h5 id="toast">Toast</h5>
