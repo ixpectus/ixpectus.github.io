@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>psql on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/psql/</link>
+    <link>https://ixpectus.ru/tags/psql/</link>
     <description>Recent content in psql on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 25 Jan 2022 19:18:38 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/psql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 19:18:38 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/psql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Особенности MVCC в postgresql на простом примере</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/mvccinaction/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/mvccinaction/</link>
       <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/mvccinaction/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/mvccinaction/</guid>
       <description>Как работает mvcc в postgresql на простом примере</description>
     </item>
     
     <item>
       <title>psql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/psql/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/psql/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/psql/</guid>
       <description>Основные команды psql</description>
     </item>
     

@@ -2,70 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/network/</link>
+    <link>https://ixpectus.ru/tags/network/</link>
     <description>Recent content in network on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 28 Jan 2022 20:31:18 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Jan 2022 20:31:18 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Websocket vs Http</title>
-      <link>https://ixpectus.com/posts/programming/network/websocket-vs-http/</link>
+      <link>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/network/websocket-vs-http/</guid>
+      <guid>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</guid>
       <description>Когда стоит использовать http, а когда websocket</description>
     </item>
     
     <item>
       <title>Процесс загрузки котика из интернета в очень общих словах</title>
-      <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/wholeprocess/</link>
       <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/wholeprocess/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/wholeprocess/</guid>
       <description>Что реально происходит, когда мы загружаем контент в интернете</description>
     </item>
     
     <item>
       <title>UDP протокол</title>
-      <link>https://ixpectus.com/posts/administrate/networking/udp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/udp/</link>
       <pubDate>Sun, 04 Apr 2021 22:14:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/udp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/udp/</guid>
       <description>Описание базовых особенностей протокола UDP</description>
     </item>
     
     <item>
       <title>TCP протокол</title>
-      <link>https://ixpectus.com/posts/administrate/networking/tcp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/tcp/</link>
       <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/tcp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/tcp/</guid>
       <description>Описание базовых особенностей протокола TCP</description>
     </item>
     
     <item>
       <title>BGP</title>
-      <link>https://ixpectus.com/posts/administrate/networking/bgp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/bgp/</link>
       <pubDate>Sat, 03 Apr 2021 21:40:44 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/bgp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/bgp/</guid>
       <description>Border gateway protocol</description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>https://ixpectus.com/posts/administrate/networking/dns/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/dns/</link>
       <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/dns/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/dns/</guid>
       <description>Какие бывают dns сервера и как понять с каким dns сервером идёт работа</description>
     </item>
     
     <item>
       <title>arp</title>
-      <link>https://ixpectus.com/posts/administrate/networking/arp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/arp/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/arp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/arp/</guid>
       <description>ARP - address resolution protocol. С его помощью можно найти устройства в локальной cети</description>
     </item>
     

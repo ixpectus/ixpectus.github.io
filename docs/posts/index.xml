@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>posts on ixpectus notes</title>
-    <link>https://ixpectus.com/posts/</link>
+    <link>https://ixpectus.ru/posts/</link>
     <description>Recent content in posts on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design Twitter</title>
-      <link>https://ixpectus.com/posts/programming/system-design-twitter/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-twitter/</link>
       <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-twitter/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-twitter/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога twitter</description>
     </item>
     
     <item>
       <title>System design на примере bit.ly</title>
-      <link>https://ixpectus.com/posts/programming/system-design-bit-ly/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-bit-ly/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-bit-ly/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-bit-ly/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога bit.ly</description>
     </item>
     
     <item>
       <title>Websocket vs Http</title>
-      <link>https://ixpectus.com/posts/programming/network/websocket-vs-http/</link>
+      <link>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/network/websocket-vs-http/</guid>
+      <guid>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</guid>
       <description>Когда стоит использовать http, а когда websocket</description>
     </item>
     
     <item>
       <title>Запросы в sql</title>
-      <link>https://ixpectus.com/posts/sql/quieries/</link>
+      <link>https://ixpectus.ru/posts/sql/quieries/</link>
       <pubDate>Fri, 03 Dec 2021 16:29:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/sql/quieries/</guid>
+      <guid>https://ixpectus.ru/posts/sql/quieries/</guid>
       <description>Полезные приемы в sql запросах</description>
     </item>
     
     <item>
       <title>Заметки с курсов хекслета по javascript</title>
-      <link>https://ixpectus.com/posts/programming/inversion/</link>
+      <link>https://ixpectus.ru/posts/programming/inversion/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/inversion/</guid>
+      <guid>https://ixpectus.ru/posts/programming/inversion/</guid>
       <description>Инверсия зависимостей Зависимости передаются на вход в функцию или объект, в котором они необходимы. Помимо всего прочего это облегчит тестирование.
 Может быть так, что с точки зрения бизнес логики зависимость передавать и не надо, к примеру в может быть обращение к системной функции определения текущего времени.
 Но это может существенно затруднить написание тестов и можно передавать текущее время на вход функции.
@@ -56,109 +56,109 @@
     
     <item>
       <title>Vim Tips после vimconf 2021</title>
-      <link>https://ixpectus.com/posts/vim/tips/</link>
+      <link>https://ixpectus.ru/posts/vim/tips/</link>
       <pubDate>Thu, 04 Nov 2021 21:29:27 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/vim/tips/</guid>
+      <guid>https://ixpectus.ru/posts/vim/tips/</guid>
       <description>Полезные вещи в vim после vimconf 2021</description>
     </item>
     
     <item>
       <title>Абстракции</title>
-      <link>https://ixpectus.com/posts/programming/abstractions/</link>
+      <link>https://ixpectus.ru/posts/programming/abstractions/</link>
       <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/abstractions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/abstractions/</guid>
       <description>Немного об абстракциях</description>
     </item>
     
     <item>
       <title>Настройка окружения для javascript разработки</title>
-      <link>https://ixpectus.com/posts/javascript/environment/</link>
+      <link>https://ixpectus.ru/posts/javascript/environment/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/environment/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/environment/</guid>
       <description>Набор полезных команд для настройки окружения</description>
     </item>
     
     <item>
       <title>О парадигмах языков программирования</title>
-      <link>https://ixpectus.com/posts/programming/paradigms/</link>
+      <link>https://ixpectus.ru/posts/programming/paradigms/</link>
       <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/paradigms/</guid>
+      <guid>https://ixpectus.ru/posts/programming/paradigms/</guid>
       <description>Кратко о некоторых парадигмах языков программирования</description>
     </item>
     
     <item>
       <title>Функции в javascript</title>
-      <link>https://ixpectus.com/posts/javascript/functions/</link>
+      <link>https://ixpectus.ru/posts/javascript/functions/</link>
       <pubDate>Mon, 04 Oct 2021 08:23:52 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/functions/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/functions/</guid>
       <description>Особенности функций в javascript</description>
     </item>
     
     <item>
       <title>Функции</title>
-      <link>https://ixpectus.com/posts/programming/functions/</link>
+      <link>https://ixpectus.ru/posts/programming/functions/</link>
       <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/functions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/functions/</guid>
       <description>О функциях в языках программирования</description>
     </item>
     
     <item>
       <title>Быстрый старт в react</title>
-      <link>https://ixpectus.com/posts/javascript/react/start/</link>
+      <link>https://ixpectus.ru/posts/javascript/react/start/</link>
       <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/react/start/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/react/start/</guid>
       <description>Быстрый старт в react</description>
     </item>
     
     <item>
       <title>Рекурсия в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/recurse/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/recurse/</link>
       <pubDate>Fri, 07 May 2021 22:10:25 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/recurse/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/recurse/</guid>
       <description>Рекурсия в haskell</description>
     </item>
     
     <item>
       <title>Базовые типы в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/basetypes/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</link>
       <pubDate>Mon, 03 May 2021 21:02:21 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/basetypes/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</guid>
       <description>Базовые типы в haskell</description>
     </item>
     
     <item>
       <title>Операторы в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/operators/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/operators/</link>
       <pubDate>Mon, 03 May 2021 15:07:20 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/operators/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/operators/</guid>
       <description>Операторы и их приоритеты в haskell</description>
     </item>
     
     <item>
       <title>Применение функций в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/functions/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/functions/</link>
       <pubDate>Mon, 03 May 2021 12:37:49 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/functions/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/functions/</guid>
       <description>Как работать с функциями в haskell</description>
     </item>
     
     <item>
       <title>Haskell начало</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/start/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/start/</link>
       <pubDate>Sat, 01 May 2021 22:19:27 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/start/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/start/</guid>
       <description>Как установить haskell на linux</description>
     </item>
     

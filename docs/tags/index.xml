@@ -2,358 +2,358 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/</link>
+    <link>https://ixpectus.ru/tags/</link>
     <description>Recent content in Tags on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>programming</title>
-      <link>https://ixpectus.com/tags/programming/</link>
+      <link>https://ixpectus.ru/tags/programming/</link>
       <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/programming/</guid>
+      <guid>https://ixpectus.ru/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>system design</title>
-      <link>https://ixpectus.com/tags/system-design/</link>
+      <link>https://ixpectus.ru/tags/system-design/</link>
       <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/system-design/</guid>
+      <guid>https://ixpectus.ru/tags/system-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>http</title>
-      <link>https://ixpectus.com/tags/http/</link>
+      <link>https://ixpectus.ru/tags/http/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/http/</guid>
+      <guid>https://ixpectus.ru/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>network</title>
-      <link>https://ixpectus.com/tags/network/</link>
+      <link>https://ixpectus.ru/tags/network/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/network/</guid>
+      <guid>https://ixpectus.ru/tags/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>websocket</title>
-      <link>https://ixpectus.com/tags/websocket/</link>
+      <link>https://ixpectus.ru/tags/websocket/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/websocket/</guid>
+      <guid>https://ixpectus.ru/tags/websocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>experiments</title>
-      <link>https://ixpectus.com/tags/experiments/</link>
+      <link>https://ixpectus.ru/tags/experiments/</link>
       <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/experiments/</guid>
+      <guid>https://ixpectus.ru/tags/experiments/</guid>
       <description></description>
     </item>
     
     <item>
       <title>postgresql</title>
-      <link>https://ixpectus.com/tags/postgresql/</link>
+      <link>https://ixpectus.ru/tags/postgresql/</link>
       <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/postgresql/</guid>
+      <guid>https://ixpectus.ru/tags/postgresql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>psql</title>
-      <link>https://ixpectus.com/tags/psql/</link>
+      <link>https://ixpectus.ru/tags/psql/</link>
       <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/psql/</guid>
+      <guid>https://ixpectus.ru/tags/psql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cli</title>
-      <link>https://ixpectus.com/tags/cli/</link>
+      <link>https://ixpectus.ru/tags/cli/</link>
       <pubDate>Sat, 18 Dec 2021 22:25:15 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/cli/</guid>
+      <guid>https://ixpectus.ru/tags/cli/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://ixpectus.com/tags/linux/</link>
+      <link>https://ixpectus.ru/tags/linux/</link>
       <pubDate>Sat, 18 Dec 2021 22:25:15 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/linux/</guid>
+      <guid>https://ixpectus.ru/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>select</title>
-      <link>https://ixpectus.com/tags/select/</link>
+      <link>https://ixpectus.ru/tags/select/</link>
       <pubDate>Fri, 03 Dec 2021 16:29:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/select/</guid>
+      <guid>https://ixpectus.ru/tags/select/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sql</title>
-      <link>https://ixpectus.com/tags/sql/</link>
+      <link>https://ixpectus.ru/tags/sql/</link>
       <pubDate>Fri, 03 Dec 2021 16:29:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/sql/</guid>
+      <guid>https://ixpectus.ru/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexlet</title>
-      <link>https://ixpectus.com/tags/hexlet/</link>
+      <link>https://ixpectus.ru/tags/hexlet/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/hexlet/</guid>
+      <guid>https://ixpectus.ru/tags/hexlet/</guid>
       <description></description>
     </item>
     
     <item>
       <title>inversion</title>
-      <link>https://ixpectus.com/tags/inversion/</link>
+      <link>https://ixpectus.ru/tags/inversion/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/inversion/</guid>
+      <guid>https://ixpectus.ru/tags/inversion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tagged data</title>
-      <link>https://ixpectus.com/tags/tagged-data/</link>
+      <link>https://ixpectus.ru/tags/tagged-data/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/tagged-data/</guid>
+      <guid>https://ixpectus.ru/tags/tagged-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vim</title>
-      <link>https://ixpectus.com/tags/vim/</link>
+      <link>https://ixpectus.ru/tags/vim/</link>
       <pubDate>Thu, 04 Nov 2021 21:29:27 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/vim/</guid>
+      <guid>https://ixpectus.ru/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>abstractions</title>
-      <link>https://ixpectus.com/tags/abstractions/</link>
+      <link>https://ixpectus.ru/tags/abstractions/</link>
       <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/abstractions/</guid>
+      <guid>https://ixpectus.ru/tags/abstractions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>environment</title>
-      <link>https://ixpectus.com/tags/environment/</link>
+      <link>https://ixpectus.ru/tags/environment/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/environment/</guid>
+      <guid>https://ixpectus.ru/tags/environment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://ixpectus.com/tags/javascript/</link>
+      <link>https://ixpectus.ru/tags/javascript/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/javascript/</guid>
+      <guid>https://ixpectus.ru/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>functions</title>
-      <link>https://ixpectus.com/tags/functions/</link>
+      <link>https://ixpectus.ru/tags/functions/</link>
       <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/functions/</guid>
+      <guid>https://ixpectus.ru/tags/functions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>react</title>
-      <link>https://ixpectus.com/tags/react/</link>
+      <link>https://ixpectus.ru/tags/react/</link>
       <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/react/</guid>
+      <guid>https://ixpectus.ru/tags/react/</guid>
       <description></description>
     </item>
     
     <item>
       <title>haskell</title>
-      <link>https://ixpectus.com/tags/haskell/</link>
+      <link>https://ixpectus.ru/tags/haskell/</link>
       <pubDate>Fri, 07 May 2021 22:10:25 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/haskell/</guid>
+      <guid>https://ixpectus.ru/tags/haskell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>architecture</title>
-      <link>https://ixpectus.com/tags/architecture/</link>
+      <link>https://ixpectus.ru/tags/architecture/</link>
       <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/architecture/</guid>
+      <guid>https://ixpectus.ru/tags/architecture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>udp</title>
-      <link>https://ixpectus.com/tags/udp/</link>
+      <link>https://ixpectus.ru/tags/udp/</link>
       <pubDate>Sun, 04 Apr 2021 22:14:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/udp/</guid>
+      <guid>https://ixpectus.ru/tags/udp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tcp</title>
-      <link>https://ixpectus.com/tags/tcp/</link>
+      <link>https://ixpectus.ru/tags/tcp/</link>
       <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/tcp/</guid>
+      <guid>https://ixpectus.ru/tags/tcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bgp</title>
-      <link>https://ixpectus.com/tags/bgp/</link>
+      <link>https://ixpectus.ru/tags/bgp/</link>
       <pubDate>Sat, 03 Apr 2021 21:40:44 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/bgp/</guid>
+      <guid>https://ixpectus.ru/tags/bgp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dns</title>
-      <link>https://ixpectus.com/tags/dns/</link>
+      <link>https://ixpectus.ru/tags/dns/</link>
       <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/dns/</guid>
+      <guid>https://ixpectus.ru/tags/dns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>репликация</title>
-      <link>https://ixpectus.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
+      <link>https://ixpectus.ru/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</guid>
+      <guid>https://ixpectus.ru/tags/%D1%80%D0%B5%D0%BF%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>monitoring</title>
-      <link>https://ixpectus.com/tags/monitoring/</link>
+      <link>https://ixpectus.ru/tags/monitoring/</link>
       <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/monitoring/</guid>
+      <guid>https://ixpectus.ru/tags/monitoring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tablespaces</title>
-      <link>https://ixpectus.com/tags/tablespaces/</link>
+      <link>https://ixpectus.ru/tags/tablespaces/</link>
       <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/tablespaces/</guid>
+      <guid>https://ixpectus.ru/tags/tablespaces/</guid>
       <description></description>
     </item>
     
     <item>
       <title>system catalog</title>
-      <link>https://ixpectus.com/tags/system-catalog/</link>
+      <link>https://ixpectus.ru/tags/system-catalog/</link>
       <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/system-catalog/</guid>
+      <guid>https://ixpectus.ru/tags/system-catalog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scheme</title>
-      <link>https://ixpectus.com/tags/scheme/</link>
+      <link>https://ixpectus.ru/tags/scheme/</link>
       <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/scheme/</guid>
+      <guid>https://ixpectus.ru/tags/scheme/</guid>
       <description></description>
     </item>
     
     <item>
       <title>buffer cache</title>
-      <link>https://ixpectus.com/tags/buffer-cache/</link>
+      <link>https://ixpectus.ru/tags/buffer-cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/buffer-cache/</guid>
+      <guid>https://ixpectus.ru/tags/buffer-cache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>acid</title>
-      <link>https://ixpectus.com/tags/acid/</link>
+      <link>https://ixpectus.ru/tags/acid/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/acid/</guid>
+      <guid>https://ixpectus.ru/tags/acid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>isolation</title>
-      <link>https://ixpectus.com/tags/isolation/</link>
+      <link>https://ixpectus.ru/tags/isolation/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/isolation/</guid>
+      <guid>https://ixpectus.ru/tags/isolation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mvcc</title>
-      <link>https://ixpectus.com/tags/mvcc/</link>
+      <link>https://ixpectus.ru/tags/mvcc/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/mvcc/</guid>
+      <guid>https://ixpectus.ru/tags/mvcc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>архитектура</title>
-      <link>https://ixpectus.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
+      <link>https://ixpectus.ru/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</guid>
+      <guid>https://ixpectus.ru/tags/%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0/</guid>
       <description></description>
     </item>
     
     <item>
       <title>configs</title>
-      <link>https://ixpectus.com/tags/configs/</link>
+      <link>https://ixpectus.ru/tags/configs/</link>
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/configs/</guid>
+      <guid>https://ixpectus.ru/tags/configs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>install</title>
-      <link>https://ixpectus.com/tags/install/</link>
+      <link>https://ixpectus.ru/tags/install/</link>
       <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
       
-      <guid>https://ixpectus.com/tags/install/</guid>
+      <guid>https://ixpectus.ru/tags/install/</guid>
       <description></description>
     </item>
     

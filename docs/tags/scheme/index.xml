@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>scheme on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/scheme/</link>
+    <link>https://ixpectus.ru/tags/scheme/</link>
     <description>Recent content in scheme on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 Jul 2020 09:35:30 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/scheme/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jul 2020 09:35:30 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/scheme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Схемы в базе данных postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/scheme/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/scheme/</link>
       <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/scheme/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/scheme/</guid>
       <description>Схема в postgresql. Каждая таблица в postgres принадлежит к какой-то схеме, как правило по умолчанию это схема &lt;code&gt;public&lt;/code&gt;</description>
     </item>
     

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hexlet on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/hexlet/</link>
+    <link>https://ixpectus.ru/tags/hexlet/</link>
     <description>Recent content in hexlet on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 Nov 2021 09:18:26 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/hexlet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 09:18:26 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/hexlet/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Заметки с курсов хекслета по javascript</title>
-      <link>https://ixpectus.com/posts/programming/inversion/</link>
+      <link>https://ixpectus.ru/posts/programming/inversion/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/inversion/</guid>
+      <guid>https://ixpectus.ru/posts/programming/inversion/</guid>
       <description>Инверсия зависимостей Зависимости передаются на вход в функцию или объект, в котором они необходимы. Помимо всего прочего это облегчит тестирование.
 Может быть так, что с точки зрения бизнес логики зависимость передавать и не надо, к примеру в может быть обращение к системной функции определения текущего времени.
 Но это может существенно затруднить написание тестов и можно передавать текущее время на вход функции.

@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>programming on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/programming/</link>
+    <link>https://ixpectus.ru/tags/programming/</link>
     <description>Recent content in programming on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design Twitter</title>
-      <link>https://ixpectus.com/posts/programming/system-design-twitter/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-twitter/</link>
       <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-twitter/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-twitter/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога twitter</description>
     </item>
     
     <item>
       <title>System design на примере bit.ly</title>
-      <link>https://ixpectus.com/posts/programming/system-design-bit-ly/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-bit-ly/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-bit-ly/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-bit-ly/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога bit.ly</description>
     </item>
     
     <item>
       <title>Заметки с курсов хекслета по javascript</title>
-      <link>https://ixpectus.com/posts/programming/inversion/</link>
+      <link>https://ixpectus.ru/posts/programming/inversion/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/inversion/</guid>
+      <guid>https://ixpectus.ru/posts/programming/inversion/</guid>
       <description>Инверсия зависимостей Зависимости передаются на вход в функцию или объект, в котором они необходимы. Помимо всего прочего это облегчит тестирование.
 Может быть так, что с точки зрения бизнес логики зависимость передавать и не надо, к примеру в может быть обращение к системной функции определения текущего времени.
 Но это может существенно затруднить написание тестов и можно передавать текущее время на вход функции.
@@ -38,28 +38,28 @@
     
     <item>
       <title>Абстракции</title>
-      <link>https://ixpectus.com/posts/programming/abstractions/</link>
+      <link>https://ixpectus.ru/posts/programming/abstractions/</link>
       <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/abstractions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/abstractions/</guid>
       <description>Немного об абстракциях</description>
     </item>
     
     <item>
       <title>О парадигмах языков программирования</title>
-      <link>https://ixpectus.com/posts/programming/paradigms/</link>
+      <link>https://ixpectus.ru/posts/programming/paradigms/</link>
       <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/paradigms/</guid>
+      <guid>https://ixpectus.ru/posts/programming/paradigms/</guid>
       <description>Кратко о некоторых парадигмах языков программирования</description>
     </item>
     
     <item>
       <title>Функции</title>
-      <link>https://ixpectus.com/posts/programming/functions/</link>
+      <link>https://ixpectus.ru/posts/programming/functions/</link>
       <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/functions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/functions/</guid>
       <description>О функциях в языках программирования</description>
     </item>
     

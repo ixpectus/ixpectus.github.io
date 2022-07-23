@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>system catalog on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/system-catalog/</link>
+    <link>https://ixpectus.ru/tags/system-catalog/</link>
     <description>Recent content in system catalog on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 09 Jul 2020 10:11:39 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/system-catalog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jul 2020 10:11:39 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/system-catalog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Системный каталог в postrgesql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/systemcatalog/</link>
       <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/systemcatalog/</guid>
       <description>В postgres, как и в других базах данных есть таблицы, которые хранят информацию о всех сущностях в базе</description>
     </item>
     

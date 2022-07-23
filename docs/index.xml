@@ -2,70 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ixpectus notes</title>
-    <link>https://ixpectus.com/</link>
+    <link>https://ixpectus.ru/</link>
     <description>Recent content on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 23:06:48 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design Twitter</title>
-      <link>https://ixpectus.com/posts/programming/system-design-twitter/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-twitter/</link>
       <pubDate>Sun, 30 Jan 2022 23:06:48 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-twitter/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-twitter/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога twitter</description>
     </item>
     
     <item>
       <title>System design на примере bit.ly</title>
-      <link>https://ixpectus.com/posts/programming/system-design-bit-ly/</link>
+      <link>https://ixpectus.ru/posts/programming/system-design-bit-ly/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/system-design-bit-ly/</guid>
+      <guid>https://ixpectus.ru/posts/programming/system-design-bit-ly/</guid>
       <description>Заметки о возможном интервью по system design для разработки аналога bit.ly</description>
     </item>
     
     <item>
       <title>Websocket vs Http</title>
-      <link>https://ixpectus.com/posts/programming/network/websocket-vs-http/</link>
+      <link>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</link>
       <pubDate>Fri, 28 Jan 2022 20:31:18 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/network/websocket-vs-http/</guid>
+      <guid>https://ixpectus.ru/posts/programming/network/websocket-vs-http/</guid>
       <description>Когда стоит использовать http, а когда websocket</description>
     </item>
     
     <item>
       <title>Особенности MVCC в postgresql на простом примере</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/mvccinaction/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/mvccinaction/</link>
       <pubDate>Tue, 25 Jan 2022 19:18:38 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/mvccinaction/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/mvccinaction/</guid>
       <description>Как работает mvcc в postgresql на простом примере</description>
     </item>
     
     <item>
       <title>Xsv ещё одна мощная cli утилита на rust</title>
-      <link>https://ixpectus.com/posts/linux/tools/xsv/</link>
+      <link>https://ixpectus.ru/posts/linux/tools/xsv/</link>
       <pubDate>Sat, 18 Dec 2021 22:25:15 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/linux/tools/xsv/</guid>
+      <guid>https://ixpectus.ru/posts/linux/tools/xsv/</guid>
       <description>xsv позволяет в консоли эффективно работать с csv</description>
     </item>
     
     <item>
       <title>Запросы в sql</title>
-      <link>https://ixpectus.com/posts/sql/quieries/</link>
+      <link>https://ixpectus.ru/posts/sql/quieries/</link>
       <pubDate>Fri, 03 Dec 2021 16:29:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/sql/quieries/</guid>
+      <guid>https://ixpectus.ru/posts/sql/quieries/</guid>
       <description>Полезные приемы в sql запросах</description>
     </item>
     
     <item>
       <title>Заметки с курсов хекслета по javascript</title>
-      <link>https://ixpectus.com/posts/programming/inversion/</link>
+      <link>https://ixpectus.ru/posts/programming/inversion/</link>
       <pubDate>Tue, 09 Nov 2021 09:18:26 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/inversion/</guid>
+      <guid>https://ixpectus.ru/posts/programming/inversion/</guid>
       <description>Инверсия зависимостей Зависимости передаются на вход в функцию или объект, в котором они необходимы. Помимо всего прочего это облегчит тестирование.
 Может быть так, что с точки зрения бизнес логики зависимость передавать и не надо, к примеру в может быть обращение к системной функции определения текущего времени.
 Но это может существенно затруднить написание тестов и можно передавать текущее время на вход функции.
@@ -74,290 +74,290 @@
     
     <item>
       <title>Vim Tips после vimconf 2021</title>
-      <link>https://ixpectus.com/posts/vim/tips/</link>
+      <link>https://ixpectus.ru/posts/vim/tips/</link>
       <pubDate>Thu, 04 Nov 2021 21:29:27 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/vim/tips/</guid>
+      <guid>https://ixpectus.ru/posts/vim/tips/</guid>
       <description>Полезные вещи в vim после vimconf 2021</description>
     </item>
     
     <item>
       <title>Абстракции</title>
-      <link>https://ixpectus.com/posts/programming/abstractions/</link>
+      <link>https://ixpectus.ru/posts/programming/abstractions/</link>
       <pubDate>Fri, 29 Oct 2021 21:18:09 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/abstractions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/abstractions/</guid>
       <description>Немного об абстракциях</description>
     </item>
     
     <item>
       <title>Настройка окружения для javascript разработки</title>
-      <link>https://ixpectus.com/posts/javascript/environment/</link>
+      <link>https://ixpectus.ru/posts/javascript/environment/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/environment/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/environment/</guid>
       <description>Набор полезных команд для настройки окружения</description>
     </item>
     
     <item>
       <title>О парадигмах языков программирования</title>
-      <link>https://ixpectus.com/posts/programming/paradigms/</link>
+      <link>https://ixpectus.ru/posts/programming/paradigms/</link>
       <pubDate>Wed, 13 Oct 2021 09:53:33 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/paradigms/</guid>
+      <guid>https://ixpectus.ru/posts/programming/paradigms/</guid>
       <description>Кратко о некоторых парадигмах языков программирования</description>
     </item>
     
     <item>
       <title>Функции в javascript</title>
-      <link>https://ixpectus.com/posts/javascript/functions/</link>
+      <link>https://ixpectus.ru/posts/javascript/functions/</link>
       <pubDate>Mon, 04 Oct 2021 08:23:52 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/functions/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/functions/</guid>
       <description>Особенности функций в javascript</description>
     </item>
     
     <item>
       <title>Функции</title>
-      <link>https://ixpectus.com/posts/programming/functions/</link>
+      <link>https://ixpectus.ru/posts/programming/functions/</link>
       <pubDate>Sun, 03 Oct 2021 21:19:14 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/programming/functions/</guid>
+      <guid>https://ixpectus.ru/posts/programming/functions/</guid>
       <description>О функциях в языках программирования</description>
     </item>
     
     <item>
       <title>Быстрый старт в react</title>
-      <link>https://ixpectus.com/posts/javascript/react/start/</link>
+      <link>https://ixpectus.ru/posts/javascript/react/start/</link>
       <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/react/start/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/react/start/</guid>
       <description>Быстрый старт в react</description>
     </item>
     
     <item>
       <title>Рекурсия в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/recurse/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/recurse/</link>
       <pubDate>Fri, 07 May 2021 22:10:25 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/recurse/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/recurse/</guid>
       <description>Рекурсия в haskell</description>
     </item>
     
     <item>
       <title>Базовые типы в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/basetypes/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</link>
       <pubDate>Mon, 03 May 2021 21:02:21 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/basetypes/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</guid>
       <description>Базовые типы в haskell</description>
     </item>
     
     <item>
       <title>Операторы в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/operators/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/operators/</link>
       <pubDate>Mon, 03 May 2021 15:07:20 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/operators/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/operators/</guid>
       <description>Операторы и их приоритеты в haskell</description>
     </item>
     
     <item>
       <title>Применение функций в haskell</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/functions/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/functions/</link>
       <pubDate>Mon, 03 May 2021 12:37:49 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/functions/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/functions/</guid>
       <description>Как работать с функциями в haskell</description>
     </item>
     
     <item>
       <title>Haskell начало</title>
-      <link>https://ixpectus.com/posts/backend/languages/haskell/start/</link>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/start/</link>
       <pubDate>Sat, 01 May 2021 22:19:27 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/backend/languages/haskell/start/</guid>
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/start/</guid>
       <description>Как установить haskell на linux</description>
     </item>
     
     <item>
       <title>Процесс загрузки котика из интернета в очень общих словах</title>
-      <link>https://ixpectus.com/posts/administrate/networking/wholeprocess/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/wholeprocess/</link>
       <pubDate>Sun, 04 Apr 2021 22:17:24 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/wholeprocess/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/wholeprocess/</guid>
       <description>Что реально происходит, когда мы загружаем контент в интернете</description>
     </item>
     
     <item>
       <title>UDP протокол</title>
-      <link>https://ixpectus.com/posts/administrate/networking/udp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/udp/</link>
       <pubDate>Sun, 04 Apr 2021 22:14:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/udp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/udp/</guid>
       <description>Описание базовых особенностей протокола UDP</description>
     </item>
     
     <item>
       <title>TCP протокол</title>
-      <link>https://ixpectus.com/posts/administrate/networking/tcp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/tcp/</link>
       <pubDate>Sat, 03 Apr 2021 21:46:58 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/tcp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/tcp/</guid>
       <description>Описание базовых особенностей протокола TCP</description>
     </item>
     
     <item>
       <title>BGP</title>
-      <link>https://ixpectus.com/posts/administrate/networking/bgp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/bgp/</link>
       <pubDate>Sat, 03 Apr 2021 21:40:44 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/bgp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/bgp/</guid>
       <description>Border gateway protocol</description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>https://ixpectus.com/posts/administrate/networking/dns/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/dns/</link>
       <pubDate>Sat, 03 Apr 2021 21:25:04 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/dns/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/dns/</guid>
       <description>Какие бывают dns сервера и как понять с каким dns сервером идёт работа</description>
     </item>
     
     <item>
       <title>Репликация postrgesql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/replication/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/replication/</link>
       <pubDate>Mon, 20 Jul 2020 10:26:55 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/replication/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/replication/</guid>
       <description>Виды репликации в Postgresql</description>
     </item>
     
     <item>
       <title>Мониторинг postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/monitoring/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/monitoring/</link>
       <pubDate>Fri, 17 Jul 2020 10:22:46 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/monitoring/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/monitoring/</guid>
       <description>Статистику о работе postgres можно посмотреть в таблицах pg_stat_activity, pg_stat_all_tables</description>
     </item>
     
     <item>
       <title>Низкий уровень postrgesql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/lowlevel/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/lowlevel/</link>
       <pubDate>Fri, 10 Jul 2020 18:12:28 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/lowlevel/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/lowlevel/</guid>
       <description>Представление данных в postgresql на уровне файлов и файловой системы</description>
     </item>
     
     <item>
       <title>Табличные пространства postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/tablespaces/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/tablespaces/</link>
       <pubDate>Fri, 10 Jul 2020 17:47:36 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/tablespaces/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/tablespaces/</guid>
       <description>Табличное пространство это указание на каталог в котором хранятся данные.Табличное пространство - средство для организации физического хранения данных. За логическое хранение отвечают базы данных и схемы.</description>
     </item>
     
     <item>
       <title>Системный каталог в postrgesql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/systemcatalog/</link>
       <pubDate>Thu, 09 Jul 2020 10:11:39 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/systemcatalog/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/systemcatalog/</guid>
       <description>В postgres, как и в других базах данных есть таблицы, которые хранят информацию о всех сущностях в базе</description>
     </item>
     
     <item>
       <title>Схемы в базе данных postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/scheme/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/scheme/</link>
       <pubDate>Wed, 08 Jul 2020 09:35:30 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/scheme/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/scheme/</guid>
       <description>Схема в postgresql. Каждая таблица в postgres принадлежит к какой-то схеме, как правило по умолчанию это схема &lt;code&gt;public&lt;/code&gt;</description>
     </item>
     
     <item>
       <title>Буфферный кэш в postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/cache/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/cache/</link>
       <pubDate>Wed, 24 Jun 2020 10:09:28 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/cache/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/cache/</guid>
       <description>При чтении страниц с диска postgresql пытается извлечь их из буфферного кэша, если страниц в кэше нет, то postres читает их с диска и помещает в кэш</description>
     </item>
     
     <item>
       <title>Изоляция и многоверсионность в postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/isolation/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/isolation/</link>
       <pubDate>Sun, 21 Jun 2020 14:06:19 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/isolation/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/isolation/</guid>
       <description>Уровни изоляции транзакция в postrgesql с примерами</description>
     </item>
     
     <item>
       <title>Общее устройство postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/basestructure/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/basestructure/</link>
       <pubDate>Sat, 20 Jun 2020 22:50:08 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/basestructure/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/basestructure/</guid>
       <description>Верхнеуровневое описание устройства postgresql и его основных процессов</description>
     </item>
     
     <item>
       <title>Конфигурирование postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/configs/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/configs/</link>
       <pubDate>Sat, 20 Jun 2020 21:41:17 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/configs/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/configs/</guid>
       <description>Где можно посмотреть основные конфиги postgresql</description>
     </item>
     
     <item>
       <title>psql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/psql/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/psql/</link>
       <pubDate>Wed, 17 Jun 2020 10:34:36 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/psql/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/psql/</guid>
       <description>Основные команды psql</description>
     </item>
     
     <item>
       <title>Установка postrgesql из исходников</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/install/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/install/</link>
       <pubDate>Mon, 08 Jun 2020 11:43:07 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/install/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/install/</guid>
       <description>Установка postgres из исходников</description>
     </item>
     
     <item>
       <title>курсы по postgresql</title>
-      <link>https://ixpectus.com/posts/storage/postgresql/courses/</link>
+      <link>https://ixpectus.ru/posts/storage/postgresql/courses/</link>
       <pubDate>Sun, 31 May 2020 23:14:55 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/storage/postgresql/courses/</guid>
+      <guid>https://ixpectus.ru/posts/storage/postgresql/courses/</guid>
       <description>Хорошие курсы от команды postgrespro и Олега Бартунова
 Администрирование PostgreSQL 10. Базовый курс Администрирование PostgreSQL 9.5. Расширенный курс Разработка серверной части приложений PostgreSQL 9.6. Базовый курс </description>
     </item>
     
     <item>
       <title>arp</title>
-      <link>https://ixpectus.com/posts/administrate/networking/arp/</link>
+      <link>https://ixpectus.ru/posts/administrate/networking/arp/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/administrate/networking/arp/</guid>
+      <guid>https://ixpectus.ru/posts/administrate/networking/arp/</guid>
       <description>ARP - address resolution protocol. С его помощью можно найти устройства в локальной cети</description>
     </item>
     
     <item>
       <title>dd</title>
-      <link>https://ixpectus.com/posts/linux/tools/dd/</link>
+      <link>https://ixpectus.ru/posts/linux/tools/dd/</link>
       <pubDate>Sun, 31 May 2020 15:25:35 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/linux/tools/dd/</guid>
+      <guid>https://ixpectus.ru/posts/linux/tools/dd/</guid>
       <description>dd умеет читать побайтово с устройства</description>
     </item>
     

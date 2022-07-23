@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on ixpectus notes</title>
-    <link>https://ixpectus.com/tags/javascript/</link>
+    <link>https://ixpectus.ru/tags/javascript/</link>
     <description>Recent content in javascript on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Oct 2021 10:17:50 +0300</lastBuildDate><atom:link href="https://ixpectus.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 10:17:50 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Настройка окружения для javascript разработки</title>
-      <link>https://ixpectus.com/posts/javascript/environment/</link>
+      <link>https://ixpectus.ru/posts/javascript/environment/</link>
       <pubDate>Mon, 18 Oct 2021 10:17:50 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/environment/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/environment/</guid>
       <description>Набор полезных команд для настройки окружения</description>
     </item>
     
     <item>
       <title>Функции в javascript</title>
-      <link>https://ixpectus.com/posts/javascript/functions/</link>
+      <link>https://ixpectus.ru/posts/javascript/functions/</link>
       <pubDate>Mon, 04 Oct 2021 08:23:52 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/functions/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/functions/</guid>
       <description>Особенности функций в javascript</description>
     </item>
     
     <item>
       <title>Быстрый старт в react</title>
-      <link>https://ixpectus.com/posts/javascript/react/start/</link>
+      <link>https://ixpectus.ru/posts/javascript/react/start/</link>
       <pubDate>Fri, 17 Sep 2021 22:40:13 +0300</pubDate>
       
-      <guid>https://ixpectus.com/posts/javascript/react/start/</guid>
+      <guid>https://ixpectus.ru/posts/javascript/react/start/</guid>
       <description>Быстрый старт в react</description>
     </item>
     
