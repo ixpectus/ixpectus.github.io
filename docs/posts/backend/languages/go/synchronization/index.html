@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Синхронизация в go | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.ru/posts/backend/languages/go/synchronization/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.ru">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/go/">#go</a>
+
+
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">July 25, 2022</h2>
+    <h1 class="title">Синхронизация в go</h1>
+    
+    <div class="content">
+      <h2 id="о-чём-вообще-речь">О чём вообще речь</h2>
+<p>В go есть возможность запустить несколько горутин, у которых будет общая область памяти.<br>
+Для сценариев, когда нужно делать какую-то совместную работу необходима синхронизация между разными горутинами<br>
+Что может произойти если это не делать или делать это плохо</p>
+<ul>
+<li>горутины будут друг друга бесконечно ждать(дедлок)</li>
+<li>горутины могут изменить одну и ту же область памяти, в результате работа каждой из них может стать некорректной</li>
+</ul>
+<h3 id="простым-языком">Простым языком</h3>
+<ul>
+<li>Горутины это просто исполнители</li>
+<li>Задача условного &ldquo;менеджера&rdquo; обеспечить, чтобы они работали эффективно, не мешали, а помогали друг другу</li>
+<li>Но эти исполнители максимально &ldquo;тупые&rdquo;, что им скажешь, то они и будут делать, они не будут друг с другом &ldquo;общаться&rdquo;</li>
+<li>Сценарий взаимодействия этих исполнителей зависит от того, какой тип работы они будут делать</li>
+</ul>
+<h3 id="какие-типы-работы-могут-быть">Какие типы работы могут быть</h3>
+<ul>
+<li>Все работы делятся в начале и далее, работы идёт независимо каждым исполнителем. Сценарий <strong>map-reduce</strong>
+<ul>
+<li>Работа делится на несколько независимых частей</li>
+<li>Каждому исполнителю нужно дать работу</li>
+<li><strong>Синхронизация</strong> нужна на этапе завершения работ</li>
+<li>На этапе завершения исполнитель как-то должен передать работу &ldquo;менеджеру&rdquo;</li>
+</ul>
+</li>
+</ul>
+<h2 id="каналы">Каналы</h2>
+<ul>
+<li>Когда использовать
+<ul>
+<li>Когда нужна координация/передача информации между разными исполнителями</li>
+<li>Когда происходит какая-то совместная обработка данных</li>
+</ul>
+</li>
+<li>У канала есть 2 стороны
+<ul>
+<li>Тот, кто читает из канала и что-то с этим делает
+<ul>
+<li>Тот, кто читает из канала не должен его закрывать, поскольку другие могут из него читать, это не по-человечески</li>
+</ul>
+</li>
+<li>Тот, кто пишет в канал
+<ul>
+<li>Может его закрыть, когда всё что нужно уже записано</li>
+<li>Закрытие не должно происходить моментально, чтобы все читатели сумели обработать данные</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Какие могут возникнуть проблемы
+<ul>
+<li>Когда кто-то будет писать в закрытый канал, то будет паника</li>
+<li>Если канал закрыть 2 раза, то будет паника</li>
+</ul>
+</li>
+</ul>
+<h2 id="устройство-каналов">Устройство каналов</h2>
+<h3 id="исходный-код">Исходный код</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/chan.go#L32">github</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">hchan</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">qcount</span>   <span style="color:#66d9ef">uint</span>           <span style="color:#75715e">// total data in the queue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dataqsiz</span> <span style="color:#66d9ef">uint</span>           <span style="color:#75715e">// size of the circular queue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">buf</span>      <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span> <span style="color:#75715e">// points to an array of dataqsiz elements
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">elemsize</span> <span style="color:#66d9ef">uint16</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">closed</span>   <span style="color:#66d9ef">uint32</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elemtype</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span> <span style="color:#75715e">// element type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sendx</span>    <span style="color:#66d9ef">uint</span>   <span style="color:#75715e">// send index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">recvx</span>    <span style="color:#66d9ef">uint</span>   <span style="color:#75715e">// receive index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">recvq</span>    <span style="color:#a6e22e">waitq</span>  <span style="color:#75715e">// list of recv waiters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sendq</span>    <span style="color:#a6e22e">waitq</span>  <span style="color:#75715e">// list of send waiters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// lock protects all fields in hchan, as well as several
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// fields in sudogs blocked on this channel.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// Do not change another G&#39;s status while holding this lock
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// (in particular, do not ready a G), as this can deadlock
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// with stack shrinking.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lock</span> <span style="color:#a6e22e">mutex</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">waitq</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">first</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">sudog</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">last</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">sudog</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="из-чего-состоит-канал">Из чего состоит канал</h3>
+<ul>
+<li><code>recvq waitq</code> очередь горутин, которые хотят что-то прочитать из канала</li>
+<li><code>sendq waitq</code> очередь горутин, которые хотят что-то записать в канал</li>
+<li><code>buf unsafe.Pointer </code> указатель на данные в канале <code>circular queue</code></li>
+<li><code>lock mutex</code> мьютекс, перед всеми операциями с каналами он защищается мьютексом</li>
+</ul>
+<h2 id="waitgroup">Waitgroup</h2>
+<ul>
+<li>Позволяет запустить 5 горутин и дождаться выполнения их всех</li>
+</ul>
+<h2 id="пакет-atomic">Пакет atomic</h2>
+<ul>
+<li>Позволяет делает разнообразные атомарные операции над разными структурами</li>
+</ul>
+<h3 id="ссылки">Ссылки</h3>
+<ul>
+<li><a href="https://go101.org/article/channel.html">Подробно о каналах</a></li>
+<li><a href="https://go101.org/article/channel-use-cases.html">Сценарии использования каналов</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

@@ -152,6 +152,5 @@ type hchan struct {
 }
 ```
 
-
 ## Ссылки 
 - [Исходники go, можно найти внутреннее представление многих типов](https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L631)

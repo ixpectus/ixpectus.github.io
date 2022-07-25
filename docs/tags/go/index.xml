@@ -5,7 +5,16 @@
     <link>https://ixpectus.ru/tags/go/</link>
     <description>Recent content in go on ixpectus notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 25 Jul 2022 10:29:15 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jul 2022 14:13:20 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Синхронизация в go</title>
+      <link>https://ixpectus.ru/posts/backend/languages/go/synchronization/</link>
+      <pubDate>Mon, 25 Jul 2022 14:13:20 +0300</pubDate>
+      
+      <guid>https://ixpectus.ru/posts/backend/languages/go/synchronization/</guid>
+      <description>Синхронизация в go. Краткий обзор</description>
+    </item>
+    
     <item>
       <title>Типы в go</title>
       <link>https://ixpectus.ru/posts/backend/languages/go/types/</link>
