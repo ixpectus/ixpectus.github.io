@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>types on ixpectus notes</title>
+    <link>https://ixpectus.ru/tags/types/</link>
+    <description>Recent content in types on ixpectus notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 03 May 2021 21:02:21 +0300</lastBuildDate><atom:link href="https://ixpectus.ru/tags/types/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Базовые типы в haskell</title>
+      <link>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</link>
+      <pubDate>Mon, 03 May 2021 21:02:21 +0300</pubDate>
+      
+      <guid>https://ixpectus.ru/posts/backend/languages/haskell/basetypes/</guid>
+      <description>Базовые типы в haskell</description>
+    </item>
+    
+  </channel>
+</rss>

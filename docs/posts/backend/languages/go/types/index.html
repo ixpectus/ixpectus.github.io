@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Типы в go | ixpectus notes</title>
+
+
+
+<link rel="stylesheet" href="/css/style.css"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://ixpectus.ru/posts/backend/languages/go/types/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://ixpectus.ru">
+          <h1 id="nav-heading" class="title is-4">ixpectus notes</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="github" href='https://github.com/ixpectus'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="email" href='mailto:ixpectus@gmail.com'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+      
+<a class="subtitle is-6" href="/tags/go/">#go</a>
+
+
+
+
+      
+    </div>
+    <h2 class="subtitle is-6">July 25, 2022</h2>
+    <h1 class="title">Типы в go</h1>
+    
+    <div class="content">
+      <h2 id="встроенные-типы">Встроенные типы</h2>
+<h3 id="базовые-типы">Базовые типы</h3>
+<ul>
+<li>int, uint, int8, uint8(byte), int32(rune), uint32, int64, uint64</li>
+<li>float32, float64</li>
+<li>complex64, complex128</li>
+<li>string</li>
+<li>bool</li>
+</ul>
+<h3 id="составные-типы">Составные типы</h3>
+<ul>
+<li>указатели</li>
+<li>структуры</li>
+<li>функции</li>
+<li>интерфейсы</li>
+<li>массивы</li>
+<li>слайсы</li>
+<li>мапы</li>
+<li>каналы</li>
+<li>интерфейсы</li>
+</ul>
+<h2 id="underlying-types">Underlying types</h2>
+<p>Низкоуровневые типы, которые лежат в основе</p>
+<h2 id="указатели">Указатели</h2>
+<ul>
+<li>нулевое значение - nil</li>
+<li>значение указателя хранит адрес в памяти другого значения</li>
+<li>адрес в памяти хранится в виде uintptr(unsigned int), 4 байта для 32 битной архитектуры, 8 байт для 64 битной</li>
+<li><code>*int</code> пример обозначения указателя, int - базовый тип, указатель хранит адрес, по которому расположено значения типа int</li>
+<li>как инициировать указатель
+<ul>
+<li><code>new(T)</code> выделяет память под значение типа T, значение инициируется своим нулевым значением</li>
+<li><code>&amp;t</code> получает адрес существующего значения t</li>
+</ul>
+</li>
+<li>как получить значение на которое ссылается указатель <code>*p</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>  <span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">33</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">t</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>,<span style="color:#f92672">*</span><span style="color:#a6e22e">p</span>) <span style="color:#75715e">// 33
+</span></span></span></code></pre></div></li>
+</ul>
+<h2 id="функции">Функции</h2>
+<ul>
+<li>Объекты первого типа, могут передаваться в другие функции и возвращаться из них, как любые другие типы</li>
+<li>Нулевое значение - nil</li>
+</ul>
+<h2 id="строки">Строки</h2>
+<h3 id="внутреннее-представление">Внутреннее представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/string.go#L229">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">stringStruct</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">str</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">len</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="интерфейс">Интерфейс</h2>
+<h3 id="внутренне-представление">Внутренне представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L366">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">interfacetype</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">typ</span>     <span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pkgpath</span> <span style="color:#a6e22e">name</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">mhdr</span>    []<span style="color:#a6e22e">imethod</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="мапы">Мапы</h2>
+<h3 id="внутренне-представление-1">Внутренне представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L372">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">maptype</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">typ</span>    <span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">key</span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elem</span>   <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">bucket</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span> <span style="color:#75715e">// internal type representing a hash bucket
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// function for hashing keys (ptr to key, seed) -&gt; hash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">hasher</span>     <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>, <span style="color:#66d9ef">uintptr</span>) <span style="color:#66d9ef">uintptr</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">keysize</span>    <span style="color:#66d9ef">uint8</span>  <span style="color:#75715e">// size of key slot
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">elemsize</span>   <span style="color:#66d9ef">uint8</span>  <span style="color:#75715e">// size of elem slot
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">bucketsize</span> <span style="color:#66d9ef">uint16</span> <span style="color:#75715e">// size of bucket
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">flags</span>      <span style="color:#66d9ef">uint32</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="каналы">Каналы</h2>
+<h3 id="внутреннеe-представление">Внутреннеe представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L410">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">chantype</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">typ</span>  <span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elem</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">dir</span>  <span style="color:#66d9ef">uintptr</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="слайсы">Слайсы</h2>
+<h3 id="внутреннеe-представление-1">Внутреннеe представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/slice.go#L13">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">slice</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">array</span> <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">len</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cap</span>   <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="массивы">Массивы</h2>
+<h3 id="внутреннеe-представление-2">Внутреннеe представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L403">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">arraytype</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">typ</span>   <span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elem</span>  <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">slice</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">len</span>   <span style="color:#66d9ef">uintptr</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="каналы-1">Каналы</h2>
+<h3 id="внутреннеe-представление-3">Внутреннеe представление</h3>
+<p><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/chan.go#L32">Исходники</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">hchan</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">qcount</span>   <span style="color:#66d9ef">uint</span>           <span style="color:#75715e">// total data in the queue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">dataqsiz</span> <span style="color:#66d9ef">uint</span>           <span style="color:#75715e">// size of the circular queue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">buf</span>      <span style="color:#a6e22e">unsafe</span>.<span style="color:#a6e22e">Pointer</span> <span style="color:#75715e">// points to an array of dataqsiz elements
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">elemsize</span> <span style="color:#66d9ef">uint16</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">closed</span>   <span style="color:#66d9ef">uint32</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elemtype</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">_type</span> <span style="color:#75715e">// element type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sendx</span>    <span style="color:#66d9ef">uint</span>   <span style="color:#75715e">// send index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">recvx</span>    <span style="color:#66d9ef">uint</span>   <span style="color:#75715e">// receive index
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">recvq</span>    <span style="color:#a6e22e">waitq</span>  <span style="color:#75715e">// list of recv waiters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">sendq</span>    <span style="color:#a6e22e">waitq</span>  <span style="color:#75715e">// list of send waiters
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// lock protects all fields in hchan, as well as several
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// fields in sudogs blocked on this channel.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// Do not change another G&#39;s status while holding this lock
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// (in particular, do not ready a G), as this can deadlock
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// with stack shrinking.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">lock</span> <span style="color:#a6e22e">mutex</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="ссылки">Ссылки</h2>
+<ul>
+<li><a href="https://github.com/golang/go/blob/release-branch.go1.17/src/runtime/type.go#L631">Исходники go, можно найти внутреннее представление многих типов</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+    
+  </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

@@ -11,4 +11,3 @@ summary: "Полезные вещи в vim после vimconf 2021"
 - [https://vim.help/](https://vim.help/) user manual в более дружелюбном виде
 - `:G` с помощью этого префикса в vim-fugitive можно выполнить любую git команду, например `:Git logs` или `:Git commit -m "some commit"`
 - `firenvim` расширение для браузера, которое превращает любое текстовое поле в nvim
-

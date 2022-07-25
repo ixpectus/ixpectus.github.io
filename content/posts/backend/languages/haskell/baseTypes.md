@@ -3,6 +3,7 @@ title: "Базовые типы в haskell"
 date: 2021-05-03T21:02:21+03:00
 tags:
   - haskell 
+  - types
 summary: "Базовые типы в haskell"
 ---
 ## Базовые типы
